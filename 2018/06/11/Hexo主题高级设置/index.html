@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="半吊码工">
 <meta property="og:description" content="这是Hexo系列的第三篇，主要记录一些NexT主题的一些高级特性设置，比如置顶、开启搜索，进行SEO设置等。  文章置顶功能设置文字的置顶级别top数，达到对文章的置顶设置。该功能就是修改node_modules/hexo-generator-index/lib/generator.js文件，添加根据top数值大小排序代码，从而实现该功能。 123456789101112131415161718">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-11T14:55:27.708Z">
+<meta property="og:updated_time" content="2018-06-11T15:15:50.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo主题高级设置">
 <meta name="twitter:description" content="这是Hexo系列的第三篇，主要记录一些NexT主题的一些高级特性设置，比如置顶、开启搜索，进行SEO设置等。  文章置顶功能设置文字的置顶级别top数，达到对文章的置顶设置。该功能就是修改node_modules/hexo-generator-index/lib/generator.js文件，添加根据top数值大小排序代码，从而实现该功能。 123456789101112131415161718">
@@ -357,7 +357,7 @@
                 
               
 
-              <time title="创建时间：2018-06-11 22:46:15 / 修改时间：22:55:27" itemprop="dateCreated datePublished" datetime="2018-06-11T22:46:15+08:00">2018-06-11</time>
+              <time title="创建时间：2018-06-11 22:46:15 / 修改时间：23:15:50" itemprop="dateCreated datePublished" datetime="2018-06-11T22:46:15+08:00">2018-06-11</time>
             
 
             
@@ -414,7 +414,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">1.7k</span>
+                <span title="本文字数">2k</span>
               
 
               
@@ -428,7 +428,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">3 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -459,6 +459,13 @@
 <h3 id="引用模板"><a href="#引用模板" class="headerlink" title="引用模板"></a>引用模板</h3><p>将创建的模板添加到<code>themes/next/layout/_macro/post.swig</code>中</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% if not is_index %&#125;</span><br><span class="line">    &#123;% include 'post-end-tag.swig' %&#125;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="添加配置"><a href="#添加配置" class="headerlink" title="添加配置"></a>添加配置</h3><p>最后在主题配置文件中添加<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post-end-tag:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="创建404页面"><a href="#创建404页面" class="headerlink" title="创建404页面"></a>创建404页面</h2><blockquote>
+<p><code>404</code>页面只有发布到站点并使用域名时才会显示，本地调试或者<code>GitHub pages</code>域名都不能显示<code>404</code>页面</p>
+</blockquote>
+<p>使用命令新建<code>404</code>页面，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new page 404</span><br></pre></td></tr></table></figure>
+<p>然后编辑<code>source/404/index.md</code>中的内容，需要注意的是需要在<code>meta</code>中标明<code>permalink</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 未找到该页面</span><br><span class="line">date: 2018-06-11 23:07:24</span><br><span class="line">comments: false</span><br><span class="line">permalink: /404</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -528,6 +535,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/11/divine/小米招股前景/" rel="prev" title="占卜:小米招股前景">
+                占卜:小米招股前景 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -605,7 +616,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -622,7 +633,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">2</span>
+                      
+                    
+                    <span class="site-state-item-count">3</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -717,7 +730,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章置顶功能"><span class="nav-number">1.</span> <span class="nav-text">文章置顶功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加文章结束标记"><span class="nav-number">2.</span> <span class="nav-text">添加文章结束标记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建模板"><span class="nav-number">2.1.</span> <span class="nav-text">创建模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用模板"><span class="nav-number">2.2.</span> <span class="nav-text">引用模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加配置"><span class="nav-number">2.3.</span> <span class="nav-text">添加配置</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章置顶功能"><span class="nav-number">1.</span> <span class="nav-text">文章置顶功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加文章结束标记"><span class="nav-number">2.</span> <span class="nav-text">添加文章结束标记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建模板"><span class="nav-number">2.1.</span> <span class="nav-text">创建模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用模板"><span class="nav-number">2.2.</span> <span class="nav-text">引用模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加配置"><span class="nav-number">2.3.</span> <span class="nav-text">添加配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建404页面"><span class="nav-number">3.</span> <span class="nav-text">创建404页面</span></a></li></ol></div>
             
 
           </div>
