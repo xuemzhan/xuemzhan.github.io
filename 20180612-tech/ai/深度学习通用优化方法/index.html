@@ -112,17 +112,18 @@
 
 
 
-  <meta name="description" content="半路出家, 不似半路出家人">
-<meta name="keywords" content="技术, 生活, 感想">
-<meta property="og:type" content="website">
-<meta property="og:title" content="半吊码工">
-<meta property="og:url" content="http://www.halfbaker.com/categories/guider/工具类/index.html">
+  <meta name="description" content="深度学习的最终目标是找到最优或者近似最优的模型。当有一个模型被训练出来后，怎么去改进？是否有一个通用的方法？  土豪法你认识或者自己就是研究领域的专家，拥有强大GPU计算集群，几乎没有限制的训练数据，先进模型的理论、架构与设计。最后有足够的时间和耐心，或者有助手帮助调参，迭代模型。 通用法通用法一般通过迁移开源的先进的模型、总结一些常用超参的调优手法进行改善模型的拟合时间和准确性。具体可以分为以">
+<meta name="keywords" content="深度学习,优化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深度学习通用优化方法">
+<meta property="og:url" content="http://www.halfbaker.com/20180612-tech/ai/深度学习通用优化方法/index.html">
 <meta property="og:site_name" content="半吊码工">
-<meta property="og:description" content="半路出家, 不似半路出家人">
+<meta property="og:description" content="深度学习的最终目标是找到最优或者近似最优的模型。当有一个模型被训练出来后，怎么去改进？是否有一个通用的方法？  土豪法你认识或者自己就是研究领域的专家，拥有强大GPU计算集群，几乎没有限制的训练数据，先进模型的理论、架构与设计。最后有足够的时间和耐心，或者有助手帮助调参，迭代模型。 通用法通用法一般通过迁移开源的先进的模型、总结一些常用超参的调优手法进行改善模型的拟合时间和准确性。具体可以分为以">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-06-12T14:49:10.347Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="半吊码工">
-<meta name="twitter:description" content="半路出家, 不似半路出家人">
+<meta name="twitter:title" content="深度学习通用优化方法">
+<meta name="twitter:description" content="深度学习的最终目标是找到最优或者近似最优的模型。当有一个模型被训练出来后，怎么去改进？是否有一个通用的方法？  土豪法你认识或者自己就是研究领域的专家，拥有强大GPU计算集群，几乎没有限制的训练数据，先进模型的理论、架构与设计。最后有足够的时间和耐心，或者有助手帮助调参，迭代模型。 通用法通用法一般通过迁移开源的先进的模型、总结一些常用超参的调优手法进行改善模型的拟合时间和准确性。具体可以分为以">
 
 
 
@@ -131,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="http://www.halfbaker.com/categories/guider/工具类/"/>
+  <link rel="canonical" href="http://www.halfbaker.com/20180612-tech/ai/深度学习通用优化方法/"/>
 
 
 
@@ -141,7 +142,7 @@
   };
 </script>
 
-  <title>分类: 工具类 | 半吊码工</title>
+  <title>深度学习通用优化方法 | 半吊码工</title>
   
 
 
@@ -197,7 +198,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <a href="https://github.com/xuemzhan">
@@ -258,7 +259,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />文章分类</a>
   </li>
@@ -338,141 +339,279 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>工具类<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/20180612-tech/ai/深度学习通用优化方法/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="半吊码工">
+      <meta itemprop="description" content="半路出家, 不似半路出家人">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半吊码工">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/20180611-guider/hexo/Hexo主题高级设置/" itemprop="url">
-              
-                <span itemprop="name">Hexo主题高级设置</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">深度学习通用优化方法
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-11T22:46:15+08:00"
-              content="2018-06-11" >
-          06-11
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-12 21:47:45 / 修改时间：22:49:10" itemprop="dateCreated datePublished" datetime="2018-06-12T21:47:45+08:00">2018-06-12</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">温故知新</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tech/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">527</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/20180610-guider/hexo/Hexo主题NexT配置与优化/" itemprop="url">
-              
-                <span itemprop="name">Hexo主题NexT配置与优化</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-10T10:47:01+08:00"
-              content="2018-06-10" >
-          06-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/20180608-guider/hexo/Hexo安装与配置/" itemprop="url">
-              
-                <span itemprop="name">Hexo安装与配置</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-08T19:04:39+08:00"
-              content="2018-06-08" >
-          06-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <blockquote>
+<p>深度学习的最终目标是找到最优或者近似最优的模型。当有一个模型被训练出来后，怎么去改进？是否有一个通用的方法？</p>
+</blockquote>
+<h2 id="土豪法"><a href="#土豪法" class="headerlink" title="土豪法"></a>土豪法</h2><p>你认识或者自己就是研究领域的专家，拥有强大<code>GPU</code>计算集群，几乎没有限制的训练数据，先进模型的理论、架构与设计。最后有足够的时间和耐心，或者有助手帮助调参，迭代模型。</p>
+<h2 id="通用法"><a href="#通用法" class="headerlink" title="通用法"></a>通用法</h2><p>通用法一般通过迁移开源的先进的模型、总结一些常用超参的调优手法进行改善模型的拟合时间和准确性。具体可以分为以下几个步骤：</p>
+<h3 id="模型迁移前的准备："><a href="#模型迁移前的准备：" class="headerlink" title="模型迁移前的准备："></a>模型迁移前的准备：</h3><p>了解最新理论成果与理想的或者目前实践上最优的模型，研究其预训练体系结构。了解迁移学习的好处，思考要解决问题的领域与现有模型的共性问题。</p>
+<h3 id="模型的裁剪"><a href="#模型的裁剪" class="headerlink" title="模型的裁剪"></a>模型的裁剪</h3><p>模型的前几层，主要是提取通用的和可以解释的特征。在迁移时，不需要修改和调整。输出层则需要进行修改，主要是使用适合应用领域的激活函数和输出维度替换模型的默认输出。</p>
+<h3 id="训练优化"><a href="#训练优化" class="headerlink" title="训练优化"></a>训练优化</h3><p>1.使用较小的学习率，这是因为预训练的权重通常优于随机初始化的权重，因此修改要更为精细。<br>2.使用<code>Dropout</code>层。和传统的回归模型的<code>Ridge</code>和<code>LASSO</code>正则化一样，<code>Dropout</code>不会适用于所有的模型。他的适用取决于具体问题，需要进行测。<br>3.通过限制有些层的权重的最大范数（绝对值）来提高模型的泛化能力。</p>
 
       
     </div>
 
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">------本文结束------</div>
+    
+</div>
+
+      
+    </div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>半吊码工</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.halfbaker.com/20180612-tech/ai/深度学习通用优化方法/" title="深度学习通用优化方法">http://www.halfbaker.com/20180612-tech/ai/深度学习通用优化方法/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/深度学习/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
+          
+            <a href="/tags/优化/" rel="tag"><i class="fa fa-tag"></i> 优化</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/20180611-divine/小米招股前景/" rel="next" title="占卜:小米招股前景">
+                <i class="fa fa-chevron-left"></i> 占卜:小米招股前景
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -493,8 +632,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -625,6 +773,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#土豪法"><span class="nav-number">1.</span> <span class="nav-text">土豪法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#通用法"><span class="nav-number">2.</span> <span class="nav-text">通用法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#模型迁移前的准备："><span class="nav-number">2.1.</span> <span class="nav-text">模型迁移前的准备：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模型的裁剪"><span class="nav-number">2.2.</span> <span class="nav-text">模型的裁剪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#训练优化"><span class="nav-number">2.3.</span> <span class="nav-text">训练优化</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -785,6 +949,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 

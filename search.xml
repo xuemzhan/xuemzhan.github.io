@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[深度学习通用优化方法]]></title>
+    <url>%2F20180612-tech%2Fai%2F%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E9%80%9A%E7%94%A8%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[深度学习的最终目标是找到最优或者近似最优的模型。当有一个模型被训练出来后，怎么去改进？是否有一个通用的方法？ 土豪法你认识或者自己就是研究领域的专家，拥有强大GPU计算集群，几乎没有限制的训练数据，先进模型的理论、架构与设计。最后有足够的时间和耐心，或者有助手帮助调参，迭代模型。 通用法通用法一般通过迁移开源的先进的模型、总结一些常用超参的调优手法进行改善模型的拟合时间和准确性。具体可以分为以下几个步骤： 模型迁移前的准备：了解最新理论成果与理想的或者目前实践上最优的模型，研究其预训练体系结构。了解迁移学习的好处，思考要解决问题的领域与现有模型的共性问题。 模型的裁剪模型的前几层，主要是提取通用的和可以解释的特征。在迁移时，不需要修改和调整。输出层则需要进行修改，主要是使用适合应用领域的激活函数和输出维度替换模型的默认输出。 训练优化1.使用较小的学习率，这是因为预训练的权重通常优于随机初始化的权重，因此修改要更为精细。2.使用Dropout层。和传统的回归模型的Ridge和LASSO正则化一样，Dropout不会适用于所有的模型。他的适用取决于具体问题，需要进行测。3.通过限制有些层的权重的最大范数（绝对值）来提高模型的泛化能力。]]></content>
+      <categories>
+        <category>温故知新</category>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+        <tag>优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[占卜:小米招股前景]]></title>
     <url>%2F20180611-divine%2F%E5%B0%8F%E7%B1%B3%E6%8B%9B%E8%82%A1%E5%89%8D%E6%99%AF%2F</url>
     <content type="text"><![CDATA[“巨树散枝开花飘全球，根扎市场吸金流，到底是花香为大众，还是花是画金是金？” 上市圈钱都不是问题，问题是圈钱的目的是做产品还是圈钱。看好其后10年的发展。]]></content>
@@ -11,7 +24,7 @@
   <entry>
     <title><![CDATA[Hexo主题高级设置]]></title>
     <url>%2F20180611-guider%2Fhexo%2FHexo%E4%B8%BB%E9%A2%98%E9%AB%98%E7%BA%A7%E8%AE%BE%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[这是Hexo系列的第三篇，主要记录一些NexT主题的一些高级特性设置，比如置顶、开启搜索，进行SEO设置等。 文章置顶功能设置文字的置顶级别top数，达到对文章的置顶设置。该功能就是修改node_modules/hexo-generator-index/lib/generator.js文件，添加根据top数值大小排序代码，从而实现该功能。 1234567891011121314151617181920212223242526module.exports = function(locals)&#123; var config = this.config; var posts = locals.posts; posts.data = posts.data.sort(function(a, b) &#123; if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义 if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排 else return b.top - a.top; // 否则按照top值降序排 &#125; else if(a.top &amp;&amp; !b.top) &#123; // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233） return -1; &#125; else if(!a.top &amp;&amp; b.top) &#123; return 1; &#125; else return b.date - a.date; // 都没定义按照文章日期降序排 &#125;); var paginationDir = config.pagination_dir || 'page'; return pagination('', posts, &#123; perPage: config.index_generator.per_page, layout: ['index', 'archive'], format: paginationDir + '/%d/', data: &#123; __index: true &#125; &#125;);&#125;; 如果需要对文章置顶，需要在文章的meta中添加top关键字，并设置相应的数值1234567---title: Hexo主题高级设置date: 2018-06-10 17:44:33tags: [Hexo, 教程]categories: [教程系列, 工具类]top: 100--- 添加文章结束标记创建模板创建一个模板文件themes/next/layout/_macro/post-end-tag.swig 12345&lt;div&gt; &#123;% if not is_index %&#125; &lt;div style="text-align:center;color: #ccc;font-size:14px;"&gt;------本文结束------&lt;/div&gt; &#123;% endif %&#125;&lt;/div&gt; 引用模板将创建的模板添加到themes/next/layout/_macro/post.swig中 12345&lt;div&gt; &#123;% if not is_index %&#125; &#123;% include 'post-end-tag.swig' %&#125; &#123;% endif %&#125;&lt;/div&gt; 添加配置最后在主题配置文件中添加12post-end-tag: enabled: true 创建404页面 404页面只有发布到站点并使用域名时才会显示，本地调试或者GitHub pages域名都不能显示404页面 使用命令新建404页面， 1$ hexo new page 404 然后编辑source/404/index.md中的内容，需要注意的是需要在meta中标明permalink 123456---title: 未找到该页面date: 2018-06-11 23:07:24comments: falsepermalink: /404--- 开启本地搜索下载hexo-generator-searchdb依赖包，然后enabled搜索配置 123456789local_search: enable: true # if auto, trigger search by changing input # if manual, trigger search by pressing enter key or search button trigger: auto # show top n results per article, show all results by setting to -1 top_n_per_article: 1 # unescape html strings to the readable one unescape: false]]></content>
+    <content type="text"><![CDATA[这是Hexo系列的第三篇，主要记录一些NexT主题的一些高级特性设置，比如置顶、开启搜索，进行SEO设置等。 文章置顶功能设置文字的置顶级别top数，达到对文章的置顶设置。该功能就是修改node_modules/hexo-generator-index/lib/generator.js文件，添加根据top数值大小排序代码，从而实现该功能。 1234567891011121314151617181920212223242526module.exports = function(locals)&#123; var config = this.config; var posts = locals.posts; posts.data = posts.data.sort(function(a, b) &#123; if(a.top &amp;&amp; b.top) &#123; // 两篇文章top都有定义 if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排 else return b.top - a.top; // 否则按照top值降序排 &#125; else if(a.top &amp;&amp; !b.top) &#123; // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233） return -1; &#125; else if(!a.top &amp;&amp; b.top) &#123; return 1; &#125; else return b.date - a.date; // 都没定义按照文章日期降序排 &#125;); var paginationDir = config.pagination_dir || 'page'; return pagination('', posts, &#123; perPage: config.index_generator.per_page, layout: ['index', 'archive'], format: paginationDir + '/%d/', data: &#123; __index: true &#125; &#125;);&#125;; 如果需要对文章置顶，需要在文章的meta中添加top关键字，并设置相应的数值1234567---title: Hexo主题高级设置date: 2018-06-10 17:44:33tags: [Hexo, 教程]categories: [教程系列, 工具类]top: 100--- 添加文章结束标记创建模板创建一个模板文件themes/next/layout/_macro/post-end-tag.swig 12345&lt;div&gt; &#123;% if not is_index %&#125; &lt;div style="text-align:center;color: #ccc;font-size:14px;"&gt;------本文结束------&lt;/div&gt; &#123;% endif %&#125;&lt;/div&gt; 引用模板将创建的模板添加到themes/next/layout/_macro/post.swig中 12345&lt;div&gt; &#123;% if not is_index %&#125; &#123;% include 'post-end-tag.swig' %&#125; &#123;% endif %&#125;&lt;/div&gt; 添加配置最后在主题配置文件中添加12post-end-tag: enabled: true 创建404页面 404页面只有发布到站点并使用域名时才会显示，本地调试或者GitHub pages域名都不能显示404页面 使用命令新建404页面， 1$ hexo new page 404 然后编辑source/404/index.md中的内容，需要注意的是需要在meta中标明permalink 123456---title: 未找到该页面date: 2018-06-11 23:07:24comments: falsepermalink: /404--- 开启本地搜索下载hexo-generator-searchdb依赖包，然后enabled搜索配置 123456789local_search: enable: true # if auto, trigger search by changing input # if manual, trigger search by pressing enter key or search button trigger: auto # show top n results per article, show all results by setting to -1 top_n_per_article: 1 # unescape html strings to the readable one unescape: false 开启社区分享功能将]]></content>
       <categories>
         <category>教程系列</category>
         <category>工具类</category>
@@ -30,9 +43,9 @@
         <category>工具类</category>
       </categories>
       <tags>
+        <tag>Hexo</tag>
         <tag>NexT</tag>
         <tag>教程</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -44,8 +57,8 @@
         <category>工具类</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>Hexo</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
 </search>
