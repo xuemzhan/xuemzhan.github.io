@@ -23,6 +23,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
 
 
 
@@ -108,18 +112,18 @@
 
 
 
-  <meta name="description" content="“巨树散枝开花飘全球，根扎市场吸金流，到底是花香为大众，还是花是画金是金？” 上市圈钱都不是问题，问题是圈钱的目的是做产品还是圈钱。看好其后10年的发展。">
-<meta name="keywords" content="技术, 生活, 感想">
+  <meta name="description" content="这是Hexo系列的第三篇，主要记录一些NexT主题的一些高级特性设置，比如置顶、开启搜索，进行SEO设置等。  文章置顶功能设置文字的置顶级别top数，达到对文章的置顶设置。该功能就是修改node_modules/hexo-generator-index/lib/generator.js文件，添加根据top数值大小排序代码，从而实现该功能。 123456789101112131415161718">
+<meta name="keywords" content="NexT,教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="占卜:小米招股前景">
-<meta property="og:url" content="http://www.halfbaker.com/2018/06/11/divine/小米招股前景/index.html">
+<meta property="og:title" content="Hexo主题高级设置">
+<meta property="og:url" content="http://www.halfbaker.com/20180611-guider/hexo/Hexo主题高级设置/index.html">
 <meta property="og:site_name" content="半吊码工">
-<meta property="og:description" content="“巨树散枝开花飘全球，根扎市场吸金流，到底是花香为大众，还是花是画金是金？” 上市圈钱都不是问题，问题是圈钱的目的是做产品还是圈钱。看好其后10年的发展。">
+<meta property="og:description" content="这是Hexo系列的第三篇，主要记录一些NexT主题的一些高级特性设置，比如置顶、开启搜索，进行SEO设置等。  文章置顶功能设置文字的置顶级别top数，达到对文章的置顶设置。该功能就是修改node_modules/hexo-generator-index/lib/generator.js文件，添加根据top数值大小排序代码，从而实现该功能。 123456789101112131415161718">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-11T15:32:06.826Z">
+<meta property="og:updated_time" content="2018-06-11T15:15:50.874Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="占卜:小米招股前景">
-<meta name="twitter:description" content="“巨树散枝开花飘全球，根扎市场吸金流，到底是花香为大众，还是花是画金是金？” 上市圈钱都不是问题，问题是圈钱的目的是做产品还是圈钱。看好其后10年的发展。">
+<meta name="twitter:title" content="Hexo主题高级设置">
+<meta name="twitter:description" content="这是Hexo系列的第三篇，主要记录一些NexT主题的一些高级特性设置，比如置顶、开启搜索，进行SEO设置等。  文章置顶功能设置文字的置顶级别top数，达到对文章的置顶设置。该功能就是修改node_modules/hexo-generator-index/lib/generator.js文件，添加根据top数值大小排序代码，从而实现该功能。 123456789101112131415161718">
 
 
 
@@ -128,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="http://www.halfbaker.com/2018/06/11/divine/小米招股前景/"/>
+  <link rel="canonical" href="http://www.halfbaker.com/20180611-guider/hexo/Hexo主题高级设置/"/>
 
 
 
@@ -138,11 +142,20 @@
   };
 </script>
 
-  <title>占卜:小米招股前景 | 半吊码工</title>
+  <title>Hexo主题高级设置 | 半吊码工</title>
   
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120728130-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120728130-1');
+</script>
 
 
 
@@ -315,7 +328,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/2018/06/11/divine/小米招股前景/">
+    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/20180611-guider/hexo/Hexo主题高级设置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="半吊码工">
@@ -332,7 +345,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">占卜:小米招股前景
+          <h1 class="post-title" itemprop="name headline">Hexo主题高级设置
               
             
           </h1>
@@ -357,7 +370,7 @@
                 
               
 
-              <time title="创建时间：2018-06-11 23:25:15 / 修改时间：23:32:06" itemprop="dateCreated datePublished" datetime="2018-06-11T23:25:15+08:00">2018-06-11</time>
+              <time title="创建时间：2018-06-11 22:46:15 / 修改时间：23:15:50" itemprop="dateCreated datePublished" datetime="2018-06-11T22:46:15+08:00">2018-06-11</time>
             
 
             
@@ -379,7 +392,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/divine/" itemprop="url" rel="index"><span itemprop="name">占卜记录</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/guider/" itemprop="url" rel="index"><span itemprop="name">教程系列</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/guider/工具类/" itemprop="url" rel="index"><span itemprop="name">工具类</span></a></span>
 
                 
                 
@@ -407,7 +427,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">78</span>
+                <span title="本文字数">2k</span>
               
 
               
@@ -421,7 +441,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">1 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -441,8 +461,24 @@
       
 
       
-        <p>“巨树散枝开花飘全球，根扎市场吸金流，到底是花香为大众，还是花是画金是金？”</p>
-<p>上市圈钱都不是问题，问题是圈钱的目的是做产品还是圈钱。看好其后10年的发展。</p>
+        <blockquote>
+<p>这是<code>Hexo系列</code>的第三篇，主要记录一些<code>NexT</code>主题的一些高级特性设置，比如置顶、开启搜索，进行SEO设置等。</p>
+</blockquote>
+<h2 id="文章置顶功能"><a href="#文章置顶功能" class="headerlink" title="文章置顶功能"></a>文章置顶功能</h2><p>设置文字的置顶级别<code>top</code>数，达到对文章的置顶设置。该功能就是修改<code>node_modules/hexo-generator-index/lib/generator.js</code>文件，添加根据<code>top</code>数值大小排序代码，从而实现该功能。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">locals</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> config = <span class="keyword">this</span>.config;</span><br><span class="line">  <span class="keyword">var</span> posts = locals.posts;</span><br><span class="line">    posts.data = posts.data.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a.top &amp;&amp; b.top) &#123; <span class="comment">// 两篇文章top都有定义</span></span><br><span class="line">            <span class="keyword">if</span>(a.top == b.top) <span class="keyword">return</span> b.date - a.date; <span class="comment">// 若top值一样则按照文章日期降序排</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> b.top - a.top; <span class="comment">// 否则按照top值降序排</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a.top &amp;&amp; !b.top) &#123; <span class="comment">// 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!a.top &amp;&amp; b.top) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> b.date - a.date; <span class="comment">// 都没定义按照文章日期降序排</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">var</span> paginationDir = config.pagination_dir || <span class="string">'page'</span>;</span><br><span class="line">  <span class="keyword">return</span> pagination(<span class="string">''</span>, posts, &#123;</span><br><span class="line">    perPage: config.index_generator.per_page,</span><br><span class="line">    layout: [<span class="string">'index'</span>, <span class="string">'archive'</span>],</span><br><span class="line">    format: paginationDir + <span class="string">'/%d/'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">      __index: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果需要对文章置顶，需要在文章的<code>meta</code>中添加<code>top</code>关键字，并设置相应的数值<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo主题高级设置</span><br><span class="line">date: 2018-06-10 17:44:33</span><br><span class="line">tags: [Hexo, 教程]</span><br><span class="line">categories: [教程系列, 工具类]</span><br><span class="line">top: 100</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h2 id="添加文章结束标记"><a href="#添加文章结束标记" class="headerlink" title="添加文章结束标记"></a>添加文章结束标记</h2><h3 id="创建模板"><a href="#创建模板" class="headerlink" title="创建模板"></a>创建模板</h3><p>创建一个模板文件<code>themes/next/layout/_macro/post-end-tag.swig</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  &#123;% if not is_index %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center;color: #ccc;font-size:14px;"</span>&gt;</span>------本文结束------<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="引用模板"><a href="#引用模板" class="headerlink" title="引用模板"></a>引用模板</h3><p>将创建的模板添加到<code>themes/next/layout/_macro/post.swig</code>中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% if not is_index %&#125;</span><br><span class="line">    &#123;% include 'post-end-tag.swig' %&#125;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加配置"><a href="#添加配置" class="headerlink" title="添加配置"></a>添加配置</h3><p>最后在主题配置文件中添加<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post-end-tag:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="创建404页面"><a href="#创建404页面" class="headerlink" title="创建404页面"></a>创建404页面</h2><blockquote>
+<p><code>404</code>页面只有发布到站点并使用域名时才会显示，本地调试或者<code>GitHub pages</code>域名都不能显示<code>404</code>页面</p>
+</blockquote>
+<p>使用命令新建<code>404</code>页面，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new page 404</span><br></pre></td></tr></table></figure>
+<p>然后编辑<code>source/404/index.md</code>中的内容，需要注意的是需要在<code>meta</code>中标明<code>permalink</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 未找到该页面</span><br><span class="line">date: 2018-06-11 23:07:24</span><br><span class="line">comments: false</span><br><span class="line">permalink: /404</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -475,7 +511,7 @@
     <strong>本文作者： </strong>半吊码工</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.halfbaker.com/2018/06/11/divine/小米招股前景/" title="占卜:小米招股前景">http://www.halfbaker.com/2018/06/11/divine/小米招股前景/</a>
+    <a href="http://www.halfbaker.com/20180611-guider/hexo/Hexo主题高级设置/" title="Hexo主题高级设置">http://www.halfbaker.com/20180611-guider/hexo/Hexo主题高级设置/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -486,8 +522,31 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/NexT/" rel="tag"><i class="fa fa-tag"></i> NexT</a>
+          
+            <a href="/tags/教程/" rel="tag"><i class="fa fa-tag"></i> 教程</a>
+          
+        </div>
+      
 
       
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
       
       
 
@@ -495,8 +554,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/11/Hexo主题高级设置/" rel="next" title="Hexo主题高级设置">
-                <i class="fa fa-chevron-left"></i> Hexo主题高级设置
+              <a href="/20180610-guider/hexo/Hexo主题NexT配置与优化/" rel="next" title="Hexo主题NexT配置与优化">
+                <i class="fa fa-chevron-left"></i> Hexo主题NexT配置与优化
               </a>
             
           </div>
@@ -504,6 +563,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/20180611-divine/小米招股前景/" rel="prev" title="占卜:小米招股前景">
+                占卜:小米招股前景 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -552,8 +615,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -677,6 +749,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章置顶功能"><span class="nav-number">1.</span> <span class="nav-text">文章置顶功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加文章结束标记"><span class="nav-number">2.</span> <span class="nav-text">添加文章结束标记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建模板"><span class="nav-number">2.1.</span> <span class="nav-text">创建模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#引用模板"><span class="nav-number">2.2.</span> <span class="nav-text">引用模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加配置"><span class="nav-number">2.3.</span> <span class="nav-text">添加配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建404页面"><span class="nav-number">3.</span> <span class="nav-text">创建404页面</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -757,6 +845,12 @@
       </div>
     
 
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
     
 
   </div>
@@ -884,6 +978,39 @@
   
 
   
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
   
 
   

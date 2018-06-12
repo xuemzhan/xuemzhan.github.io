@@ -23,6 +23,10 @@
 
 
 
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
 
 
 
@@ -142,6 +146,15 @@
 
 
 
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-120728130-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-120728130-1');
+</script>
 
 
 
@@ -339,7 +352,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/06/10/Hexo主题NexT配置与优化/" itemprop="url">
+            <a class="post-title-link" href="/20180610-guider/hexo/Hexo主题NexT配置与优化/" itemprop="url">
               
                 <span itemprop="name">Hexo主题NexT配置与优化</span>
               
@@ -367,7 +380,7 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/06/08/Hexo安装与配置/" itemprop="url">
+            <a class="post-title-link" href="/20180608-guider/hexo/Hexo安装与配置/" itemprop="url">
               
                 <span itemprop="name">Hexo安装与配置</span>
               
@@ -626,6 +639,12 @@
     
 
     
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
 
   </div>
 
@@ -748,6 +767,39 @@
   
 
   
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "box";
+      
+          flOptions.boxForm = "horizontal";
+      
+          flOptions.position = "middleRight";
+      
+          flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
   
 
   
