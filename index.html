@@ -359,7 +359,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/20180611-guider/hexo/Hexo主题高级设置/">
+    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/2018/06/13/tech/arch/数据库的分库与分表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="半吊码工">
@@ -378,8 +378,8 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/20180611-guider/hexo/Hexo主题高级设置/" itemprop="url">
-                  Hexo主题高级设置
+                <a class="post-title-link" href="/2018/06/13/tech/arch/数据库的分库与分表/" itemprop="url">
+                  数据库的分库与分表
                 </a>
               
             
@@ -405,7 +405,7 @@
                 
               
 
-              <time title="创建时间：2018-06-11 22:46:15" itemprop="dateCreated datePublished" datetime="2018-06-11T22:46:15+08:00">2018-06-11</time>
+              <time title="创建时间：2018-06-13 13:47:37" itemprop="dateCreated datePublished" datetime="2018-06-13T13:47:37+08:00">2018-06-13</time>
             
 
             
@@ -422,7 +422,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-12 21:49:12" itemprop="dateModified" datetime="2018-06-12T21:49:12+08:00">2018-06-12</time>
+                <time title="修改时间：2018-06-22 11:14:39" itemprop="dateModified" datetime="2018-06-22T11:14:39+08:00">2018-06-22</time>
               
             
           </span>
@@ -439,14 +439,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/guider/" itemprop="url" rel="index"><span itemprop="name">教程系列</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">温故知新</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/guider/工具类/" itemprop="url" rel="index"><span itemprop="name">工具类</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tech/架构/" itemprop="url" rel="index"><span itemprop="name">架构</span></a></span>
 
                 
                 
@@ -474,7 +474,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.3k</span>
+                <span title="本文字数">1.1k</span>
               
 
               
@@ -488,7 +488,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">4 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -511,26 +511,89 @@
         
           
             <blockquote>
-<p>这是<code>Hexo系列</code>的第三篇，主要记录一些<code>NexT</code>主题的一些高级特性设置，比如置顶、开启搜索，进行SEO设置等。</p>
+<p>在系统设计与架构时，绝大多数是绕不开数据库的。数据库的选型、部署方案、数据结构的切分、优化等等都是一系列需要思考的。文本针对数据库优化中的分库分表做一些阐述。</p>
 </blockquote>
-<h2 id="文章置顶功能"><a href="#文章置顶功能" class="headerlink" title="文章置顶功能"></a>文章置顶功能</h2><p>设置文字的置顶级别<code>top</code>数，达到对文章的置顶设置。该功能就是修改<code>node_modules/hexo-generator-index/lib/generator.js</code>文件，添加根据<code>top</code>数值大小排序代码，从而实现该功能。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">locals</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> config = <span class="keyword">this</span>.config;</span><br><span class="line">  <span class="keyword">var</span> posts = locals.posts;</span><br><span class="line">    posts.data = posts.data.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a.top &amp;&amp; b.top) &#123; <span class="comment">// 两篇文章top都有定义</span></span><br><span class="line">            <span class="keyword">if</span>(a.top == b.top) <span class="keyword">return</span> b.date - a.date; <span class="comment">// 若top值一样则按照文章日期降序排</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> b.top - a.top; <span class="comment">// 否则按照top值降序排</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a.top &amp;&amp; !b.top) &#123; <span class="comment">// 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!a.top &amp;&amp; b.top) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> b.date - a.date; <span class="comment">// 都没定义按照文章日期降序排</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">var</span> paginationDir = config.pagination_dir || <span class="string">'page'</span>;</span><br><span class="line">  <span class="keyword">return</span> pagination(<span class="string">''</span>, posts, &#123;</span><br><span class="line">    perPage: config.index_generator.per_page,</span><br><span class="line">    layout: [<span class="string">'index'</span>, <span class="string">'archive'</span>],</span><br><span class="line">    format: paginationDir + <span class="string">'/%d/'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">      __index: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>如果需要对文章置顶，需要在文章的<code>meta</code>中添加<code>top</code>关键字，并设置相应的数值<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo主题高级设置</span><br><span class="line">date: 2018-06-10 17:44:33</span><br><span class="line">tags: [Hexo, 教程]</span><br><span class="line">categories: [教程系列, 工具类]</span><br><span class="line">top: 100</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<h2 id="添加文章结束标记"><a href="#添加文章结束标记" class="headerlink" title="添加文章结束标记"></a>添加文章结束标记</h2><h3 id="创建模板"><a href="#创建模板" class="headerlink" title="创建模板"></a>创建模板</h3><p>创建一个模板文件<code>themes/next/layout/_macro/post-end-tag.swig</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  &#123;% if not is_index %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center;color: #ccc;font-size:14px;"</span>&gt;</span>------本文结束------<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="引用模板"><a href="#引用模板" class="headerlink" title="引用模板"></a>引用模板</h3><p>将创建的模板添加到<code>themes/next/layout/_macro/post.swig</code>中</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% if not is_index %&#125;</span><br><span class="line">    &#123;% include 'post-end-tag.swig' %&#125;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="添加配置"><a href="#添加配置" class="headerlink" title="添加配置"></a>添加配置</h3><p>最后在主题配置文件中添加<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post-end-tag:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="创建404页面"><a href="#创建404页面" class="headerlink" title="创建404页面"></a>创建404页面</h2><blockquote>
-<p><code>404</code>页面只有发布到站点并使用域名时才会显示，本地调试或者<code>GitHub pages</code>域名都不能显示<code>404</code>页面</p>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>什么是最好的数据库分库分表方案？ 不需要分库分表的方案是最好的。但随着业务的发展，系统数据量和访问量的增加，有时候要进入到不得不分库分表的阶段。总结起来，分库分表的原因可以归结为：</p>
+<ol>
+<li>数据的读取量急剧增加，以至于内存不能满足其需求，说白了就是内存容量不够；</li>
+<li>数据的读取变化频幅很快，以至于查询的数据不是来自于内存还是来自硬盘；</li>
+<li>数据的写操作超过了磁盘负载，以至于数据副本的同步更新远落后与写入操作；</li>
+</ol>
+<p>具体到数据库层面，表现为：</p>
+<ol>
+<li>数据库读写请求量太大；</li>
+<li>单库数据过大；</li>
+<li>单表数据过大；</li>
+</ol>
+<p>因此，所有的分库分表方案都是基于解决上述三个问题。</p>
+<h3 id="面临的问题"><a href="#面临的问题" class="headerlink" title="面临的问题"></a>面临的问题</h3><p>俗话说“有得必有失”，针对数据库的分库分表操作也一样。进行分库分表后可能付出的代价可能有以下几种：</p>
+<blockquote>
+<ol>
+<li>原先的<code>SQL</code>语句不再是申明式的</li>
+</ol>
 </blockquote>
-<p>使用命令新建<code>404</code>页面，</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new page 404</span><br></pre></td></tr></table></figure>
-<p>然后编辑<code>source/404/index.md</code>中的内容，需要注意的是需要在<code>meta</code>中标明<code>permalink</code></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 未找到该页面</span><br><span class="line">date: 2018-06-11 23:07:24</span><br><span class="line">comments: false</span><br><span class="line">permalink: /404</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h2 id="开启本地搜索"><a href="#开启本地搜索" class="headerlink" title="开启本地搜索"></a>开启本地搜索</h2><p>下载<code>hexo-generator-searchdb</code>依赖包，然后<code>enabled</code>搜索配置</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line"><span class="attr">  trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line"><span class="attr">  top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># unescape html strings to the readable one</span></span><br><span class="line"><span class="attr">  unescape:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<h2 id="开启社区分享功能"><a href="#开启社区分享功能" class="headerlink" title="开启社区分享功能"></a>开启社区分享功能</h2><p>将</p>
+<p>数据库通过<code>SQL</code>语句获知用户的意图，然后适用优化器进行优化，并将优化后的<code>SQL</code>转换成获取程序。分库分表后，这种优势可能被打破。</p>
+<blockquote>
+<ol start="2">
+<li>可能会导致大量的网络延时</li>
+</ol>
+</blockquote>
+<p>在分布式环境下，查询语句必须要通过<code>KV</code>映射，访问多个网络节点，或者将<code>WHERE</code>条件放在他们将被执行的节点上, 但是即使在最好的情况下，涉及到多个网络访问都会更加复杂。</p>
+<blockquote>
+<ol start="3">
+<li>将会失去一些<code>SQL</code>的强大功能</li>
+</ol>
+</blockquote>
+<p>例如外键约束等</p>
+<blockquote>
+<ol start="4">
+<li>异步查询的数据不能顺序返回</li>
+</ol>
+</blockquote>
+<p>当相同类型的数据存放在多个节点上（例如用户数据存放在A,B,C节点上），水平查询需要访问所有节点，数据访问时间直接因以节点数线性增长。除非多个节点是以并行方式访问，然后再以<code>MapReduce</code>的方式聚合。前提是需要提供异步通信的<code>API</code>，但这并不存在于<code>MySQL</code>提供的功能中, 可选的方案是在子进程中增加很多的forking和连接。</p>
+<h2 id="切分方法"><a href="#切分方法" class="headerlink" title="切分方法"></a>切分方法</h2><p>切分方法多种多样，本文将从架构层级切分和物理层级切分进行简要描述。</p>
+<h3 id="架构层级切分"><a href="#架构层级切分" class="headerlink" title="架构层级切分"></a>架构层级切分</h3><table>
+<thead>
+<tr>
+<th>切分方法</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>业务功能切分</td>
+<td>相关表都在本地，可以享受声明式的SQL语句好处， 网络延时少</td>
+<td>可能出现单个表单数据过大的情况</td>
+</tr>
+<tr>
+<td>业务应用层切分</td>
+<td>可选的方案多，灵活</td>
+<td>处理细节多，技术细节复杂。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="物理切分"><a href="#物理切分" class="headerlink" title="物理切分"></a>物理切分</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>垂直切分</th>
+<th>水平切分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分表</td>
+<td>大表切成小表， 拆分字段， 建扩展表</td>
+<td>对数据量巨大的单表按照某种规则(RANGE, HASH取模等)，切分成多张表</td>
+</tr>
+<tr>
+<td>分库</td>
+<td>针对不同业务进行拆分</td>
+<td>将单张表切分到多个服务器中</td>
+</tr>
+</tbody>
+</table>
 
           
         
@@ -588,7 +651,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/20180612-tech/ai/深度学习通用优化方法/">
+    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/2018/06/12/tech/ai/深度学习通用优化方法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="半吊码工">
@@ -607,7 +670,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/20180612-tech/ai/深度学习通用优化方法/" itemprop="url">
+                <a class="post-title-link" href="/2018/06/12/tech/ai/深度学习通用优化方法/" itemprop="url">
                   深度学习通用优化方法
                 </a>
               
@@ -634,12 +697,24 @@
                 
               
 
-              <time title="创建时间：2018-06-12 21:47:45 / 修改时间：22:49:10" itemprop="dateCreated datePublished" datetime="2018-06-12T21:47:45+08:00">2018-06-12</time>
+              <time title="创建时间：2018-06-12 21:47:45" itemprop="dateCreated datePublished" datetime="2018-06-12T21:47:45+08:00">2018-06-12</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-06-13 09:55:43" itemprop="dateModified" datetime="2018-06-13T09:55:43+08:00">2018-06-13</time>
               
             
           </span>
@@ -792,7 +867,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/20180611-divine/小米招股前景/">
+    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/2018/06/11/divine/小米招股前景/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="半吊码工">
@@ -811,7 +886,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/20180611-divine/小米招股前景/" itemprop="url">
+                <a class="post-title-link" href="/2018/06/11/divine/小米招股前景/" itemprop="url">
                   占卜:小米招股前景
                 </a>
               
@@ -983,7 +1058,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/20180610-guider/hexo/Hexo主题NexT配置与优化/">
+    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/2018/06/11/guider/hexo/Hexo主题高级设置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="半吊码工">
@@ -1002,7 +1077,236 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/20180610-guider/hexo/Hexo主题NexT配置与优化/" itemprop="url">
+                <a class="post-title-link" href="/2018/06/11/guider/hexo/Hexo主题高级设置/" itemprop="url">
+                  Hexo主题高级设置
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-06-11 22:46:15" itemprop="dateCreated datePublished" datetime="2018-06-11T22:46:15+08:00">2018-06-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-06-13 13:55:24" itemprop="dateModified" datetime="2018-06-13T13:55:24+08:00">2018-06-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/guider/" itemprop="url" rel="index"><span itemprop="name">教程系列</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/guider/工具类/" itemprop="url" rel="index"><span itemprop="name">工具类</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>这是<code>Hexo系列</code>的第三篇，主要记录一些<code>NexT</code>主题的一些高级特性设置，比如置顶、开启搜索，进行SEO设置等。</p>
+</blockquote>
+<h2 id="文章置顶功能"><a href="#文章置顶功能" class="headerlink" title="文章置顶功能"></a>文章置顶功能</h2><p>设置文字的置顶级别<code>top</code>数，达到对文章的置顶设置。该功能就是修改<code>node_modules/hexo-generator-index/lib/generator.js</code>文件，添加根据<code>top</code>数值大小排序代码，从而实现该功能。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">locals</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> config = <span class="keyword">this</span>.config;</span><br><span class="line">  <span class="keyword">var</span> posts = locals.posts;</span><br><span class="line">    posts.data = posts.data.sort(<span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a.top &amp;&amp; b.top) &#123; <span class="comment">// 两篇文章top都有定义</span></span><br><span class="line">            <span class="keyword">if</span>(a.top == b.top) <span class="keyword">return</span> b.date - a.date; <span class="comment">// 若top值一样则按照文章日期降序排</span></span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">return</span> b.top - a.top; <span class="comment">// 否则按照top值降序排</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(a.top &amp;&amp; !b.top) &#123; <span class="comment">// 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）</span></span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!a.top &amp;&amp; b.top) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> b.date - a.date; <span class="comment">// 都没定义按照文章日期降序排</span></span><br><span class="line">    &#125;);</span><br><span class="line">  <span class="keyword">var</span> paginationDir = config.pagination_dir || <span class="string">'page'</span>;</span><br><span class="line">  <span class="keyword">return</span> pagination(<span class="string">''</span>, posts, &#123;</span><br><span class="line">    perPage: config.index_generator.per_page,</span><br><span class="line">    layout: [<span class="string">'index'</span>, <span class="string">'archive'</span>],</span><br><span class="line">    format: paginationDir + <span class="string">'/%d/'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">      __index: <span class="literal">true</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果需要对文章置顶，需要在文章的<code>meta</code>中添加<code>top</code>关键字，并设置相应的数值<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo主题高级设置</span><br><span class="line">date: 2018-06-10 17:44:33</span><br><span class="line">tags: [Hexo, 教程]</span><br><span class="line">categories: [教程系列, 工具类]</span><br><span class="line">top: 100</span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
+<h2 id="添加文章结束标记"><a href="#添加文章结束标记" class="headerlink" title="添加文章结束标记"></a>添加文章结束标记</h2><h3 id="创建模板"><a href="#创建模板" class="headerlink" title="创建模板"></a>创建模板</h3><p>创建一个模板文件<code>themes/next/layout/_macro/post-end-tag.swig</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  &#123;% if not is_index %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"text-align:center;color: #ccc;font-size:14px;"</span>&gt;</span>------本文结束------<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="引用模板"><a href="#引用模板" class="headerlink" title="引用模板"></a>引用模板</h3><p>将创建的模板添加到<code>themes/next/layout/_macro/post.swig</code>中</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">    &#123;% if not is_index %&#125;</span><br><span class="line">    &#123;% include 'post-end-tag.swig' %&#125;</span><br><span class="line">    &#123;% endif %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="添加配置"><a href="#添加配置" class="headerlink" title="添加配置"></a>添加配置</h3><p>最后在主题配置文件中添加<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post-end-tag:</span></span><br><span class="line"><span class="attr">  enabled:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="创建404页面"><a href="#创建404页面" class="headerlink" title="创建404页面"></a>创建404页面</h2><blockquote>
+<p><code>404</code>页面只有发布到站点并使用域名时才会显示，本地调试或者<code>GitHub pages</code>域名都不能显示<code>404</code>页面</p>
+</blockquote>
+<p>使用命令新建<code>404</code>页面，</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new page 404</span><br></pre></td></tr></table></figure>
+<p>然后编辑<code>source/404/index.md</code>中的内容，需要注意的是需要在<code>meta</code>中标明<code>permalink</code></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 未找到该页面</span><br><span class="line">date: 2018-06-11 23:07:24</span><br><span class="line">comments: false</span><br><span class="line">permalink: /404</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="开启本地搜索"><a href="#开启本地搜索" class="headerlink" title="开启本地搜索"></a>开启本地搜索</h2><p>下载<code>hexo-generator-searchdb</code>依赖包，然后<code>enabled</code>搜索配置</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># if auto, trigger search by changing input</span></span><br><span class="line">  <span class="comment"># if manual, trigger search by pressing enter key or search button</span></span><br><span class="line"><span class="attr">  trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># show top n results per article, show all results by setting to -1</span></span><br><span class="line"><span class="attr">  top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># unescape html strings to the readable one</span></span><br><span class="line"><span class="attr">  unescape:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h2 id="开启社区分享功能"><a href="#开启社区分享功能" class="headerlink" title="开启社区分享功能"></a>开启社区分享功能</h2><p>将</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    <div>
+      
+    </div>
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/2018/06/10/guider/hexo/Hexo主题NexT配置与优化/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="半吊码工">
+      <meta itemprop="description" content="半路出家, 不似半路出家人">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="半吊码工">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/10/guider/hexo/Hexo主题NexT配置与优化/" itemprop="url">
                   Hexo主题NexT配置与优化
                 </a>
               
@@ -1142,7 +1446,7 @@
 <p>在没有特别说明的情况下，配置文件默认是<code>themes/next/_config.yml</code>主题配置文件。</p>
 </blockquote>
 <h2 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h2><h3 id="主题风格"><a href="#主题风格" class="headerlink" title="主题风格"></a>主题风格</h3><p><code>NexT</code>主题支持<code>Muse</code>、<code>Mist</code>、<code>Pisces</code>和<code>Gemini</code>四种风格，可以根据个人喜好进行选择，本人比较喜欢<code>Pisces</code>风格。不同风格的设置有些许差异,在此将不做论述，具体可以详细阅读<a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">官方文档</a>。<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Schemes</span></span><br><span class="line"><span class="comment">#scheme: Muse</span></span><br><span class="line"><span class="comment">#scheme: Mist</span></span><br><span class="line"><span class="attr">scheme:</span> <span class="string">Pisces</span></span><br><span class="line"><span class="comment">#scheme: Gemini</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="/20180610-guider/hexo/Hexo主题NexT配置与优化/pisces_screem.png" alt="pisces_screem"></p>
+<p><img src="/2018/06/10/guider/hexo/Hexo主题NexT配置与优化/pisces_screem.png" alt="pisces_screem"></p>
 <h3 id="菜单设置"><a href="#菜单设置" class="headerlink" title="菜单设置"></a>菜单设置</h3><p>菜单设置涉及到的文件有</p>
 <table>
 <thead>
@@ -1164,13 +1468,13 @@
 </table>
 <p>打开配置文件，修改<code>menu</code>设置取消常用的<code>tags</code>和<code>categories</code>的注释。也可以根据自己的喜好添加或者修改菜单内容。因为不需要修改比较个性的菜单中文名称，这里没有对<code>zh-CN.yml</code>文件进行修改。<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line"><span class="attr">  home:</span> <span class="string">/</span> <span class="string">||</span> <span class="string">home</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">  categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br><span class="line"><span class="attr">  archives:</span> <span class="string">/archives/</span> <span class="string">||</span> <span class="string">archive</span></span><br><span class="line">  <span class="comment">#about: /about/ || user</span></span><br><span class="line">  <span class="comment">#schedule: /schedule/ || calendar</span></span><br><span class="line">  <span class="comment">#sitemap: /sitemap.xml || sitemap</span></span><br><span class="line">  <span class="comment">#commonweal: /404/ || heartbeat</span></span><br></pre></td></tr></table></figure></p>
 <p>设置完成后，多出了两个菜单项<code>标签</code>和<code>分类</code></p>
-<p><img src="/20180610-guider/hexo/Hexo主题NexT配置与优化/menu_setting.png" alt="menu_setting"></p>
+<p><img src="/2018/06/10/guider/hexo/Hexo主题NexT配置与优化/menu_setting.png" alt="menu_setting"></p>
 <p>但是点击进去后找不到相应的页面，这时就需要接下来的操作。</p>
-<p><img src="/20180610-guider/hexo/Hexo主题NexT配置与优化/page_cannot_find.png" alt="page_cannot_find"></p>
+<p><img src="/2018/06/10/guider/hexo/Hexo主题NexT配置与优化/page_cannot_find.png" alt="page_cannot_find"></p>
 <h3 id="创建tags和categoryies页面"><a href="#创建tags和categoryies页面" class="headerlink" title="创建tags和categoryies页面"></a>创建<code>tags</code>和<code>categoryies</code>页面</h3><p>使用命令创建页面，并修改<code>source</code>文件夹中对应文件夹中的<code>index.md</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new page tags</span><br><span class="line"><span class="meta">$</span> hexo new page categories</span><br></pre></td></tr></table></figure></p>
-<p><img src="/20180610-guider/hexo/Hexo主题NexT配置与优化/tag_cat_index.png" alt="tag_cat_index"></p>
+<p><img src="/2018/06/10/guider/hexo/Hexo主题NexT配置与优化/tag_cat_index.png" alt="tag_cat_index"></p>
 <p>设置完成后，修改文章<code>meta</code>中的内容，添加上<code>标签</code>和<code>分类</code>项。<code>tags</code>和<code>categories</code>进行了两种不同的写法，可以使用其中的任意一种。两者不同的是多个<code>tag</code>是平级的，多个<code>category</code>是从前到后（从上到下）分级的。</p>
-<p><img src="/20180610-guider/hexo/Hexo主题NexT配置与优化/tag_cat_post_mod.png" alt="tag_cat_post_mod"></p>
+<p><img src="/2018/06/10/guider/hexo/Hexo主题NexT配置与优化/tag_cat_post_mod.png" alt="tag_cat_post_mod"></p>
 <h2 id="功能扩展"><a href="#功能扩展" class="headerlink" title="功能扩展"></a>功能扩展</h2><h3 id="添加头像"><a href="#添加头像" class="headerlink" title="添加头像"></a>添加头像</h3><p>在<code>source</code>文件夹中添加<code>images</code>文件夹，将自己的头像图片拷贝到文件夹中，然后在配置文件中修改<code>Avator</code>设置<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Sidebar Avatar</span></span><br><span class="line"><span class="attr">avatar:</span></span><br><span class="line"><span class="attr">  url:</span> <span class="string">/images/avatar.gif</span></span><br><span class="line">  <span class="comment"># If true, the avatar would be dispalyed in circle.</span></span><br><span class="line"><span class="attr">  rounded:</span> <span class="literal">true</span> <span class="string">opacity</span> <span class="string">of</span> <span class="string">the</span> <span class="string">avatar.</span></span><br><span class="line"><span class="attr">  opacity:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># If true, the avatar would be rotated with the cursor.</span></span><br><span class="line"><span class="attr">  rotated:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="添加社交链接"><a href="#添加社交链接" class="headerlink" title="添加社交链接"></a>添加社交链接</h3><p>在配置文件中找到<code>Social Links</code>设置，添加个人的社交网络账号。本人主要添加了两个，然后设置成只显示图标的方式。<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">social:</span></span><br><span class="line"><span class="attr">  GitHub:</span> <span class="attr">https://github.com/xuemzhan</span> <span class="string">||</span> <span class="string">github</span></span><br><span class="line"><span class="attr">  Weibo:</span> <span class="attr">https://weibo.com/nimeux</span> <span class="string">||</span> <span class="string">weibo</span></span><br><span class="line"><span class="attr">social_icons:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  icons_only:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  transition:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="添加RSS"><a href="#添加RSS" class="headerlink" title="添加RSS"></a>添加RSS</h3><p>设置<code>RSS</code>前，需要安装依赖包<code>hexo-generator-feed</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure></p>
@@ -1178,7 +1482,7 @@
 <h3 id="添加友情链接"><a href="#添加友情链接" class="headerlink" title="添加友情链接"></a>添加友情链接</h3><p>在配置文件中找到<code>links</code>设置项<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"># Blog rolls</span><br><span class="line">links_icon: link</span><br><span class="line">links_title: Links</span><br><span class="line">links_layout: block</span><br><span class="line">#links_layout: inline</span><br><span class="line">links:</span><br><span class="line">  友情链接: http://example.com/</span><br></pre></td></tr></table></figure></p>
 <h3 id="添加浏览进度显示"><a href="#添加浏览进度显示" class="headerlink" title="添加浏览进度显示"></a>添加浏览进度显示</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Back to top in sidebar (only for Pisces | Gemini).</span></span><br><span class="line"><span class="attr">b2t:</span> <span class="literal">false</span></span><br><span class="line"><span class="comment">#Scroll percent label in b2t button.</span></span><br><span class="line"><span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <h3 id="添加Fork-me-on-github"><a href="#添加Fork-me-on-github" class="headerlink" title="添加Fork me on github"></a>添加<code>Fork me on github</code></h3><p>从<a href=""><code>GitHub Ribbons</code></a>选择自己喜欢的样式，然后将代码复制到<code>themes/next/layout/_loyout.swig</code>文件中的<code>&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</code>标记下面。 粘贴后需要将<code>GitHub</code>的链接换成自己的。同时也可以把图片下载下来放置在<code>source/images</code>文件夹中。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;headband&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;a href=&quot;https://github.com/xuemzhan&quot;&gt;</span><br><span class="line">  &lt;img style=&quot;position: absolute; top: 0; right: 0; border: 0;&quot; src=&quot;/images/forkme_right_orange_ff7600.png&quot; alt=&quot;Fork me on GitHub&quot;&gt;&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
-<p><img src="/20180610-guider/hexo/Hexo主题NexT配置与优化/fork_on_me.png" alt="fork_on_me"></p>
+<p><img src="/2018/06/10/guider/hexo/Hexo主题NexT配置与优化/fork_on_me.png" alt="fork_on_me"></p>
 <h2 id="样式优化"><a href="#样式优化" class="headerlink" title="样式优化"></a>样式优化</h2><h3 id="添加边框阴影及代码样式"><a href="#添加边框阴影及代码样式" class="headerlink" title="添加边框阴影及代码样式"></a>添加边框阴影及代码样式</h3><p>向文件<code>themes/next/source/css/_custom/custom.styl</code> 添加样式<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">// 主页文章添加阴影效果</span><br><span class="line"><span class="selector-class">.post</span> &#123;</span><br><span class="line">   <span class="attribute">margin-top</span>: <span class="number">0px</span>;</span><br><span class="line">   <span class="attribute">margin-bottom</span>: <span class="number">60px</span>;</span><br><span class="line">   <span class="attribute">padding</span>: <span class="number">25px</span>;</span><br><span class="line">   <span class="attribute">-webkit-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(202, 203, 203, .5);</span><br><span class="line">   <span class="attribute">-moz-box-shadow</span>: <span class="number">0</span> <span class="number">0</span> <span class="number">5px</span> <span class="built_in">rgba</span>(202, 203, 204, .5);</span><br><span class="line">&#125;</span><br><span class="line">// Custom styles.</span><br><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ff7600</span>;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#fbf7f8</span>;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">2px</span>;</span><br><span class="line">&#125;</span><br><span class="line">// 边框的自定义样式</span><br><span class="line"><span class="selector-class">.highlight</span>, <span class="selector-tag">pre</span> &#123;</span><br><span class="line">    <span class="attribute">margin</span>: <span class="number">5px</span> <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">5px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">3px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.highlight</span>, <span class="selector-tag">code</span>, <span class="selector-tag">pre</span> &#123;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#d6d6d6</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="修改文章之间的分割线"><a href="#修改文章之间的分割线" class="headerlink" title="修改文章之间的分割线"></a>修改文章之间的分割线</h3><p>修改文件<code>themes/next/source/css/_common/components/post/post-eof.styl</code>中的样式为<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.posts-expand</span> &#123;</span><br><span class="line">  .post-eof &#123;</span><br><span class="line">    <span class="selector-tag">display</span>: <span class="selector-tag">block</span>;</span><br><span class="line">    #margin: $post-eof-margin-top auto $post-eof-margin-bottom;</span><br><span class="line">    <span class="selector-id">#width</span>: 8%;</span><br><span class="line">    <span class="selector-id">#height</span>: 1<span class="selector-tag">px</span>;</span><br><span class="line">    <span class="selector-tag">width</span>: 0%;</span><br><span class="line">    <span class="selector-tag">height</span>: 0<span class="selector-tag">px</span>;</span><br><span class="line">    background: $grey-light;</span><br><span class="line">    <span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="修改文章标签样式"><a href="#修改文章标签样式" class="headerlink" title="修改文章标签样式"></a>修改文章标签样式</h3><p>打开文件<code>themes/next/layout/_macro/post.swig</code>, 将<code>&lt;div class=&quot;post-tags&quot;&gt;</code>中的内容样式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"post-tags"</span>&gt;</span></span><br><span class="line">  &#123;% for tag in post.tags %&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"&#123;&#123; url_for(tag.path) &#125;&#125;"</span> <span class="attr">rel</span>=<span class="string">"tag"</span>&gt;</span># &#123;&#123; tag.name &#125;&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  &#123;% endfor %&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
@@ -1243,7 +1547,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/">
+    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="半吊码工">
@@ -1262,7 +1566,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/20180608-guider/hexo/Hexo安装与配置/" itemprop="url">
+                <a class="post-title-link" href="/2018/06/08/guider/hexo/Hexo安装与配置/" itemprop="url">
                   Hexo安装与配置
                 </a>
               
@@ -1405,10 +1709,10 @@
 <h3 id="Node-js安装和配置"><a href="#Node-js安装和配置" class="headerlink" title="Node.js安装和配置"></a>Node.js安装和配置</h3><p>Node.js目前的版本已经升级到<code>v8.11.2</code>, 其<a href="https://gitforwindows.org/" target="_blank" rel="noopener">官网</a>的文档介绍很详尽，英文水平可以的建议直接上，当然也可以参考<a href="https://www.cnblogs.com/zhouyu2017/p/6485265.html" target="_blank" rel="noopener">这篇文章</a></p>
 <h3 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h3><p><code>hexo</code>在<code>node.js</code>环境中安装非常的方便，只需要一条命令行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g hexo</span><br></pre></td></tr></table></figure></p>
 <p>经过上述四个步骤，环境配置如下：</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/env.png" alt="env"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/env.png" alt="env"></p>
 <h2 id="创建本地Hexo工程"><a href="#创建本地Hexo工程" class="headerlink" title="创建本地Hexo工程"></a>创建本地Hexo工程</h2><h3 id="工程创建及文件目录说明"><a href="#工程创建及文件目录说明" class="headerlink" title="工程创建及文件目录说明"></a>工程创建及文件目录说明</h3><p>建议创建一个本地文件夹用于存放相关的文件，我在本地<code>D盘</code>中创建了一个<code>github</code>目录，然后运行<code>hexo init</code>命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir github</span><br><span class="line">cd github</span><br><span class="line">hexo init newblog</span><br></pre></td></tr></table></figure></p>
 <p><code>hexo</code>程序生成的<code>newblog</code>工程如下:</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/目录结构.png" alt="目录结构"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/目录结构.png" alt="目录结构"></p>
 <p>其中主要的文件夹和文件说明如下：</p>
 <table>
 <thead>
@@ -1446,47 +1750,47 @@
 </table>
 <h3 id="生成及启动"><a href="#生成及启动" class="headerlink" title="生成及启动"></a>生成及启动</h3><p>初始化工程后，个人博客的站点基本的基本框架已经搭建，且有一个默认的主题<code>landscape</code>在<code>themes</code>文件中，因此我只需要运行命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g # 或者hexo generate</span><br><span class="line">hexo s # 或者hexo server</span><br></pre></td></tr></table></figure></p>
 <p>就会在本地启动一个端口为<code>4000</code>的服务，截图如下：</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/默认服务例子.png" alt="默认服务例子"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/默认服务例子.png" alt="默认服务例子"></p>
 <h3 id="配置设置及说明"><a href="#配置设置及说明" class="headerlink" title="配置设置及说明"></a>配置设置及说明</h3><p>上述的步骤已经将<code>hexo</code>工程搭建完毕，接下来就进行个性化的设置。我们使用<code>Atom</code>作为编辑器对工程文件进行统一的管理与操作，关于<code>Atom</code>请查看<a href="https://atom.io/" target="_blank" rel="noopener">官网</a>。</p>
 <p><code>hexo</code>站点全局配置在文件<code>_config.yml</code>中。配置的第一项肯定是站点名称、站点内容等描述。<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">半吊码工</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">知识应予记录,</span> <span class="string">经验应当传播</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">半路出家,</span> <span class="string">不似半路出家人</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">"技术, 生活, 感想"</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">半吊码工</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span></span><br></pre></td></tr></table></figure></p>
 <p>上述是本人的博客描述，其中说明的一点就是<code>hexo</code>支持多语言的，中文简体的配置是<code>zh-CN</code>，老版本为<code>zh-Hans</code>。</p>
 <p>接下来一般是设置主题<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></p>
 <p>由于本人十分喜欢<code>NexT</code>主题，因此本示例中将使用<code>NexT</code>主题，而且接下来几篇将重点介绍<code>NexT</code>主题的配置。</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/next_theme_example.png" alt="next_theme_example"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/next_theme_example.png" alt="next_theme_example"></p>
 <p>另外，为了方便书写，特别是方便在markdown中添加图标，可以将<code>post_asset_folder</code>设置成<code>true</code>， 安装<code>hexo-asset-image</code>依赖包。</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
 <p>这样添加一篇新文章是，系统会帮助我们生成一个同名的文件夹，用于存放附件（图片）等，方便在文中直接引用。</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/postassetfolder.png" alt="postAssetFolder"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/postassetfolder.png" alt="postAssetFolder"></p>
 <h2 id="Github配置与链接"><a href="#Github配置与链接" class="headerlink" title="Github配置与链接"></a>Github配置与链接</h2><p><code>Hexo</code>工程准备好后，接下来就是将其发布到<code>github</code>并实现在线访问。</p>
 <h3 id="注册github并创建repository"><a href="#注册github并创建repository" class="headerlink" title="注册github并创建repository"></a>注册<code>github</code>并创建<code>repository</code></h3><p>如果没有<code>github</code>账号，则先注册，然后创建一个符合<a href="https://pages.github.com/" target="_blank" rel="noopener"><code>github pages</code></a>要求的<code>repository</code>，其实就是创建一个和用户一致的并且以<code>.github.io</code>结尾的工程。例如我的就是<code>xuemzhan.githu.io</code>。</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/create_repo.png" alt="create_repo"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/create_repo.png" alt="create_repo"></p>
 <h3 id="Gitbash配置与链接"><a href="#Gitbash配置与链接" class="headerlink" title="Gitbash配置与链接"></a>Gitbash配置与链接</h3><p>首先设置Git的用户与邮箱<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name = "xuemzhan"</span><br><span class="line">git config --global user.email = "xuemzhan@163.com"</span><br></pre></td></tr></table></figure></p>
 <p>然后使用<code>ssh-keygen</code>创建<code>RSA</code>公钥，如果存在则直接拷贝公钥内容。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "xuemzhan@163.com"</span><br></pre></td></tr></table></figure>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/gitbash_cmd.png" alt="gitbash_cmd"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/gitbash_cmd.png" alt="gitbash_cmd"></p>
 <p>登入<code>github</code>, 选择<code>Settings</code>-&gt;<code>SSH and GPG keys</code>-&gt;<code>New SSH key</code>将复制到公钥内容填入。</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/fill_rsa_pub.png" alt="fill_rsa_pub"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/fill_rsa_pub.png" alt="fill_rsa_pub"></p>
 <p>使用如下命令进行测试<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
 <p>如果出现如下内容，则标明git配置及链接成功</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/ssh_test.png" alt="ssh_test"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/ssh_test.png" alt="ssh_test"></p>
 <h3 id="hexo工程发布"><a href="#hexo工程发布" class="headerlink" title="hexo工程发布"></a><code>hexo</code>工程发布</h3><p>修改网站配置文件<code>_config.yml</code>中关于<code>Deployment</code>的内容<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/xuemzhan/xuemzhan.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <p>注：这里有一个坑是<code>type</code>类型一定是<code>git</code>而不是<code>github</code></p>
 </blockquote>
 <p>然后将博客站点发布到<code>github</code>上<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
 <p>最后通过<code>yourname.github.io</code>进行访问测试，本人的如下：</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/deploy_screen.png" alt="deploy_screen"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/deploy_screen.png" alt="deploy_screen"></p>
 <h2 id="域名解析及测试"><a href="#域名解析及测试" class="headerlink" title="域名解析及测试"></a>域名解析及测试</h2><h3 id="查找github-pages对应IP"><a href="#查找github-pages对应IP" class="headerlink" title="查找github pages对应IP"></a>查找<code>github pages</code>对应IP</h3><p>如果自己申请了域名，可以将自己的域名绑定到<code>github pages</code>上。本人的域名实在阿里云上申请的，所有路由解析需要在上面进行设定。设定前，需要查看自己<code>github pages</code>指向的<code>IP</code>地址</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -4 xuemzhan.github.io</span><br></pre></td></tr></table></figure>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/ping_result.png" alt="ping_result"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/ping_result.png" alt="ping_result"></p>
 <h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>进入域名解析页面填写DNS解析规则</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/dNS_jiexi.png" alt="DNS_jiexi"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/dNS_jiexi.png" alt="DNS_jiexi"></p>
 <h3 id="创建域名CNAME"><a href="#创建域名CNAME" class="headerlink" title="创建域名CNAME"></a>创建域名<code>CNAME</code></h3><p>在<code>hexo</code>工程的<code>source</code>文件夹中，创建文件<code>CNAME</code>,其中内容的是自己的域名。</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/cname_file.png" alt="cname_file"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/cname_file.png" alt="cname_file"></p>
 <p>最后，重新生成并发布</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/success_sc.png" alt="success_sc"></p>
+<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/success_sc.png" alt="success_sc"></p>
 <h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><table>
 <thead>
 <tr>
@@ -1628,7 +1932,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1651,7 +1955,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1674,7 +1980,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1768,7 +2076,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">11k</span>
   
 
   
@@ -1779,7 +2087,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">19 分钟</span>
+    <span title="站点阅读时长">21 分钟</span>
   
 </div>
 

@@ -112,33 +112,18 @@
 
 
 
-  <meta name="description" content="Hexo系列文章是本人搭建Hexo博客系统的一些记录与总结。期间，花费了一些时间和精力去搜集资料，并动手实践，觉得应该将这些过程进行总结留档，方便自己日后查看。同时也能给其他需要的人一些提示。该系列将从安装与配置、NexT主题设置和SEO等高级特性三个方面进行阐述。  本片文章主是Hexo系列的开篇，主要围绕“Hexo+Github+私有域名”搭建免备案博客，简要阐述Hexo安装环境的准备，基本">
-<meta name="keywords" content="Hexo,教程">
+  <meta name="description" content="在系统设计与架构时，绝大多数是绕不开数据库的。数据库的选型、部署方案、数据结构的切分、优化等等都是一系列需要思考的。文本针对数据库优化中的分库分表做一些阐述。  写在前面什么是最好的数据库分库分表方案？ 不需要分库分表的方案是最好的。但随着业务的发展，系统数据量和访问量的增加，有时候要进入到不得不分库分表的阶段。总结起来，分库分表的原因可以归结为：  数据的读取量急剧增加，以至于内存不能满足其需">
+<meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo安装与配置">
-<meta property="og:url" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/index.html">
+<meta property="og:title" content="数据库的分库与分表">
+<meta property="og:url" content="http://www.halfbaker.com/2018/06/13/tech/arch/数据库的分库与分表/index.html">
 <meta property="og:site_name" content="半吊码工">
-<meta property="og:description" content="Hexo系列文章是本人搭建Hexo博客系统的一些记录与总结。期间，花费了一些时间和精力去搜集资料，并动手实践，觉得应该将这些过程进行总结留档，方便自己日后查看。同时也能给其他需要的人一些提示。该系列将从安装与配置、NexT主题设置和SEO等高级特性三个方面进行阐述。  本片文章主是Hexo系列的开篇，主要围绕“Hexo+Github+私有域名”搭建免备案博客，简要阐述Hexo安装环境的准备，基本">
+<meta property="og:description" content="在系统设计与架构时，绝大多数是绕不开数据库的。数据库的选型、部署方案、数据结构的切分、优化等等都是一系列需要思考的。文本针对数据库优化中的分库分表做一些阐述。  写在前面什么是最好的数据库分库分表方案？ 不需要分库分表的方案是最好的。但随着业务的发展，系统数据量和访问量的增加，有时候要进入到不得不分库分表的阶段。总结起来，分库分表的原因可以归结为：  数据的读取量急剧增加，以至于内存不能满足其需">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/env.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/目录结构.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/默认服务例子.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/next_theme_example.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/postassetfolder.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/create_repo.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/gitbash_cmd.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/fill_rsa_pub.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/ssh_test.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/deploy_screen.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/ping_result.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/dNS_jiexi.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/cname_file.png">
-<meta property="og:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/success_sc.png">
-<meta property="og:updated_time" content="2018-06-10T15:03:45.777Z">
+<meta property="og:updated_time" content="2018-06-22T03:14:39.553Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo安装与配置">
-<meta name="twitter:description" content="Hexo系列文章是本人搭建Hexo博客系统的一些记录与总结。期间，花费了一些时间和精力去搜集资料，并动手实践，觉得应该将这些过程进行总结留档，方便自己日后查看。同时也能给其他需要的人一些提示。该系列将从安装与配置、NexT主题设置和SEO等高级特性三个方面进行阐述。  本片文章主是Hexo系列的开篇，主要围绕“Hexo+Github+私有域名”搭建免备案博客，简要阐述Hexo安装环境的准备，基本">
-<meta name="twitter:image" content="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/env.png">
+<meta name="twitter:title" content="数据库的分库与分表">
+<meta name="twitter:description" content="在系统设计与架构时，绝大多数是绕不开数据库的。数据库的选型、部署方案、数据结构的切分、优化等等都是一系列需要思考的。文本针对数据库优化中的分库分表做一些阐述。  写在前面什么是最好的数据库分库分表方案？ 不需要分库分表的方案是最好的。但随着业务的发展，系统数据量和访问量的增加，有时候要进入到不得不分库分表的阶段。总结起来，分库分表的原因可以归结为：  数据的读取量急剧增加，以至于内存不能满足其需">
 
 
 
@@ -147,7 +132,7 @@
 
 
 
-  <link rel="canonical" href="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/"/>
+  <link rel="canonical" href="http://www.halfbaker.com/2018/06/13/tech/arch/数据库的分库与分表/"/>
 
 
 
@@ -157,7 +142,7 @@
   };
 </script>
 
-  <title>Hexo安装与配置 | 半吊码工</title>
+  <title>数据库的分库与分表 | 半吊码工</title>
   
 
 
@@ -374,7 +359,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/">
+    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/2018/06/13/tech/arch/数据库的分库与分表/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="半吊码工">
@@ -391,7 +376,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo安装与配置
+          <h1 class="post-title" itemprop="name headline">数据库的分库与分表
               
             
           </h1>
@@ -416,7 +401,7 @@
                 
               
 
-              <time title="创建时间：2018-06-08 19:04:39" itemprop="dateCreated datePublished" datetime="2018-06-08T19:04:39+08:00">2018-06-08</time>
+              <time title="创建时间：2018-06-13 13:47:37" itemprop="dateCreated datePublished" datetime="2018-06-13T13:47:37+08:00">2018-06-13</time>
             
 
             
@@ -433,7 +418,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-10 23:03:45" itemprop="dateModified" datetime="2018-06-10T23:03:45+08:00">2018-06-10</time>
+                <time title="修改时间：2018-06-22 11:14:39" itemprop="dateModified" datetime="2018-06-22T11:14:39+08:00">2018-06-22</time>
               
             
           </span>
@@ -450,14 +435,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/guider/" itemprop="url" rel="index"><span itemprop="name">教程系列</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">温故知新</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/guider/工具类/" itemprop="url" rel="index"><span itemprop="name">工具类</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tech/架构/" itemprop="url" rel="index"><span itemprop="name">架构</span></a></span>
 
                 
                 
@@ -485,7 +470,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.1k</span>
+                <span title="本文字数">1.1k</span>
               
 
               
@@ -499,7 +484,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 分钟</span>
+                <span title="阅读时长">2 分钟</span>
               
             </div>
           
@@ -520,147 +505,86 @@
 
       
         <blockquote>
-<p><code>Hexo系列</code>文章是本人搭建<code>Hexo</code>博客系统的一些记录与总结。期间，花费了一些时间和精力去搜集资料，并动手实践，觉得应该将这些过程进行总结留档，方便自己日后查看。同时也能给其他需要的人一些提示。该系列将从安装与配置、NexT主题设置和SEO等高级特性三个方面进行阐述。</p>
+<p>在系统设计与架构时，绝大多数是绕不开数据库的。数据库的选型、部署方案、数据结构的切分、优化等等都是一系列需要思考的。文本针对数据库优化中的分库分表做一些阐述。</p>
 </blockquote>
-<p>本片文章主是<code>Hexo系列</code>的开篇，主要围绕“Hexo+Github+私有域名”搭建免备案博客，简要阐述Hexo安装环境的准备，基本命令的使用和配置实现。</p>
-<h2 id="环境准备及程序安装"><a href="#环境准备及程序安装" class="headerlink" title="环境准备及程序安装"></a>环境准备及程序安装</h2><h3 id="需要的软件与环境如下："><a href="#需要的软件与环境如下：" class="headerlink" title="需要的软件与环境如下："></a>需要的软件与环境如下：</h3><blockquote>
-<p>Git for Windows<br>Node.js for Windows<br>hexo及相关的包</p>
-</blockquote>
-<h3 id="Git安装和配置"><a href="#Git安装和配置" class="headerlink" title="Git安装和配置"></a>Git安装和配置</h3><p>Git的下载、安装和配置可以参考<a href="https://gitforwindows.org/" target="_blank" rel="noopener">官方文档</a>，也可以参考<a href="https://blog.csdn.net/wangrenbao123/article/details/55511461/" target="_blank" rel="noopener">这篇文章</a></p>
-<h3 id="Node-js安装和配置"><a href="#Node-js安装和配置" class="headerlink" title="Node.js安装和配置"></a>Node.js安装和配置</h3><p>Node.js目前的版本已经升级到<code>v8.11.2</code>, 其<a href="https://gitforwindows.org/" target="_blank" rel="noopener">官网</a>的文档介绍很详尽，英文水平可以的建议直接上，当然也可以参考<a href="https://www.cnblogs.com/zhouyu2017/p/6485265.html" target="_blank" rel="noopener">这篇文章</a></p>
-<h3 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h3><p><code>hexo</code>在<code>node.js</code>环境中安装非常的方便，只需要一条命令行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g hexo</span><br></pre></td></tr></table></figure></p>
-<p>经过上述四个步骤，环境配置如下：</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/env.png" alt="env"></p>
-<h2 id="创建本地Hexo工程"><a href="#创建本地Hexo工程" class="headerlink" title="创建本地Hexo工程"></a>创建本地Hexo工程</h2><h3 id="工程创建及文件目录说明"><a href="#工程创建及文件目录说明" class="headerlink" title="工程创建及文件目录说明"></a>工程创建及文件目录说明</h3><p>建议创建一个本地文件夹用于存放相关的文件，我在本地<code>D盘</code>中创建了一个<code>github</code>目录，然后运行<code>hexo init</code>命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir github</span><br><span class="line">cd github</span><br><span class="line">hexo init newblog</span><br></pre></td></tr></table></figure></p>
-<p><code>hexo</code>程序生成的<code>newblog</code>工程如下:</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/目录结构.png" alt="目录结构"></p>
-<p>其中主要的文件夹和文件说明如下：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>node_modules</td>
-<td>工程依赖包存放文件夹</td>
-</tr>
-<tr>
-<td>scaffolds</td>
-<td>模板存放文件夹, 默认包含有post, draft和page三个</td>
-</tr>
-<tr>
-<td>source</td>
-<td>文章markdown格式存放文件夹</td>
-</tr>
-<tr>
-<td>themes</td>
-<td>各种主题，本系列文章主讲的NexT模板就存在该文件夹中</td>
-</tr>
-<tr>
-<td>public</td>
-<td>上面截图中还未生成，在运行<code>hexo g</code>后会产生，用于存放工程生成的页面</td>
-</tr>
-<tr>
-<td>_config.xml</td>
-<td>工程的总的配置文件，本文所涉及的配置都在该文件中设置</td>
-</tr>
-</tbody>
-</table>
-<h3 id="生成及启动"><a href="#生成及启动" class="headerlink" title="生成及启动"></a>生成及启动</h3><p>初始化工程后，个人博客的站点基本的基本框架已经搭建，且有一个默认的主题<code>landscape</code>在<code>themes</code>文件中，因此我只需要运行命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g # 或者hexo generate</span><br><span class="line">hexo s # 或者hexo server</span><br></pre></td></tr></table></figure></p>
-<p>就会在本地启动一个端口为<code>4000</code>的服务，截图如下：</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/默认服务例子.png" alt="默认服务例子"></p>
-<h3 id="配置设置及说明"><a href="#配置设置及说明" class="headerlink" title="配置设置及说明"></a>配置设置及说明</h3><p>上述的步骤已经将<code>hexo</code>工程搭建完毕，接下来就进行个性化的设置。我们使用<code>Atom</code>作为编辑器对工程文件进行统一的管理与操作，关于<code>Atom</code>请查看<a href="https://atom.io/" target="_blank" rel="noopener">官网</a>。</p>
-<p><code>hexo</code>站点全局配置在文件<code>_config.yml</code>中。配置的第一项肯定是站点名称、站点内容等描述。<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">半吊码工</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">知识应予记录,</span> <span class="string">经验应当传播</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">半路出家,</span> <span class="string">不似半路出家人</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">"技术, 生活, 感想"</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">半吊码工</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span></span><br></pre></td></tr></table></figure></p>
-<p>上述是本人的博客描述，其中说明的一点就是<code>hexo</code>支持多语言的，中文简体的配置是<code>zh-CN</code>，老版本为<code>zh-Hans</code>。</p>
-<p>接下来一般是设置主题<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></p>
-<p>由于本人十分喜欢<code>NexT</code>主题，因此本示例中将使用<code>NexT</code>主题，而且接下来几篇将重点介绍<code>NexT</code>主题的配置。</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/next_theme_example.png" alt="next_theme_example"></p>
-<p>另外，为了方便书写，特别是方便在markdown中添加图标，可以将<code>post_asset_folder</code>设置成<code>true</code>， 安装<code>hexo-asset-image</code>依赖包。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-<p>这样添加一篇新文章是，系统会帮助我们生成一个同名的文件夹，用于存放附件（图片）等，方便在文中直接引用。</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/postassetfolder.png" alt="postAssetFolder"></p>
-<h2 id="Github配置与链接"><a href="#Github配置与链接" class="headerlink" title="Github配置与链接"></a>Github配置与链接</h2><p><code>Hexo</code>工程准备好后，接下来就是将其发布到<code>github</code>并实现在线访问。</p>
-<h3 id="注册github并创建repository"><a href="#注册github并创建repository" class="headerlink" title="注册github并创建repository"></a>注册<code>github</code>并创建<code>repository</code></h3><p>如果没有<code>github</code>账号，则先注册，然后创建一个符合<a href="https://pages.github.com/" target="_blank" rel="noopener"><code>github pages</code></a>要求的<code>repository</code>，其实就是创建一个和用户一致的并且以<code>.github.io</code>结尾的工程。例如我的就是<code>xuemzhan.githu.io</code>。</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/create_repo.png" alt="create_repo"></p>
-<h3 id="Gitbash配置与链接"><a href="#Gitbash配置与链接" class="headerlink" title="Gitbash配置与链接"></a>Gitbash配置与链接</h3><p>首先设置Git的用户与邮箱<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name = "xuemzhan"</span><br><span class="line">git config --global user.email = "xuemzhan@163.com"</span><br></pre></td></tr></table></figure></p>
-<p>然后使用<code>ssh-keygen</code>创建<code>RSA</code>公钥，如果存在则直接拷贝公钥内容。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "xuemzhan@163.com"</span><br></pre></td></tr></table></figure>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/gitbash_cmd.png" alt="gitbash_cmd"></p>
-<p>登入<code>github</code>, 选择<code>Settings</code>-&gt;<code>SSH and GPG keys</code>-&gt;<code>New SSH key</code>将复制到公钥内容填入。</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/fill_rsa_pub.png" alt="fill_rsa_pub"></p>
-<p>使用如下命令进行测试<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
-<p>如果出现如下内容，则标明git配置及链接成功</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/ssh_test.png" alt="ssh_test"></p>
-<h3 id="hexo工程发布"><a href="#hexo工程发布" class="headerlink" title="hexo工程发布"></a><code>hexo</code>工程发布</h3><p>修改网站配置文件<code>_config.yml</code>中关于<code>Deployment</code>的内容<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/xuemzhan/xuemzhan.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>什么是最好的数据库分库分表方案？ 不需要分库分表的方案是最好的。但随着业务的发展，系统数据量和访问量的增加，有时候要进入到不得不分库分表的阶段。总结起来，分库分表的原因可以归结为：</p>
+<ol>
+<li>数据的读取量急剧增加，以至于内存不能满足其需求，说白了就是内存容量不够；</li>
+<li>数据的读取变化频幅很快，以至于查询的数据不是来自于内存还是来自硬盘；</li>
+<li>数据的写操作超过了磁盘负载，以至于数据副本的同步更新远落后与写入操作；</li>
+</ol>
+<p>具体到数据库层面，表现为：</p>
+<ol>
+<li>数据库读写请求量太大；</li>
+<li>单库数据过大；</li>
+<li>单表数据过大；</li>
+</ol>
+<p>因此，所有的分库分表方案都是基于解决上述三个问题。</p>
+<h3 id="面临的问题"><a href="#面临的问题" class="headerlink" title="面临的问题"></a>面临的问题</h3><p>俗话说“有得必有失”，针对数据库的分库分表操作也一样。进行分库分表后可能付出的代价可能有以下几种：</p>
 <blockquote>
-<p>注：这里有一个坑是<code>type</code>类型一定是<code>git</code>而不是<code>github</code></p>
+<ol>
+<li>原先的<code>SQL</code>语句不再是申明式的</li>
+</ol>
 </blockquote>
-<p>然后将博客站点发布到<code>github</code>上<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<p>最后通过<code>yourname.github.io</code>进行访问测试，本人的如下：</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/deploy_screen.png" alt="deploy_screen"></p>
-<h2 id="域名解析及测试"><a href="#域名解析及测试" class="headerlink" title="域名解析及测试"></a>域名解析及测试</h2><h3 id="查找github-pages对应IP"><a href="#查找github-pages对应IP" class="headerlink" title="查找github pages对应IP"></a>查找<code>github pages</code>对应IP</h3><p>如果自己申请了域名，可以将自己的域名绑定到<code>github pages</code>上。本人的域名实在阿里云上申请的，所有路由解析需要在上面进行设定。设定前，需要查看自己<code>github pages</code>指向的<code>IP</code>地址</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -4 xuemzhan.github.io</span><br></pre></td></tr></table></figure>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/ping_result.png" alt="ping_result"></p>
-<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>进入域名解析页面填写DNS解析规则</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/dNS_jiexi.png" alt="DNS_jiexi"></p>
-<h3 id="创建域名CNAME"><a href="#创建域名CNAME" class="headerlink" title="创建域名CNAME"></a>创建域名<code>CNAME</code></h3><p>在<code>hexo</code>工程的<code>source</code>文件夹中，创建文件<code>CNAME</code>,其中内容的是自己的域名。</p>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/cname_file.png" alt="cname_file"></p>
-<p>最后，重新生成并发布</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p><img src="/20180608-guider/hexo/Hexo安装与配置/success_sc.png" alt="success_sc"></p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><table>
+<p>数据库通过<code>SQL</code>语句获知用户的意图，然后适用优化器进行优化，并将优化后的<code>SQL</code>转换成获取程序。分库分表后，这种优势可能被打破。</p>
+<blockquote>
+<ol start="2">
+<li>可能会导致大量的网络延时</li>
+</ol>
+</blockquote>
+<p>在分布式环境下，查询语句必须要通过<code>KV</code>映射，访问多个网络节点，或者将<code>WHERE</code>条件放在他们将被执行的节点上, 但是即使在最好的情况下，涉及到多个网络访问都会更加复杂。</p>
+<blockquote>
+<ol start="3">
+<li>将会失去一些<code>SQL</code>的强大功能</li>
+</ol>
+</blockquote>
+<p>例如外键约束等</p>
+<blockquote>
+<ol start="4">
+<li>异步查询的数据不能顺序返回</li>
+</ol>
+</blockquote>
+<p>当相同类型的数据存放在多个节点上（例如用户数据存放在A,B,C节点上），水平查询需要访问所有节点，数据访问时间直接因以节点数线性增长。除非多个节点是以并行方式访问，然后再以<code>MapReduce</code>的方式聚合。前提是需要提供异步通信的<code>API</code>，但这并不存在于<code>MySQL</code>提供的功能中, 可选的方案是在子进程中增加很多的forking和连接。</p>
+<h2 id="切分方法"><a href="#切分方法" class="headerlink" title="切分方法"></a>切分方法</h2><p>切分方法多种多样，本文将从架构层级切分和物理层级切分进行简要描述。</p>
+<h3 id="架构层级切分"><a href="#架构层级切分" class="headerlink" title="架构层级切分"></a>架构层级切分</h3><table>
 <thead>
 <tr>
-<th>命令名称</th>
-<th>描述</th>
+<th>切分方法</th>
+<th>优点</th>
+<th>缺点</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>hexo clean</td>
-<td>clean 清除缓存文件<code>db.json</code>和已生成的静态文件 <code>public</code>文件夹中</td>
+<td>业务功能切分</td>
+<td>相关表都在本地，可以享受声明式的SQL语句好处， 网络延时少</td>
+<td>可能出现单个表单数据过大的情况</td>
 </tr>
 <tr>
-<td>hexo g</td>
-<td>generate 生成静态文件</td>
-</tr>
-<tr>
-<td>hexo s</td>
-<td>server 启动服务器</td>
-</tr>
-<tr>
-<td>hexo d</td>
-<td>deploy 部署网站。部署网站前，需要预先生成静态文件</td>
-</tr>
-<tr>
-<td>hexo new post “title”</td>
-<td>创建一篇新的博文</td>
-</tr>
-<tr>
-<td>hexo new page “title”</td>
-<td>创建一个新的页面</td>
+<td>业务应用层切分</td>
+<td>可选的方案多，灵活</td>
+<td>处理细节多，技术细节复杂。</td>
 </tr>
 </tbody>
 </table>
-<h3 id="需要的依赖包"><a href="#需要的依赖包" class="headerlink" title="需要的依赖包"></a>需要的依赖包</h3><table>
+<h3 id="物理切分"><a href="#物理切分" class="headerlink" title="物理切分"></a>物理切分</h3><table>
 <thead>
 <tr>
-<th>包名称</th>
-<th>依赖操作</th>
+<th>方法</th>
+<th>垂直切分</th>
+<th>水平切分</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>hexo-deployer-git</td>
-<td>hexo d</td>
+<td>分表</td>
+<td>大表切成小表， 拆分字段， 建扩展表</td>
+<td>对数据量巨大的单表按照某种规则(RANGE, HASH取模等)，切分成多张表</td>
 </tr>
 <tr>
-<td>hexo-asset-image</td>
-<td>用于图片插入</td>
+<td>分库</td>
+<td>针对不同业务进行拆分</td>
+<td>将单张表切分到多个服务器中</td>
 </tr>
 </tbody>
 </table>
@@ -696,7 +620,7 @@
     <strong>本文作者： </strong>半吊码工</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/" title="Hexo安装与配置">http://www.halfbaker.com/20180608-guider/hexo/Hexo安装与配置/</a>
+    <a href="http://www.halfbaker.com/2018/06/13/tech/arch/数据库的分库与分表/" title="数据库的分库与分表">http://www.halfbaker.com/2018/06/13/tech/arch/数据库的分库与分表/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -709,9 +633,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
-          
-            <a href="/tags/教程/" rel="tag"><i class="fa fa-tag"></i> 教程</a>
+            <a href="/tags/mysql/" rel="tag"><i class="fa fa-tag"></i> mysql</a>
           
         </div>
       
@@ -739,15 +661,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/12/tech/ai/深度学习通用优化方法/" rel="next" title="深度学习通用优化方法">
+                <i class="fa fa-chevron-left"></i> 深度学习通用优化方法
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/20180610-guider/hexo/Hexo主题NexT配置与优化/" rel="prev" title="Hexo主题NexT配置与优化">
-                Hexo主题NexT配置与优化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -825,7 +747,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">5</span>
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -848,7 +770,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -871,7 +795,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">5</span>
+                      
+                    
+                    <span class="site-state-item-count">6</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -947,7 +873,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备及程序安装"><span class="nav-number">1.</span> <span class="nav-text">环境准备及程序安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需要的软件与环境如下："><span class="nav-number">1.1.</span> <span class="nav-text">需要的软件与环境如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git安装和配置"><span class="nav-number">1.2.</span> <span class="nav-text">Git安装和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js安装和配置"><span class="nav-number">1.3.</span> <span class="nav-text">Node.js安装和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo安装"><span class="nav-number">1.4.</span> <span class="nav-text">hexo安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建本地Hexo工程"><span class="nav-number">2.</span> <span class="nav-text">创建本地Hexo工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工程创建及文件目录说明"><span class="nav-number">2.1.</span> <span class="nav-text">工程创建及文件目录说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成及启动"><span class="nav-number">2.2.</span> <span class="nav-text">生成及启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置设置及说明"><span class="nav-number">2.3.</span> <span class="nav-text">配置设置及说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github配置与链接"><span class="nav-number">3.</span> <span class="nav-text">Github配置与链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册github并创建repository"><span class="nav-number">3.1.</span> <span class="nav-text">注册github并创建repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gitbash配置与链接"><span class="nav-number">3.2.</span> <span class="nav-text">Gitbash配置与链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo工程发布"><span class="nav-number">3.3.</span> <span class="nav-text">hexo工程发布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名解析及测试"><span class="nav-number">4.</span> <span class="nav-text">域名解析及测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查找github-pages对应IP"><span class="nav-number">4.1.</span> <span class="nav-text">查找github pages对应IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名解析"><span class="nav-number">4.2.</span> <span class="nav-text">域名解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建域名CNAME"><span class="nav-number">4.3.</span> <span class="nav-text">创建域名CNAME</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-number">5.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">5.1.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需要的依赖包"><span class="nav-number">5.2.</span> <span class="nav-text">需要的依赖包</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#面临的问题"><span class="nav-number">1.1.</span> <span class="nav-text">面临的问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切分方法"><span class="nav-number">2.</span> <span class="nav-text">切分方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#架构层级切分"><span class="nav-number">2.1.</span> <span class="nav-text">架构层级切分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#物理切分"><span class="nav-number">2.2.</span> <span class="nav-text">物理切分</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -981,7 +907,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">10k</span>
+    <span title="站点总字数">11k</span>
   
 
   
@@ -992,7 +918,7 @@
     
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
     
-    <span title="站点阅读时长">19 分钟</span>
+    <span title="站点阅读时长">21 分钟</span>
   
 </div>
 
