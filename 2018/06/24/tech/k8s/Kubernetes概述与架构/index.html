@@ -112,33 +112,21 @@
 
 
 
-  <meta name="description" content="Hexo系列文章是本人搭建Hexo博客系统的一些记录与总结。期间，花费了一些时间和精力去搜集资料，并动手实践，觉得应该将这些过程进行总结留档，方便自己日后查看。同时也能给其他需要的人一些提示。该系列将从安装与配置、NexT主题设置和SEO等高级特性三个方面进行阐述。  本片文章主是Hexo系列的开篇，主要围绕“Hexo+Github+私有域名”搭建免备案博客，简要阐述Hexo安装环境的准备，基本">
-<meta name="keywords" content="教程,Hexo">
+  <meta name="description" content="Kubernetes是一个用于管理容器化应用和服务的轻便和可扩展的开源平台。通过Kubernetes能够进行应用的自动化部署和扩缩容。在Kubernetes中，会将组成应用的容器组合成一个逻辑单元以更易管理和发现。 主要特性1.自动化装箱：对资源的要求和约束自动部署容器，同时为了提高利用率和节省更多资源，将关键和最佳工作量结合在一起。 2.自愈能力：当容器失败时，对容器进行重启；当部署的Node节">
+<meta name="keywords" content="架构,k8s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo安装与配置">
-<meta property="og:url" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/index.html">
+<meta property="og:title" content="Kubernetes概述与架构">
+<meta property="og:url" content="http://www.halfbaker.com/2018/06/24/tech/k8s/Kubernetes概述与架构/index.html">
 <meta property="og:site_name" content="半吊码工">
-<meta property="og:description" content="Hexo系列文章是本人搭建Hexo博客系统的一些记录与总结。期间，花费了一些时间和精力去搜集资料，并动手实践，觉得应该将这些过程进行总结留档，方便自己日后查看。同时也能给其他需要的人一些提示。该系列将从安装与配置、NexT主题设置和SEO等高级特性三个方面进行阐述。  本片文章主是Hexo系列的开篇，主要围绕“Hexo+Github+私有域名”搭建免备案博客，简要阐述Hexo安装环境的准备，基本">
+<meta property="og:description" content="Kubernetes是一个用于管理容器化应用和服务的轻便和可扩展的开源平台。通过Kubernetes能够进行应用的自动化部署和扩缩容。在Kubernetes中，会将组成应用的容器组合成一个逻辑单元以更易管理和发现。 主要特性1.自动化装箱：对资源的要求和约束自动部署容器，同时为了提高利用率和节省更多资源，将关键和最佳工作量结合在一起。 2.自愈能力：当容器失败时，对容器进行重启；当部署的Node节">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/env.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/目录结构.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/默认服务例子.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/next_theme_example.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/postassetfolder.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/create_repo.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/gitbash_cmd.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/fill_rsa_pub.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/ssh_test.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/deploy_screen.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/ping_result.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/dNS_jiexi.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/cname_file.png">
-<meta property="og:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/success_sc.png">
-<meta property="og:updated_time" content="2018-06-10T15:03:45.777Z">
+<meta property="og:image" content="http://www.halfbaker.com/2018/06/24/tech/k8s/Kubernetes概述与架构/k8s_arch.png">
+<meta property="og:image" content="http://www.halfbaker.com/2018/06/24/tech/k8s/Kubernetes概述与架构/container_runtime.png">
+<meta property="og:updated_time" content="2018-06-24T13:58:32.198Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo安装与配置">
-<meta name="twitter:description" content="Hexo系列文章是本人搭建Hexo博客系统的一些记录与总结。期间，花费了一些时间和精力去搜集资料，并动手实践，觉得应该将这些过程进行总结留档，方便自己日后查看。同时也能给其他需要的人一些提示。该系列将从安装与配置、NexT主题设置和SEO等高级特性三个方面进行阐述。  本片文章主是Hexo系列的开篇，主要围绕“Hexo+Github+私有域名”搭建免备案博客，简要阐述Hexo安装环境的准备，基本">
-<meta name="twitter:image" content="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/env.png">
+<meta name="twitter:title" content="Kubernetes概述与架构">
+<meta name="twitter:description" content="Kubernetes是一个用于管理容器化应用和服务的轻便和可扩展的开源平台。通过Kubernetes能够进行应用的自动化部署和扩缩容。在Kubernetes中，会将组成应用的容器组合成一个逻辑单元以更易管理和发现。 主要特性1.自动化装箱：对资源的要求和约束自动部署容器，同时为了提高利用率和节省更多资源，将关键和最佳工作量结合在一起。 2.自愈能力：当容器失败时，对容器进行重启；当部署的Node节">
+<meta name="twitter:image" content="http://www.halfbaker.com/2018/06/24/tech/k8s/Kubernetes概述与架构/k8s_arch.png">
 
 
 
@@ -147,7 +135,7 @@
 
 
 
-  <link rel="canonical" href="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/"/>
+  <link rel="canonical" href="http://www.halfbaker.com/2018/06/24/tech/k8s/Kubernetes概述与架构/"/>
 
 
 
@@ -157,7 +145,7 @@
   };
 </script>
 
-  <title>Hexo安装与配置 | 半吊码工</title>
+  <title>Kubernetes概述与架构 | 半吊码工</title>
   
 
 
@@ -374,7 +362,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/">
+    <link itemprop="mainEntityOfPage" href="http://www.halfbaker.com/2018/06/24/tech/k8s/Kubernetes概述与架构/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="半吊码工">
@@ -391,7 +379,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo安装与配置
+          <h1 class="post-title" itemprop="name headline">Kubernetes概述与架构
               
             
           </h1>
@@ -416,24 +404,12 @@
                 
               
 
-              <time title="创建时间：2018-06-08 19:04:39" itemprop="dateCreated datePublished" datetime="2018-06-08T19:04:39+08:00">2018-06-08</time>
+              <time title="创建时间：2018-06-24 18:02:19 / 修改时间：21:58:32" itemprop="dateCreated datePublished" datetime="2018-06-24T18:02:19+08:00">2018-06-24</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-10 23:03:45" itemprop="dateModified" datetime="2018-06-10T23:03:45+08:00">2018-06-10</time>
               
             
           </span>
@@ -450,14 +426,14 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/guider/" itemprop="url" rel="index"><span itemprop="name">教程系列</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">温故知新</span></a></span>
 
                 
                 
                   ，
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/guider/工具类/" itemprop="url" rel="index"><span itemprop="name">工具类</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/tech/架构/" itemprop="url" rel="index"><span itemprop="name">架构</span></a></span>
 
                 
                 
@@ -485,7 +461,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">3.1k</span>
+                <span title="本文字数">2.3k</span>
               
 
               
@@ -499,7 +475,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">6 分钟</span>
+                <span title="阅读时长">4 分钟</span>
               
             </div>
           
@@ -519,151 +495,30 @@
       
 
       
-        <blockquote>
-<p><code>Hexo系列</code>文章是本人搭建<code>Hexo</code>博客系统的一些记录与总结。期间，花费了一些时间和精力去搜集资料，并动手实践，觉得应该将这些过程进行总结留档，方便自己日后查看。同时也能给其他需要的人一些提示。该系列将从安装与配置、NexT主题设置和SEO等高级特性三个方面进行阐述。</p>
-</blockquote>
-<p>本片文章主是<code>Hexo系列</code>的开篇，主要围绕“Hexo+Github+私有域名”搭建免备案博客，简要阐述Hexo安装环境的准备，基本命令的使用和配置实现。</p>
-<h2 id="环境准备及程序安装"><a href="#环境准备及程序安装" class="headerlink" title="环境准备及程序安装"></a>环境准备及程序安装</h2><h3 id="需要的软件与环境如下："><a href="#需要的软件与环境如下：" class="headerlink" title="需要的软件与环境如下："></a>需要的软件与环境如下：</h3><blockquote>
-<p>Git for Windows<br>Node.js for Windows<br>hexo及相关的包</p>
-</blockquote>
-<h3 id="Git安装和配置"><a href="#Git安装和配置" class="headerlink" title="Git安装和配置"></a>Git安装和配置</h3><p>Git的下载、安装和配置可以参考<a href="https://gitforwindows.org/" target="_blank" rel="noopener">官方文档</a>，也可以参考<a href="https://blog.csdn.net/wangrenbao123/article/details/55511461/" target="_blank" rel="noopener">这篇文章</a></p>
-<h3 id="Node-js安装和配置"><a href="#Node-js安装和配置" class="headerlink" title="Node.js安装和配置"></a>Node.js安装和配置</h3><p>Node.js目前的版本已经升级到<code>v8.11.2</code>, 其<a href="https://gitforwindows.org/" target="_blank" rel="noopener">官网</a>的文档介绍很详尽，英文水平可以的建议直接上，当然也可以参考<a href="https://www.cnblogs.com/zhouyu2017/p/6485265.html" target="_blank" rel="noopener">这篇文章</a></p>
-<h3 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h3><p><code>hexo</code>在<code>node.js</code>环境中安装非常的方便，只需要一条命令行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g hexo</span><br></pre></td></tr></table></figure></p>
-<p>经过上述四个步骤，环境配置如下：</p>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/env.png" alt="env"></p>
-<h2 id="创建本地Hexo工程"><a href="#创建本地Hexo工程" class="headerlink" title="创建本地Hexo工程"></a>创建本地Hexo工程</h2><h3 id="工程创建及文件目录说明"><a href="#工程创建及文件目录说明" class="headerlink" title="工程创建及文件目录说明"></a>工程创建及文件目录说明</h3><p>建议创建一个本地文件夹用于存放相关的文件，我在本地<code>D盘</code>中创建了一个<code>github</code>目录，然后运行<code>hexo init</code>命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir github</span><br><span class="line">cd github</span><br><span class="line">hexo init newblog</span><br></pre></td></tr></table></figure></p>
-<p><code>hexo</code>程序生成的<code>newblog</code>工程如下:</p>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/目录结构.png" alt="目录结构"></p>
-<p>其中主要的文件夹和文件说明如下：</p>
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>node_modules</td>
-<td>工程依赖包存放文件夹</td>
-</tr>
-<tr>
-<td>scaffolds</td>
-<td>模板存放文件夹, 默认包含有post, draft和page三个</td>
-</tr>
-<tr>
-<td>source</td>
-<td>文章markdown格式存放文件夹</td>
-</tr>
-<tr>
-<td>themes</td>
-<td>各种主题，本系列文章主讲的NexT模板就存在该文件夹中</td>
-</tr>
-<tr>
-<td>public</td>
-<td>上面截图中还未生成，在运行<code>hexo g</code>后会产生，用于存放工程生成的页面</td>
-</tr>
-<tr>
-<td>_config.xml</td>
-<td>工程的总的配置文件，本文所涉及的配置都在该文件中设置</td>
-</tr>
-</tbody>
-</table>
-<h3 id="生成及启动"><a href="#生成及启动" class="headerlink" title="生成及启动"></a>生成及启动</h3><p>初始化工程后，个人博客的站点基本的基本框架已经搭建，且有一个默认的主题<code>landscape</code>在<code>themes</code>文件中，因此我只需要运行命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g # 或者hexo generate</span><br><span class="line">hexo s # 或者hexo server</span><br></pre></td></tr></table></figure></p>
-<p>就会在本地启动一个端口为<code>4000</code>的服务，截图如下：</p>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/默认服务例子.png" alt="默认服务例子"></p>
-<h3 id="配置设置及说明"><a href="#配置设置及说明" class="headerlink" title="配置设置及说明"></a>配置设置及说明</h3><p>上述的步骤已经将<code>hexo</code>工程搭建完毕，接下来就进行个性化的设置。我们使用<code>Atom</code>作为编辑器对工程文件进行统一的管理与操作，关于<code>Atom</code>请查看<a href="https://atom.io/" target="_blank" rel="noopener">官网</a>。</p>
-<p><code>hexo</code>站点全局配置在文件<code>_config.yml</code>中。配置的第一项肯定是站点名称、站点内容等描述。<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">半吊码工</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">知识应予记录,</span> <span class="string">经验应当传播</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">半路出家,</span> <span class="string">不似半路出家人</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">"技术, 生活, 感想"</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">半吊码工</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span></span><br></pre></td></tr></table></figure></p>
-<p>上述是本人的博客描述，其中说明的一点就是<code>hexo</code>支持多语言的，中文简体的配置是<code>zh-CN</code>，老版本为<code>zh-Hans</code>。</p>
-<p>接下来一般是设置主题<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></p>
-<p>由于本人十分喜欢<code>NexT</code>主题，因此本示例中将使用<code>NexT</code>主题，而且接下来几篇将重点介绍<code>NexT</code>主题的配置。</p>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/next_theme_example.png" alt="next_theme_example"></p>
-<p>另外，为了方便书写，特别是方便在markdown中添加图标，可以将<code>post_asset_folder</code>设置成<code>true</code>， 安装<code>hexo-asset-image</code>依赖包。</p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
-<p>这样添加一篇新文章是，系统会帮助我们生成一个同名的文件夹，用于存放附件（图片）等，方便在文中直接引用。</p>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/postassetfolder.png" alt="postAssetFolder"></p>
-<h2 id="Github配置与链接"><a href="#Github配置与链接" class="headerlink" title="Github配置与链接"></a>Github配置与链接</h2><p><code>Hexo</code>工程准备好后，接下来就是将其发布到<code>github</code>并实现在线访问。</p>
-<h3 id="注册github并创建repository"><a href="#注册github并创建repository" class="headerlink" title="注册github并创建repository"></a>注册<code>github</code>并创建<code>repository</code></h3><p>如果没有<code>github</code>账号，则先注册，然后创建一个符合<a href="https://pages.github.com/" target="_blank" rel="noopener"><code>github pages</code></a>要求的<code>repository</code>，其实就是创建一个和用户一致的并且以<code>.github.io</code>结尾的工程。例如我的就是<code>xuemzhan.githu.io</code>。</p>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/create_repo.png" alt="create_repo"></p>
-<h3 id="Gitbash配置与链接"><a href="#Gitbash配置与链接" class="headerlink" title="Gitbash配置与链接"></a>Gitbash配置与链接</h3><p>首先设置Git的用户与邮箱<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name = "xuemzhan"</span><br><span class="line">git config --global user.email = "xuemzhan@163.com"</span><br></pre></td></tr></table></figure></p>
-<p>然后使用<code>ssh-keygen</code>创建<code>RSA</code>公钥，如果存在则直接拷贝公钥内容。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "xuemzhan@163.com"</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/gitbash_cmd.png" alt="gitbash_cmd"></p>
-<p>登入<code>github</code>, 选择<code>Settings</code>-&gt;<code>SSH and GPG keys</code>-&gt;<code>New SSH key</code>将复制到公钥内容填入。</p>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/fill_rsa_pub.png" alt="fill_rsa_pub"></p>
-<p>使用如下命令进行测试<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></p>
-<p>如果出现如下内容，则标明git配置及链接成功</p>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/ssh_test.png" alt="ssh_test"></p>
-<h3 id="hexo工程发布"><a href="#hexo工程发布" class="headerlink" title="hexo工程发布"></a><code>hexo</code>工程发布</h3><p>修改网站配置文件<code>_config.yml</code>中关于<code>Deployment</code>的内容<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/xuemzhan/xuemzhan.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>注：这里有一个坑是<code>type</code>类型一定是<code>git</code>而不是<code>github</code></p>
-</blockquote>
-<p>然后将博客站点发布到<code>github</code>上<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p>
-<p>最后通过<code>yourname.github.io</code>进行访问测试，本人的如下：</p>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/deploy_screen.png" alt="deploy_screen"></p>
-<h2 id="域名解析及测试"><a href="#域名解析及测试" class="headerlink" title="域名解析及测试"></a>域名解析及测试</h2><h3 id="查找github-pages对应IP"><a href="#查找github-pages对应IP" class="headerlink" title="查找github pages对应IP"></a>查找<code>github pages</code>对应IP</h3><p>如果自己申请了域名，可以将自己的域名绑定到<code>github pages</code>上。本人的域名实在阿里云上申请的，所有路由解析需要在上面进行设定。设定前，需要查看自己<code>github pages</code>指向的<code>IP</code>地址</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -4 xuemzhan.github.io</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/ping_result.png" alt="ping_result"></p>
-<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>进入域名解析页面填写DNS解析规则</p>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/dNS_jiexi.png" alt="DNS_jiexi"></p>
-<h3 id="创建域名CNAME"><a href="#创建域名CNAME" class="headerlink" title="创建域名CNAME"></a>创建域名<code>CNAME</code></h3><p>在<code>hexo</code>工程的<code>source</code>文件夹中，创建文件<code>CNAME</code>,其中内容的是自己的域名。</p>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/cname_file.png" alt="cname_file"></p>
-<p>最后，重新生成并发布</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/success_sc.png" alt="success_sc"></p>
-<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><table>
-<thead>
-<tr>
-<th>命令名称</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>hexo clean</td>
-<td>clean 清除缓存文件<code>db.json</code>和已生成的静态文件 <code>public</code>文件夹中</td>
-</tr>
-<tr>
-<td>hexo g</td>
-<td>generate 生成静态文件</td>
-</tr>
-<tr>
-<td>hexo s</td>
-<td>server 启动服务器</td>
-</tr>
-<tr>
-<td>hexo d</td>
-<td>deploy 部署网站。部署网站前，需要预先生成静态文件</td>
-</tr>
-<tr>
-<td>hexo new post “title”</td>
-<td>创建一篇新的博文</td>
-</tr>
-<tr>
-<td>hexo new page “title”</td>
-<td>创建一个新的页面</td>
-</tr>
-</tbody>
-</table>
-<h3 id="需要的依赖包"><a href="#需要的依赖包" class="headerlink" title="需要的依赖包"></a>需要的依赖包</h3><table>
-<thead>
-<tr>
-<th>包名称</th>
-<th>依赖操作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>hexo-deployer-git</td>
-<td>hexo d</td>
-</tr>
-<tr>
-<td>hexo-asset-image</td>
-<td>用于图片插入</td>
-</tr>
-</tbody>
-</table>
+        <p><code>Kubernetes</code>是一个用于管理容器化应用和服务的轻便和可扩展的开源平台。通过<code>Kubernetes</code>能够进行应用的自动化部署和扩缩容。在<code>Kubernetes</code>中，会将组成应用的容器组合成一个逻辑单元以更易管理和发现。</p>
+<h2 id="主要特性"><a href="#主要特性" class="headerlink" title="主要特性"></a>主要特性</h2><p>1.自动化装箱：对资源的要求和约束自动部署容器，同时为了提高利用率和节省更多资源，将关键和最佳工作量结合在一起。</p>
+<p>2.自愈能力：当容器失败时，对容器进行重启；当部署的Node节点有问题时，对容器进行重新部署和重新调度；当容器未通过监控检查时，会关闭容器；只有容器正常运行，才会对外提供服务。</p>
+<p>3.水平扩展：通过简单命令、用户界面或者基于CPU的适用情况对应用容器进行扩展。</p>
+<p>4.服务发现和负载均衡：基于Kubernetes进行服务发现和负载均衡，开发者不需要适用额外的服务发现机制。</p>
+<p>5.自动发布和回滚：<code>Kubernetes</code>能够程序化的发布应用和相关配置，如果发布有问题，能够会贵发生的变更。</p>
+<p>6.保密和配置管理： 在不需要重新构建镜像的情况下，可以部署和更新保密和应用配置。</p>
+<p>7.存储编排：自动挂接本地、公有云、网络存储系统。</p>
+<h2 id="架构图"><a href="#架构图" class="headerlink" title="架构图"></a>架构图</h2><p><code>Kubernetes</code>属于主从分布架构，主要由<code>Master Node</code>、<code>Worker Node</code>、<code>Kubectl</code>和其他附加项构成。</p>
+<p><img src="/2018/06/24/tech/k8s/Kubernetes概述与架构/k8s_arch.png" alt="k8s_arch"></p>
+<h2 id="Master-Node"><a href="#Master-Node" class="headerlink" title="Master Node"></a>Master Node</h2><p><code>Master Node</code>是控制节点，对整个集群进行调度管理。它由<code>API Server</code>、<code>Scheduler</code>、<code>Cluster State Store</code>和<code>Controller-Manager</code>组成.</p>
+<h3 id="API-Server"><a href="#API-Server" class="headerlink" title="API Server"></a>API Server</h3><p><code>API Server</code>是所有<code>REST</code>命令的入口，用于<code>REST</code>的操作，确保它们生效，执行相关业务逻辑，以及更新<code>etcd</code>。另外，<code>API Server</code>作为集群网关。默认情况下，客户端通过<code>API Server</code>对集群进行访问。</p>
+<h3 id="Scheduler"><a href="#Scheduler" class="headerlink" title="Scheduler"></a>Scheduler</h3><p><code>Scheduler</code>组件为容器自动选择运行的主机。依据请求资源的可用性，服务请求的质量等约束条件，监控未绑定的<code>pod</code>, 并将其绑定至特定的<code>node</code>节点。 <code>Scheduler</code>可以依据的调度策略主要有<code>预选策略</code>和<code>优选策略</code>。</p>
+<h3 id="Cluster-State-Store"><a href="#Cluster-State-Store" class="headerlink" title="Cluster State Store"></a>Cluster State Store</h3><p><code>Kubernetes</code>默认使用<code>etcd</code>作为集群整体存储。<code>etcd</code>是一个简单的、分布式的、一致的<code>key-value</code>存储，主要被用来共享配置和服务发现。<code>etcd</code>提供了一系列<code>CRUD</code>操作<code>API</code>，以及作为注册的接口用于监控置顶的<code>Node</code>。集群所有的状态都存储在<code>etcd</code>实例中，并具有监控能力，当<code>etcd</code>中的信息发生变化时，就能够快速的通知集群相关的组件。</p>
+<h3 id="Controller-Manager"><a href="#Controller-Manager" class="headerlink" title="Controller-Manager"></a>Controller-Manager</h3><p>用于执行大部分的集群层次功能，它即执行例如命名空间创建、生命周期管理、事件垃圾收集、已终止垃圾收集、联级删除垃圾收集、node垃圾收集等生命周期功能，也执行例如<code>pod</code>的弹性扩容等API业务逻辑。控制管理提供自愈能力、扩容、应用生命周期管理、服务发现、路由、服务绑定等。</p>
+<h2 id="Worker-Node"><a href="#Worker-Node" class="headerlink" title="Worker Node"></a>Worker Node</h2><p><code>Worker Node</code>作为真正的工作节点，运行业务应用的容器；其包含kubelet、kube proxy和Container Runtime</p>
+<h3 id="kubelet"><a href="#kubelet" class="headerlink" title="kubelet"></a>kubelet</h3><p><code>Kubelet</code>是<code>Pod</code>和<code>Node API</code>的主要实现者，并负责驱动容器执行层，负责管理<code>Pod</code>、容器、镜像和数据卷，实现集群对节点的管理，并将容器的运行状态汇报给<code>Kubernetes API Server</code>。在<code>Kubernetes</code>中，<code>Pod</code>作为基本的执行单元，它可以拥有多个容器和存储数据卷，能够方便在每一个容器中打包一个单一的应用，从而解耦了应用构建时和部署时的所关心的事项，已经能够方便在物理机/虚拟机之间进行迁移。<code>API</code>准入控制可以拒绝<code>Pod</code>，或者为<code>Pod</code>添加外的调度约束，但是<code>Kubelet</code>才是<code>Pod</code>是否能够运行在特定<code>Node</code>上的最终裁决者。</p>
+<h3 id="Container-Runtime"><a href="#Container-Runtime" class="headerlink" title="Container Runtime"></a>Container Runtime</h3><p>每一个<code>Node</code>都会运行一个<code>Container Runtime</code>, 其负责下载镜像和运行容器。 <code>Kubernetes</code>本身不提供容器运行环境，但提供了接口，可以插入所选择的容器运行时环境。<code>Kubelet</code>使用<code>Unix socket</code>之上的<code>gRPC</code>框架与容器运行时进行通信， <code>Kubelet</code>作为客户端，<code>CRI shim</code>作为服务器。</p>
+<p><img src="/2018/06/24/tech/k8s/Kubernetes概述与架构/container_runtime.png" alt="container_runtime"></p>
+<p><code>protocal buffers API</code>提供<code>ImageService</code>和<code>RuntimeService</code>两个<code>gRPC</code>服务。<code>ImageService</code>提供拉去、查看和移除镜像的<code>RPC</code>。<code>RuntimeService</code>则提供管理<code>Pods</code>和容器生命周期管理的<code>RPC</code>，以及与容器进行交互(exec/attach/port-forward)。</p>
+<h3 id="Kube-proxy"><a href="#Kube-proxy" class="headerlink" title="Kube proxy"></a>Kube proxy</h3><p>基于一种公共访问策略（例如：负载均衡），服务提供了一种访问一群<code>pod</code>的途径。此方式通过创建一个虚拟的IP来实现，客户端能够访问此IP，并能够将服务透明的代理至<code>Pod</code>。每一个<code>Node</code>都会运行一个<code>kube-proxy</code>，<code>kube proxy</code>通过<code>iptables</code>规则引导访问至服务IP，并将重定向至正确的后端应用，通过这种方式<code>kube-proxy</code>提供了一个高可用的负载均衡解决方案。服务发现主要通过DNS实现。</p>
+<p>在<code>Kubernetes</code>中，<code>kube proxy</code>负责为<code>Pod</code>创建代理服务；引到访问至服务；并实现服务到Pod的路由和转发，以及通过应用的负载均衡。</p>
+<h2 id="Kubectl"><a href="#Kubectl" class="headerlink" title="Kubectl"></a>Kubectl</h2><p>kubectl是Kubernetes集群的命令行接口。运行kubectl命令的语法如下所示：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> kubectl [command] [TYPE] [NAME] [flags]</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -696,7 +551,7 @@
     <strong>本文作者： </strong>半吊码工</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/" title="Hexo安装与配置">http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/</a>
+    <a href="http://www.halfbaker.com/2018/06/24/tech/k8s/Kubernetes概述与架构/" title="Kubernetes概述与架构">http://www.halfbaker.com/2018/06/24/tech/k8s/Kubernetes概述与架构/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -709,9 +564,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/教程/" rel="tag"><i class="fa fa-tag"></i> 教程</a>
+            <a href="/tags/架构/" rel="tag"><i class="fa fa-tag"></i> 架构</a>
           
-            <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+            <a href="/tags/k8s/" rel="tag"><i class="fa fa-tag"></i> k8s</a>
           
         </div>
       
@@ -739,15 +594,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/06/23/tech/ai/强化学习要点/" rel="next" title="强化学习要点">
+                <i class="fa fa-chevron-left"></i> 强化学习要点
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/10/guider/hexo/Hexo主题NexT配置与优化/" rel="prev" title="Hexo主题NexT配置与优化">
-                Hexo主题NexT配置与优化 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -961,7 +816,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境准备及程序安装"><span class="nav-number">1.</span> <span class="nav-text">环境准备及程序安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需要的软件与环境如下："><span class="nav-number">1.1.</span> <span class="nav-text">需要的软件与环境如下：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git安装和配置"><span class="nav-number">1.2.</span> <span class="nav-text">Git安装和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js安装和配置"><span class="nav-number">1.3.</span> <span class="nav-text">Node.js安装和配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo安装"><span class="nav-number">1.4.</span> <span class="nav-text">hexo安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建本地Hexo工程"><span class="nav-number">2.</span> <span class="nav-text">创建本地Hexo工程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工程创建及文件目录说明"><span class="nav-number">2.1.</span> <span class="nav-text">工程创建及文件目录说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成及启动"><span class="nav-number">2.2.</span> <span class="nav-text">生成及启动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置设置及说明"><span class="nav-number">2.3.</span> <span class="nav-text">配置设置及说明</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Github配置与链接"><span class="nav-number">3.</span> <span class="nav-text">Github配置与链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册github并创建repository"><span class="nav-number">3.1.</span> <span class="nav-text">注册github并创建repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gitbash配置与链接"><span class="nav-number">3.2.</span> <span class="nav-text">Gitbash配置与链接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hexo工程发布"><span class="nav-number">3.3.</span> <span class="nav-text">hexo工程发布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名解析及测试"><span class="nav-number">4.</span> <span class="nav-text">域名解析及测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#查找github-pages对应IP"><span class="nav-number">4.1.</span> <span class="nav-text">查找github pages对应IP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#域名解析"><span class="nav-number">4.2.</span> <span class="nav-text">域名解析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建域名CNAME"><span class="nav-number">4.3.</span> <span class="nav-text">创建域名CNAME</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附录"><span class="nav-number">5.</span> <span class="nav-text">附录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">5.1.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#需要的依赖包"><span class="nav-number">5.2.</span> <span class="nav-text">需要的依赖包</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#主要特性"><span class="nav-number">1.</span> <span class="nav-text">主要特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#架构图"><span class="nav-number">2.</span> <span class="nav-text">架构图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Master-Node"><span class="nav-number">3.</span> <span class="nav-text">Master Node</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#API-Server"><span class="nav-number">3.1.</span> <span class="nav-text">API Server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scheduler"><span class="nav-number">3.2.</span> <span class="nav-text">Scheduler</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cluster-State-Store"><span class="nav-number">3.3.</span> <span class="nav-text">Cluster State Store</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Controller-Manager"><span class="nav-number">3.4.</span> <span class="nav-text">Controller-Manager</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Worker-Node"><span class="nav-number">4.</span> <span class="nav-text">Worker Node</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#kubelet"><span class="nav-number">4.1.</span> <span class="nav-text">kubelet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Container-Runtime"><span class="nav-number">4.2.</span> <span class="nav-text">Container Runtime</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kube-proxy"><span class="nav-number">4.3.</span> <span class="nav-text">Kube proxy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kubectl"><span class="nav-number">5.</span> <span class="nav-text">Kubectl</span></a></li></ol></div>
             
 
           </div>
