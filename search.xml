@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Jupyter使用杂记]]></title>
+    <url>%2F2018%2F07%2F13%2Ftips%2FJupyter%E4%BD%BF%E7%94%A8%E6%9D%82%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Jupyter是学习、记录和传授的超级工具，其可见可得，代码和文档一起的风格，我都要爱死了。 Jupyter Notebook设置远程访问修改jupyter_notebook_config.py文件中的c.NotebookApp.ip属性为’*’1# vim ~/.jupyter/jupyter_notebook_config.py]]></content>
+      <categories>
+        <category>小窍门</category>
+      </categories>
+      <tags>
+        <tag>jupyter</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Anaconda命令小记]]></title>
+    <url>%2F2018%2F07%2F13%2Ftips%2FAnaconda%E5%91%BD%E4%BB%A4%E5%B0%8F%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[Anconda 学习与使用机器学习和深度学习必不可少的工具，本博文将不断记录工作中碰到的需要记忆的命令和一些使用上的小窍门，主要是为了方便今后查询及记忆 添加国内镜像123conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/freeconda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/mainconda config --set show_channel_urls yes 恢复默认的源1conda config --remove-key channels]]></content>
+      <categories>
+        <category>小窍门</category>
+      </categories>
+      <tags>
+        <tag>Anaconda</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Kubernetes概述与架构]]></title>
     <url>%2F2018%2F06%2F24%2Ftech%2Fk8s%2FKubernetes%E6%A6%82%E8%BF%B0%E4%B8%8E%E6%9E%B6%E6%9E%84%2F</url>
     <content type="text"><![CDATA[Kubernetes是一个用于管理容器化应用和服务的轻便和可扩展的开源平台。通过Kubernetes能够进行应用的自动化部署和扩缩容。在Kubernetes中，会将组成应用的容器组合成一个逻辑单元以更易管理和发现。 主要特性1.自动化装箱：对资源的要求和约束自动部署容器，同时为了提高利用率和节省更多资源，将关键和最佳工作量结合在一起。 2.自愈能力：当容器失败时，对容器进行重启；当部署的Node节点有问题时，对容器进行重新部署和重新调度；当容器未通过监控检查时，会关闭容器；只有容器正常运行，才会对外提供服务。 3.水平扩展：通过简单命令、用户界面或者基于CPU的适用情况对应用容器进行扩展。 4.服务发现和负载均衡：基于Kubernetes进行服务发现和负载均衡，开发者不需要适用额外的服务发现机制。 5.自动发布和回滚：Kubernetes能够程序化的发布应用和相关配置，如果发布有问题，能够会贵发生的变更。 6.保密和配置管理： 在不需要重新构建镜像的情况下，可以部署和更新保密和应用配置。 7.存储编排：自动挂接本地、公有云、网络存储系统。 架构图Kubernetes属于主从分布架构，主要由Master Node、Worker Node、Kubectl和其他附加项构成。 Master NodeMaster Node是控制节点，对整个集群进行调度管理。它由API Server、Scheduler、Cluster State Store和Controller-Manager组成. API ServerAPI Server是所有REST命令的入口，用于REST的操作，确保它们生效，执行相关业务逻辑，以及更新etcd。另外，API Server作为集群网关。默认情况下，客户端通过API Server对集群进行访问。 SchedulerScheduler组件为容器自动选择运行的主机。依据请求资源的可用性，服务请求的质量等约束条件，监控未绑定的pod, 并将其绑定至特定的node节点。 Scheduler可以依据的调度策略主要有预选策略和优选策略。 Cluster State StoreKubernetes默认使用etcd作为集群整体存储。etcd是一个简单的、分布式的、一致的key-value存储，主要被用来共享配置和服务发现。etcd提供了一系列CRUD操作API，以及作为注册的接口用于监控置顶的Node。集群所有的状态都存储在etcd实例中，并具有监控能力，当etcd中的信息发生变化时，就能够快速的通知集群相关的组件。 Controller-Manager用于执行大部分的集群层次功能，它即执行例如命名空间创建、生命周期管理、事件垃圾收集、已终止垃圾收集、联级删除垃圾收集、node垃圾收集等生命周期功能，也执行例如pod的弹性扩容等API业务逻辑。控制管理提供自愈能力、扩容、应用生命周期管理、服务发现、路由、服务绑定等。 Worker NodeWorker Node作为真正的工作节点，运行业务应用的容器；其包含kubelet、kube proxy和Container Runtime kubeletKubelet是Pod和Node API的主要实现者，并负责驱动容器执行层，负责管理Pod、容器、镜像和数据卷，实现集群对节点的管理，并将容器的运行状态汇报给Kubernetes API Server。在Kubernetes中，Pod作为基本的执行单元，它可以拥有多个容器和存储数据卷，能够方便在每一个容器中打包一个单一的应用，从而解耦了应用构建时和部署时的所关心的事项，已经能够方便在物理机/虚拟机之间进行迁移。API准入控制可以拒绝Pod，或者为Pod添加外的调度约束，但是Kubelet才是Pod是否能够运行在特定Node上的最终裁决者。 Container Runtime每一个Node都会运行一个Container Runtime, 其负责下载镜像和运行容器。 Kubernetes本身不提供容器运行环境，但提供了接口，可以插入所选择的容器运行时环境。Kubelet使用Unix socket之上的gRPC框架与容器运行时进行通信， Kubelet作为客户端，CRI shim作为服务器。 protocal buffers API提供ImageService和RuntimeService两个gRPC服务。ImageService提供拉去、查看和移除镜像的RPC。RuntimeService则提供管理Pods和容器生命周期管理的RPC，以及与容器进行交互(exec/attach/port-forward)。 Kube proxy基于一种公共访问策略（例如：负载均衡），服务提供了一种访问一群pod的途径。此方式通过创建一个虚拟的IP来实现，客户端能够访问此IP，并能够将服务透明的代理至Pod。每一个Node都会运行一个kube-proxy，kube proxy通过iptables规则引导访问至服务IP，并将重定向至正确的后端应用，通过这种方式kube-proxy提供了一个高可用的负载均衡解决方案。服务发现主要通过DNS实现。 在Kubernetes中，kube proxy负责为Pod创建代理服务；引到访问至服务；并实现服务到Pod的路由和转发，以及通过应用的负载均衡。 Kubectlkubectl是Kubernetes集群的命令行接口。运行kubectl命令的语法如下所示： 1$ kubectl [command] [TYPE] [NAME] [flags]]]></content>
@@ -82,9 +104,9 @@
         <category>工具类</category>
       </categories>
       <tags>
+        <tag>Hexo</tag>
         <tag>NexT</tag>
         <tag>教程</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -96,8 +118,8 @@
         <category>工具类</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>Hexo</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
 </search>

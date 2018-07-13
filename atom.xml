@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.halfbaker.com/"/>
-  <updated>2018-06-24T13:58:32.198Z</updated>
+  <updated>2018-07-13T05:08:25.614Z</updated>
   <id>http://www.halfbaker.com/</id>
   
   <author>
@@ -15,6 +15,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Jupyter使用杂记</title>
+    <link href="http://www.halfbaker.com/2018/07/13/tips/Jupyter%E4%BD%BF%E7%94%A8%E6%9D%82%E8%AE%B0/"/>
+    <id>http://www.halfbaker.com/2018/07/13/tips/Jupyter使用杂记/</id>
+    <published>2018-07-13T05:03:11.000Z</published>
+    <updated>2018-07-13T05:08:25.614Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p><code>Jupyter</code>是学习、记录和传授的超级工具，其可见可得，代码和文档一起的风格，我都要爱死了。</p></blockquote><h3 id="Jupyter-Notebook设置远程访问"><a href="#Jupyter-Notebook设置远程访问" class="headerlink" title="Jupyter Notebook设置远程访问"></a>Jupyter Notebook设置远程访问</h3><p>修改<code>jupyter_notebook_config.py</code>文件中的<code>c.NotebookApp.ip</code>属性为’*’<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> vim ~/.jupyter/jupyter_notebook_config.py</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;Jupyter&lt;/code&gt;是学习、记录和传授的超级工具，其可见可得，代码和文档一起的风格，我都要爱死了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Jupyter-Notebook设置远程访问&quot;&gt;&lt;a href=&quot;#Jupy
+      
+    
+    </summary>
+    
+      <category term="小窍门" scheme="http://www.halfbaker.com/categories/tips/"/>
+    
+    
+      <category term="jupyter" scheme="http://www.halfbaker.com/tags/jupyter/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Anaconda命令小记</title>
+    <link href="http://www.halfbaker.com/2018/07/13/tips/Anaconda%E5%91%BD%E4%BB%A4%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://www.halfbaker.com/2018/07/13/tips/Anaconda命令小记/</id>
+    <published>2018-07-13T03:34:08.000Z</published>
+    <updated>2018-07-13T03:55:39.490Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Anconda 学习与使用机器学习和深度学习必不可少的工具，本博文将不断记录工作中碰到的需要记忆的命令和一些使用上的小窍门，主要是为了方便今后查询及记忆</p></blockquote><h3 id="添加国内镜像"><a href="#添加国内镜像" class="headerlink" title="添加国内镜像"></a>添加国内镜像</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free</span><br><span class="line">conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main</span><br><span class="line">conda config --set show_channel_urls yes</span><br></pre></td></tr></table></figure><h3 id="恢复默认的源"><a href="#恢复默认的源" class="headerlink" title="恢复默认的源"></a>恢复默认的源</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda config --remove-key channels</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Anconda 学习与使用机器学习和深度学习必不可少的工具，本博文将不断记录工作中碰到的需要记忆的命令和一些使用上的小窍门，主要是为了方便今后查询及记忆&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;添加国内镜像&quot;&gt;&lt;a href=&quot;#添加国
+      
+    
+    </summary>
+    
+      <category term="小窍门" scheme="http://www.halfbaker.com/categories/tips/"/>
+    
+    
+      <category term="Anaconda" scheme="http://www.halfbaker.com/tags/Anaconda/"/>
+    
+  </entry>
   
   <entry>
     <title>Kubernetes概述与架构</title>
@@ -222,11 +278,11 @@
       <category term="工具类" scheme="http://www.halfbaker.com/categories/guider/%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
     
+      <category term="Hexo" scheme="http://www.halfbaker.com/tags/Hexo/"/>
+    
       <category term="NexT" scheme="http://www.halfbaker.com/tags/NexT/"/>
     
       <category term="教程" scheme="http://www.halfbaker.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
-      <category term="Hexo" scheme="http://www.halfbaker.com/tags/Hexo/"/>
     
   </entry>
   
@@ -235,7 +291,7 @@
     <link href="http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
     <id>http://www.halfbaker.com/2018/06/08/guider/hexo/Hexo安装与配置/</id>
     <published>2018-06-08T11:04:39.000Z</published>
-    <updated>2018-06-10T15:03:45.777Z</updated>
+    <updated>2018-07-11T03:53:36.551Z</updated>
     
     <content type="html"><![CDATA[<blockquote><p><code>Hexo系列</code>文章是本人搭建<code>Hexo</code>博客系统的一些记录与总结。期间，花费了一些时间和精力去搜集资料，并动手实践，觉得应该将这些过程进行总结留档，方便自己日后查看。同时也能给其他需要的人一些提示。该系列将从安装与配置、NexT主题设置和SEO等高级特性三个方面进行阐述。</p></blockquote><p>本片文章主是<code>Hexo系列</code>的开篇，主要围绕“Hexo+Github+私有域名”搭建免备案博客，简要阐述Hexo安装环境的准备，基本命令的使用和配置实现。</p><h2 id="环境准备及程序安装"><a href="#环境准备及程序安装" class="headerlink" title="环境准备及程序安装"></a>环境准备及程序安装</h2><h3 id="需要的软件与环境如下："><a href="#需要的软件与环境如下：" class="headerlink" title="需要的软件与环境如下："></a>需要的软件与环境如下：</h3><blockquote><p>Git for Windows<br>Node.js for Windows<br>hexo及相关的包</p></blockquote><h3 id="Git安装和配置"><a href="#Git安装和配置" class="headerlink" title="Git安装和配置"></a>Git安装和配置</h3><p>Git的下载、安装和配置可以参考<a href="https://gitforwindows.org/" target="_blank" rel="noopener">官方文档</a>，也可以参考<a href="https://blog.csdn.net/wangrenbao123/article/details/55511461/" target="_blank" rel="noopener">这篇文章</a></p><h3 id="Node-js安装和配置"><a href="#Node-js安装和配置" class="headerlink" title="Node.js安装和配置"></a>Node.js安装和配置</h3><p>Node.js目前的版本已经升级到<code>v8.11.2</code>, 其<a href="https://gitforwindows.org/" target="_blank" rel="noopener">官网</a>的文档介绍很详尽，英文水平可以的建议直接上，当然也可以参考<a href="https://www.cnblogs.com/zhouyu2017/p/6485265.html" target="_blank" rel="noopener">这篇文章</a></p><h3 id="hexo安装"><a href="#hexo安装" class="headerlink" title="hexo安装"></a>hexo安装</h3><p><code>hexo</code>在<code>node.js</code>环境中安装非常的方便，只需要一条命令行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i -g hexo</span><br></pre></td></tr></table></figure></p><p>经过上述四个步骤，环境配置如下：</p><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/env.png" alt="env"></p><h2 id="创建本地Hexo工程"><a href="#创建本地Hexo工程" class="headerlink" title="创建本地Hexo工程"></a>创建本地Hexo工程</h2><h3 id="工程创建及文件目录说明"><a href="#工程创建及文件目录说明" class="headerlink" title="工程创建及文件目录说明"></a>工程创建及文件目录说明</h3><p>建议创建一个本地文件夹用于存放相关的文件，我在本地<code>D盘</code>中创建了一个<code>github</code>目录，然后运行<code>hexo init</code>命令<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir github</span><br><span class="line">cd github</span><br><span class="line">hexo init newblog</span><br></pre></td></tr></table></figure></p><p><code>hexo</code>程序生成的<code>newblog</code>工程如下:</p><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/目录结构.png" alt="目录结构"></p><p>其中主要的文件夹和文件说明如下：</p><table><thead><tr><th>名称</th><th>说明</th></tr></thead><tbody><tr><td>node_modules</td><td>工程依赖包存放文件夹</td></tr><tr><td>scaffolds</td><td>模板存放文件夹, 默认包含有post, draft和page三个</td></tr><tr><td>source</td><td>文章markdown格式存放文件夹</td></tr><tr><td>themes</td><td>各种主题，本系列文章主讲的NexT模板就存在该文件夹中</td></tr><tr><td>public</td><td>上面截图中还未生成，在运行<code>hexo g</code>后会产生，用于存放工程生成的页面</td></tr><tr><td>_config.xml</td><td>工程的总的配置文件，本文所涉及的配置都在该文件中设置</td></tr></tbody></table><h3 id="生成及启动"><a href="#生成及启动" class="headerlink" title="生成及启动"></a>生成及启动</h3><p>初始化工程后，个人博客的站点基本的基本框架已经搭建，且有一个默认的主题<code>landscape</code>在<code>themes</code>文件中，因此我只需要运行命令：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g # 或者hexo generate</span><br><span class="line">hexo s # 或者hexo server</span><br></pre></td></tr></table></figure></p><p>就会在本地启动一个端口为<code>4000</code>的服务，截图如下：</p><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/默认服务例子.png" alt="默认服务例子"></p><h3 id="配置设置及说明"><a href="#配置设置及说明" class="headerlink" title="配置设置及说明"></a>配置设置及说明</h3><p>上述的步骤已经将<code>hexo</code>工程搭建完毕，接下来就进行个性化的设置。我们使用<code>Atom</code>作为编辑器对工程文件进行统一的管理与操作，关于<code>Atom</code>请查看<a href="https://atom.io/" target="_blank" rel="noopener">官网</a>。</p><p><code>hexo</code>站点全局配置在文件<code>_config.yml</code>中。配置的第一项肯定是站点名称、站点内容等描述。<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">title:</span> <span class="string">半吊码工</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">知识应予记录,</span> <span class="string">经验应当传播</span></span><br><span class="line"><span class="attr">description:</span> <span class="string">半路出家,</span> <span class="string">不似半路出家人</span></span><br><span class="line"><span class="attr">keywords:</span> <span class="string">"技术, 生活, 感想"</span></span><br><span class="line"><span class="attr">author:</span> <span class="string">半吊码工</span></span><br><span class="line"><span class="attr">language:</span> <span class="string">zh-CN</span></span><br><span class="line"><span class="attr">timezone:</span></span><br></pre></td></tr></table></figure></p><p>上述是本人的博客描述，其中说明的一点就是<code>hexo</code>支持多语言的，中文简体的配置是<code>zh-CN</code>，老版本为<code>zh-Hans</code>。</p><p>接下来一般是设置主题<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure></p><p>由于本人十分喜欢<code>NexT</code>主题，因此本示例中将使用<code>NexT</code>主题，而且接下来几篇将重点介绍<code>NexT</code>主题的配置。</p><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/next_theme_example.png" alt="next_theme_example"></p><p>另外，为了方便书写，特别是方便在markdown中添加图标，可以将<code>post_asset_folder</code>设置成<code>true</code>， 安装<code>hexo-asset-image</code>依赖包。</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure><p>这样添加一篇新文章是，系统会帮助我们生成一个同名的文件夹，用于存放附件（图片）等，方便在文中直接引用。</p><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/postassetfolder.png" alt="postAssetFolder"></p><h2 id="Github配置与链接"><a href="#Github配置与链接" class="headerlink" title="Github配置与链接"></a>Github配置与链接</h2><p><code>Hexo</code>工程准备好后，接下来就是将其发布到<code>github</code>并实现在线访问。</p><h3 id="注册github并创建repository"><a href="#注册github并创建repository" class="headerlink" title="注册github并创建repository"></a>注册<code>github</code>并创建<code>repository</code></h3><p>如果没有<code>github</code>账号，则先注册，然后创建一个符合<a href="https://pages.github.com/" target="_blank" rel="noopener"><code>github pages</code></a>要求的<code>repository</code>，其实就是创建一个和用户一致的并且以<code>.github.io</code>结尾的工程。例如我的就是<code>xuemzhan.githu.io</code>。</p><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/create_repo.png" alt="create_repo"></p><h3 id="Gitbash配置与链接"><a href="#Gitbash配置与链接" class="headerlink" title="Gitbash配置与链接"></a>Gitbash配置与链接</h3><p>首先设置Git的用户与邮箱<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name = "xuemzhan"</span><br><span class="line">git config --global user.email = "xuemzhan@163.com"</span><br></pre></td></tr></table></figure></p><p>然后使用<code>ssh-keygen</code>创建<code>RSA</code>公钥，如果存在则直接拷贝公钥内容。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "xuemzhan@163.com"</span><br></pre></td></tr></table></figure><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/gitbash_cmd.png" alt="gitbash_cmd"></p><p>登入<code>github</code>, 选择<code>Settings</code>-&gt;<code>SSH and GPG keys</code>-&gt;<code>New SSH key</code>将复制到公钥内容填入。</p><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/fill_rsa_pub.png" alt="fill_rsa_pub"></p><p>使用如下命令进行测试<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure></p><p>如果出现如下内容，则标明git配置及链接成功</p><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/ssh_test.png" alt="ssh_test"></p><h3 id="hexo工程发布"><a href="#hexo工程发布" class="headerlink" title="hexo工程发布"></a><code>hexo</code>工程发布</h3><p>修改网站配置文件<code>_config.yml</code>中关于<code>Deployment</code>的内容<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> <span class="string">git</span></span><br><span class="line"><span class="attr">  repo:</span> <span class="attr">https://github.com/xuemzhan/xuemzhan.github.io.git</span></span><br><span class="line"><span class="attr">  branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure></p><blockquote><p>注：这里有一个坑是<code>type</code>类型一定是<code>git</code>而不是<code>github</code></p></blockquote><p>然后将博客站点发布到<code>github</code>上<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure></p><p>最后通过<code>yourname.github.io</code>进行访问测试，本人的如下：</p><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/deploy_screen.png" alt="deploy_screen"></p><h2 id="域名解析及测试"><a href="#域名解析及测试" class="headerlink" title="域名解析及测试"></a>域名解析及测试</h2><h3 id="查找github-pages对应IP"><a href="#查找github-pages对应IP" class="headerlink" title="查找github pages对应IP"></a>查找<code>github pages</code>对应IP</h3><p>如果自己申请了域名，可以将自己的域名绑定到<code>github pages</code>上。本人的域名实在阿里云上申请的，所有路由解析需要在上面进行设定。设定前，需要查看自己<code>github pages</code>指向的<code>IP</code>地址</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ping -4 xuemzhan.github.io</span><br></pre></td></tr></table></figure><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/ping_result.png" alt="ping_result"></p><h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><p>进入域名解析页面填写DNS解析规则</p><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/dNS_jiexi.png" alt="DNS_jiexi"></p><h3 id="创建域名CNAME"><a href="#创建域名CNAME" class="headerlink" title="创建域名CNAME"></a>创建域名<code>CNAME</code></h3><p>在<code>hexo</code>工程的<code>source</code>文件夹中，创建文件<code>CNAME</code>,其中内容的是自己的域名。</p><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/cname_file.png" alt="cname_file"></p><p>最后，重新生成并发布</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure><p><img src="/2018/06/08/guider/hexo/Hexo安装与配置/success_sc.png" alt="success_sc"></p><h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><table><thead><tr><th>命令名称</th><th>描述</th></tr></thead><tbody><tr><td>hexo clean</td><td>clean 清除缓存文件<code>db.json</code>和已生成的静态文件 <code>public</code>文件夹中</td></tr><tr><td>hexo g</td><td>generate 生成静态文件</td></tr><tr><td>hexo s</td><td>server 启动服务器</td></tr><tr><td>hexo d</td><td>deploy 部署网站。部署网站前，需要预先生成静态文件</td></tr><tr><td>hexo new post “title”</td><td>创建一篇新的博文</td></tr><tr><td>hexo new page “title”</td><td>创建一个新的页面</td></tr></tbody></table><h3 id="需要的依赖包"><a href="#需要的依赖包" class="headerlink" title="需要的依赖包"></a>需要的依赖包</h3><table><thead><tr><th>包名称</th><th>依赖操作</th></tr></thead><tbody><tr><td>hexo-deployer-git</td><td>hexo d</td></tr><tr><td>hexo-asset-image</td><td>用于图片插入</td></tr></tbody></table>]]></content>
     
@@ -254,9 +310,9 @@
       <category term="工具类" scheme="http://www.halfbaker.com/categories/guider/%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
     
-      <category term="教程" scheme="http://www.halfbaker.com/tags/%E6%95%99%E7%A8%8B/"/>
-    
       <category term="Hexo" scheme="http://www.halfbaker.com/tags/Hexo/"/>
+    
+      <category term="教程" scheme="http://www.halfbaker.com/tags/%E6%95%99%E7%A8%8B/"/>
     
   </entry>
   
