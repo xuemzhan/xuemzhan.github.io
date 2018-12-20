@@ -1,6 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2018%2F12%2F12%2Ftech%2Fcrypt%2FGemalto%E8%BD%AF%E7%A1%AC%E7%8B%97%E8%AE%BE%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[Gemalto Sentinel LDK 设置安装将Installation Disk中的文件安装到Windows系统中，一般也指EMS的安装 硬Key制作与使用 在EMS中添加Feature和Product(可以参照官方文档)，在配饰feature时注意feature的ID，该ID在加密文件时需要。 新建Entitlements，选择Product，插入黑色的Key进行烧制 使用http://localhost:1947查看生成的key 将安装Disk中Linux拷贝到需要运行Docker的宿主服务器中 安装Linux/Redistribute/Runtime/aksusbd_7.80-1_amd64.deb，并开放1947端口 1dpkg -i aksusbd_7.80-1_amd64.deb 使用Linux/VectorTools/Envelope/linuxenv 对so文件进行加密， DEMOMA.hvc是工具授权文件 1./linuxenv -d -v:DEMOMA.hvc -f:5001 util.so util_p.so 在Docker镜像中安装aksusbd驱动，并使用privileged模式启动镜像。 软Key制作与使用]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2018%2F10%2F25%2Ftech%2Fjenkins%2F%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[构建用户组和用户 12#sudo groupadd build#sudo useradd -d /jenkins -p l1admin --groups build jenkins]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[CodeReview使用向导]]></title>
+    <url>%2F2018%2F08%2F02%2Fguider%2Fdevops%2FCodeReview%E4%BD%BF%E7%94%A8%E5%90%91%E5%AF%BC%2F</url>
+    <content type="text"><![CDATA[代码审核（Code Review）是软件研发质量保障机制中非常重要的一环，能够有效提高代码质量。目前团队使用的工具是基于gerrit搭建，结合git-review工具提交代码审查申请。 环境软件要求 git python 账号创建与配置目前gerrit系统没有与公司账号系统打通，因此在使用系统需要账号的设置工作。设置工作包括账号申请和账号设置两个步骤。 账号申请将ITCode发送给Gerrit系统管理员`zhangxm34@lenovo.com，邮件题目标明&quot;Gerrit`账号申请”。通过申请后管理员会将密码通过邮箱发送给申请者。 设置账号账号设置需要如下五个步骤： 1.登入Gerrit系统 http://10.100.208.502.进入系统后点击右上角用户名，选择下拉框的Settings选项3.使用ssh-keygen命令生成个人的SSH Key1234# 在windows中使用右键`Git Bash Here`打开$ ssh-keygen -t rsa -C &lt;itcode&gt;@lenovo.com -f ~/.ssh/id_gerrit# 复制公共Key$ cat ~/.ssh/id_gerrit.pub 4.在左边栏Settings菜单中选择SSH Public Keys，然后将3步复制的Key添加的系统中。5.验证系统是否连接成功12345678910111213$ ssh -p 29418 -i ~/.ssh/id_gerrit 10.100.208.50 -l &lt;your itcode&gt;# 如果连接成功则会出现如下提示**** Welcome to Gerrit Code Review **** Hi &lt;your itcode&gt;, you have successfully connected over SSH. Unfortunately, interactive shells are disabled. To clone a hosted Git repository, use: git clone ssh://zhangxm34@10.100.208.50:29418/REPOSITORY_NAME.gitConnection to 10.100.208.50 closed. 工具设置Gerrit系统支持原生的git命令，但命令比较复杂，因此需要git-review辅助开发人员进行相关操作。如果不想安装可以自行查看Gerrit的相关文档。 git-review下载安装git-review下载安装比较方便，在python环境下直接使用pip下载安装。1$ pip install git-review 参数设置git参数12$ git config --global user.name &lt;your itcode&gt;$ git config --global user.email &lt;your itcode&gt;@lenovo.com ssh配置文件在home目录（windows：c/Users/&lt; your computer account name&gt;/）下.ssh文件夹中添加config文件，配置内容如下12345678910111213# gitlab for LenovoHost gitlab.lenovo.comPreferredAuthentications publickeyIdentityFile ~/.ssh/id_rsaUser zhangxm34# gitlab for ci test# 克隆源代码Host 10.100.208.50Port 2222PreferredAuthentications publickeyIdentityFile ~/.ssh/id_rsaUser zhangxm34 使用示例下载源代码12345678$ git clone git@10.100.208.50:zhangxm/CapLogger.gitCloning into 'CapLogger'...remote: Counting objects: 25, done.remote: Compressing objects: 100% (18/18), done.remote: Total 25 (delta 0), reused 0 (delta 0)Receiving objects: 100% (25/25), 7.07 KiB | 1.18 MiB/s, done.$ cd CapLogger 初始化git-review123$ git review -sCreating a git remote called 'gerrit' that maps to: ssh://zhangxm34@10.100.208.50:29418/CapLogger 修改代码并提交1234$ echo "hello world from zhangxm34" &gt;&gt; README.md$ git add .$ git commit -m 'zhangxm34 review test'$ git review 经过上述步骤，提交者会收到一份邮件，表明Review请求已经提交成功，可以登入Gerrit系统进行查看。]]></content>
+      <categories>
+        <category>教程系列</category>
+        <category>Devops</category>
+      </categories>
+      <tags>
+        <tag>gerrit</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git命令大全]]></title>
+    <url>%2F2018%2F08%2F01%2Ftips%2FGit%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8%2F</url>
+    <content type="text"><![CDATA[Git是开发过程中经常用到的工具，本文主要将日常中常用的git命令进行梳理和记录。 Git主流程图在开始罗列命令前，先给一张经常看到的图，这图正式所谓的“大道至简”，虽然简单，但也不简单。 Git命令归类查看、添加、提交、删除、找回，重置修改文件1234567891011121314151617181920212223git help &lt;command&gt; # 显示command的helpgit show # 显示某次提交的内容 git show $idgit co -- &lt;file&gt; # 抛弃工作区修改git co . # 抛弃工作区修改git add &lt;file&gt; # 将工作文件修改提交到本地暂存区git add . # 将所有修改过的工作文件提交暂存区git rm &lt;file&gt; # 从版本库中删除文件git rm &lt;file&gt; --cached # 从版本库中删除文件，但不删除文件git reset &lt;file&gt; # 从暂存区恢复到工作文件git reset -- . # 从暂存区恢复到工作文件git reset --hard # 恢复最近一次提交过的状态，即放弃上次提交后的所有本次修改git ci &lt;file&gt;git ci .git ci -a # 将git add, git rm和git ci等操作都合并在一起做 git ci -am "some comments"git ci --amend # 修改最后一次提交记录git revert &lt;$id&gt; # 恢复某次提交的状态，恢复动作本身也创建次提交对象git revert HEAD # 恢复最后一次提交的状态 查看文件diff123456git diff &lt;file&gt; # 比较当前文件和暂存区文件差异 git diffgit diff &lt;id1&gt;&lt;id2&gt; # 比较两次提交之间的差异git diff &lt;branch1&gt;..&lt;branch2&gt; # 在两个分支之间比较git diff --staged # 比较暂存区和版本库差异git diff --cached # 比较暂存区和版本库差异git diff --stat # 仅仅比较统计信息 查看提交记录1234git log git log &lt;file&gt; # 查看该文件每次提交记录git log -p &lt;file&gt; # 查看每次详细修改内容的diffgit log -p -2 # 查看最近两次详细修改内容的diffgit log --stat #查看提交统计信息 Git 本地分支管理查看、切换、创建和删除分支1234567891011121314git br -r # 查看远程分支git br &lt;new_branch&gt; # 创建新的分支git br -v # 查看各个分支最后提交信息git br --merged # 查看已经被合并到当前分支的分支git br --no-merged # 查看尚未被合并到当前分支的分支git co &lt;branch&gt; # 切换到某个分支git co -b &lt;new_branch&gt; # 创建新的分支，并且切换过去git co -b &lt;new_branch&gt; &lt;branch&gt; # 基于branch创建新的new_branchgit co $id # 把某次历史提交记录checkout出来，但无分支信息，切换到其他分支会自动删除git co $id -b &lt;new_branch&gt; # 把某次历史提交记录checkout出来，创建成一个分支git br -d &lt;branch&gt; # 删除某个分支git br -D &lt;branch&gt; # 强制删除某个分支 (未被合并的分支被删除的时候需要强制) 分支合并和rebase12345git merge &lt;branch&gt; # 将branch分支合并到当前分支git merge origin/master --no-ff # 不要Fast-Foward合并，这样可以生成merge提交git rebase master &lt;branch&gt; # 将master rebase到branch，相当于：git co &lt;branch&gt; &amp;&amp; git rebase master &amp;&amp; git co master &amp;&amp; git merge &lt;branch&gt; Git补丁管理(方便在多台机器上开发同步时用)123git diff &gt; ../sync.patch # 生成补丁git apply ../sync.patch # 打补丁git apply --check ../sync.patch #测试补丁能否成功 Git暂存管理1234git stash # 暂存git stash list # 列所有stashgit stash apply # 恢复暂存的内容git stash drop # 删除暂存区 Git远程分支管理12345678910111213141516git pull # 抓取远程仓库所有分支更新并合并到本地git pull --no-ff # 抓取远程仓库所有分支更新并合并到本地，不要快进合并git fetch origin # 抓取远程仓库更新git merge origin/master # 将远程主分支合并到本地当前分支git co --track origin/branch # 跟踪某个远程分支创建相应的本地分支git co -b &lt;local_branch&gt; origin/&lt;remote_branch&gt; # 基于远程分支创建本地分支，功能同上git push # push所有分支git push origin master # 将本地主分支推到远程主分支git push -u origin master # 将本地主分支推到远程(如无远程主分支则创建，用于初始化远程仓库)git push origin &lt;local_branch&gt; # 创建远程分支， origin是远程仓库名git push origin &lt;local_branch&gt;:&lt;remote_branch&gt; # 创建远程分支git push origin :&lt;remote_branch&gt; #先删除本地分支(git br -d &lt;branch&gt;)，然后再push删除远程分支 Git远程仓库管理12345git remote -v # 查看远程服务器地址和仓库名称git remote show origin # 查看远程服务器仓库状态git remote add origin git@ github:robbin/robbin_site.git # 添加远程仓库地址git remote set-url origin git@ github.com:robbin/robbin_site.git # 设置远程仓库地址(用于修改远程仓库地址)git remote rm &lt;repository&gt; # 删除远程仓库 创建远程仓库1234567git clone --bare robbin_site robbin_site.git # 用带版本的项目创建纯版本仓库scp -r my_project.git git@ git.csdn.net:~ # 将纯仓库上传到服务器上mkdir robbin_site.git &amp;&amp; cd robbin_site.git &amp;&amp; git --bare init # 在服务器创建纯仓库git remote add origin git@ github.com:robbin/robbin_site.git # 设置远程仓库地址git push -u origin master # 客户端首次提交git push -u origin develop # 首次将本地develop分支提交到远程develop分支，并且trackgit remote set-head origin master # 设置远程仓库的HEAD指向master分支 Others123#也可以命令设置跟踪远程库和本地库git branch --set-upstream master origin/mastergit branch --set-upstream develop origin/develop]]></content>
+      <categories>
+        <category>小窍门</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Shell使用小记]]></title>
+    <url>%2F2018%2F07%2F31%2Ftips%2FShell%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[结合expect工具实现命令自动输入123456789101112131415161718192021222324NUM=$#if [ $NUM != 3 ]; then echo "Add gerrit user and password:" echo " Usage: add_gerrit_user UserName Password Email" exit 1;fiNAME=$1if [ $NUM -eq 2 ];then PWD=$2else PWD=l1adminfiexpect &lt;&lt; __EOFspawn htpasswd /etc/nginx/conf.d/gerrit.passwd $NAMEexpect &#123; "New password" &#123; send "$PWD\r"; exp_continue &#125; "Re-type new password" &#123; send "$PWD\r"; exp_continue &#125;&#125;__EOF]]></content>
+      <categories>
+        <category>小窍门</category>
+      </categories>
+      <tags>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[开发客户代码环境工具与配置]]></title>
+    <url>%2F2018%2F07%2F30%2Fguider%2Fdevops%2F%E5%BC%80%E5%8F%91%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[导言：针对不同的语言，每一位开发人员都有各自熟悉的开发工具，本教程主要描述怎样搭建CAP的代码开发环境，包括工具选择和开发环境设置两个部分，并支持Windows和Linux两大操作系统。其中涉及到的Java与Pthon语言开发工具和开发环境不做描述。 工具选择 git (git for windows) git-review]]></content>
+      <categories>
+        <category>教程系列</category>
+        <category>Devops</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>git-review</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Mysql[MariaDB]使用小记]]></title>
     <url>%2F2018%2F07%2F23%2Ftips%2FMysql-MariaDB-%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[启用远程Root访问权限12MariaDB [(none)]&gt; grant all privileges on *.* to 'root'@'%' identified by \'l1admin' with grant option;]]></content>
@@ -39,7 +96,7 @@
   <entry>
     <title><![CDATA[Git命令小记]]></title>
     <url>%2F2018%2F07%2F18%2Ftips%2FGit%E5%91%BD%E4%BB%A4%E5%B0%8F%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[记录日常Git使用过程中的点滴 github和gitlab仓库一起使用 分别创建github和gitlab本地SSH RSA Key 12$ ssh-keygen -t rsa -C "注册的gitlab邮箱" -f ~/.ssh/gitlab_rsa$ ssh-keygen -t rsa -C "注册的gitlab邮箱" -f ~/.ssh/github_rsa 将生成的gitlab_rsa.pub和github_rsa.pub拷贝到系统中Profile-&gt;Settings-&gt;SSH Keys 12$ cat gitlab_rsa.pub | clip$ cat github_rsa.pub | clip 在${USER}/.ssh/目录下添加config文件，并进行配置 123456789101112131415161718192021# 配置文件参数# Host : Host可以看作是一个你要识别的模式，对识别的模式，进行配置对应的的主机名和ssh文件# HostName : 要登录主机的主机名# Port 端口号，默认为22# User : 登录名# IdentityFile : 指明上面User对应的identityFile路径# githubHost github.comHostName github.comPreferredAuthentications publickeyIdentityFile ~/.ssh/github_rsaUser xuemzhan# gitlabHost gitlab.lenovo.comHostName gitlab.lenovo.comPort 50022PreferredAuthentications publickeyIdentityFile ~/.ssh/gitlab_rsaUser xuemzhan 在不同的项目中设置用户和邮箱 123$ git init$ git config --local user.name 'personal'$ git config --local user.email 'personal@xxxx.com' 测试 12345# 测试github$ ssh -T git@github.com# 测试gitlab$ ssh -T git@gitlab.com]]></content>
+    <content type="text"><![CDATA[记录日常Git使用过程中的点滴 github和gitlab仓库一起使用 分别创建github和gitlab本地SSH RSA Key 12$ ssh-keygen -t rsa -C "注册的gitlab邮箱" -f ~/.ssh/gitlab_rsa$ ssh-keygen -t rsa -C "注册的gitlab邮箱" -f ~/.ssh/github_rsa 将生成的gitlab_rsa.pub和github_rsa.pub拷贝到系统中Profile-&gt;Settings-&gt;SSH Keys 12$ cat gitlab_rsa.pub | clip$ cat github_rsa.pub | clip 在${USER}/.ssh/目录下添加config文件，并进行配置 123456789101112131415161718192021# 配置文件参数# Host : Host可以看作是一个你要识别的模式，对识别的模式，进行配置对应的的主机名和ssh文件# HostName : 要登录主机的主机名# Port 端口号，默认为22# User : 登录名# IdentityFile : 指明上面User对应的identityFile路径# githubHost github.comHostName github.comPreferredAuthentications publickeyIdentityFile ~/.ssh/github_rsaUser xuemzhan# gitlabHost gitlab.lenovo.comHostName gitlab.lenovo.comPort 50022PreferredAuthentications publickeyIdentityFile ~/.ssh/gitlab_rsaUser xuemzhan 在不同的项目中设置用户和邮箱 123456789101112$ git init$ git config --local user.name 'personal'$ git config --local user.email 'personal@xxxx.com'```s5. 测试```shell# 测试github$ ssh -T git@github.com# 测试gitlab$ ssh -T git@gitlab.com Bad owner or permissions on /home//.ssh/config 1$chmod 600 config git clone --bare与git clone --mirror区别两个命令都表示克隆的版本不包含工作区，直接是版本的内容，这样克隆的版本成为裸版本库。一般约定裸版本库以.git为后缀。两者的区分是mirror克隆的对上游版本进行了注册，这样可以使用git fetch与上流的版本进行同步，而bare则没有。 在提交前撤销git commit123456# 查看需要撤销的`id`$ git log#完成撤销,同时将代码恢复到前一commit_id 对应的版本$ git reset --hard &lt;id&gt;#完成Commit命令的撤销，但是不对代码修改进行撤销，可以直接通过git commit 重新提交对本地代码的修改$ git reset &lt;id&gt;]]></content>
       <categories>
         <category>小窍门</category>
       </categories>
