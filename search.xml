@@ -2,8 +2,13 @@
 <search>
   <entry>
     <title></title>
+    <url>%2F2018%2F12%2F20%2Ftech%2Finnvo%2F%E4%B8%93%E5%88%A9%E8%AE%BE%E6%83%B3%2F</url>
+    <content type="text"><![CDATA[专利构思 一种移动条件下单GPU多模型的调度方法 一种移动条件下双GPU多模型的调度方法 一种移动条件下多GPU多模型的调度方法 云平台上一种人工智能服务数据收集方法 云平台上一种人工智能服务数据收集与再训练结构 一种人工智能服务数据快速储存方法]]></content>
+  </entry>
+  <entry>
+    <title></title>
     <url>%2F2018%2F12%2F12%2Ftech%2Fcrypt%2FGemalto%E8%BD%AF%E7%A1%AC%E7%8B%97%E8%AE%BE%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[Gemalto Sentinel LDK 设置安装将Installation Disk中的文件安装到Windows系统中，一般也指EMS的安装 硬Key制作与使用 在EMS中添加Feature和Product(可以参照官方文档)，在配饰feature时注意feature的ID，该ID在加密文件时需要。 新建Entitlements，选择Product，插入黑色的Key进行烧制 使用http://localhost:1947查看生成的key 将安装Disk中Linux拷贝到需要运行Docker的宿主服务器中 安装Linux/Redistribute/Runtime/aksusbd_7.80-1_amd64.deb，并开放1947端口 1dpkg -i aksusbd_7.80-1_amd64.deb 使用Linux/VectorTools/Envelope/linuxenv 对so文件进行加密， DEMOMA.hvc是工具授权文件 1./linuxenv -d -v:DEMOMA.hvc -f:5001 util.so util_p.so 在Docker镜像中安装aksusbd驱动，并使用privileged模式启动镜像。 软Key制作与使用]]></content>
+    <content type="text"><![CDATA[Gemalto Sentinel LDK 设置安装将Installation Disk中的文件安装到Windows系统中，一般也指EMS的安装 硬Key制作与使用 在EMS中添加Feature和Product(可以参照官方文档)，在配饰feature时注意feature的ID，该ID在加密文件时需要。 新建Entitlements，选择Product，插入黑色的Key进行烧制 使用http://localhost:1947查看生成的key 将安装Disk中Linux拷贝到需要运行Docker的宿主服务器中 安装Linux/Redistribute/Runtime/aksusbd_7.80-1_amd64.deb，并开放1947端口 1dpkg -i aksusbd_7.80-1_amd64.deb 使用Linux/VectorTools/Envelope/linuxenv 对so文件进行加密， DEMOMA.hvc是工具授权文件 1./linuxenv -d -v:DEMOMA.hvc -f:5001 util.so util_p.soz 在Docker镜像中安装aksusbd驱动，并使用privileged模式启动镜像。 软Key制作与使用]]></content>
   </entry>
   <entry>
     <title></title>
@@ -258,9 +263,9 @@
         <category>工具类</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>NexT</tag>
         <tag>教程</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -272,8 +277,8 @@
         <category>工具类</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
         <tag>教程</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>

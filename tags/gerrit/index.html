@@ -116,7 +116,7 @@
 <meta name="keywords" content="技术, 生活, 感想">
 <meta property="og:type" content="website">
 <meta property="og:title" content="半吊码工">
-<meta property="og:url" content="http://www.halfbaker.com/tags/gerrit/index.html">
+<meta property="og:url" content="http://www.halfbaker.com/tags/Gerrit/index.html">
 <meta property="og:site_name" content="半吊码工">
 <meta property="og:description" content="半路出家, 不似半路出家人">
 <meta property="og:locale" content="zh-CN">
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://www.halfbaker.com/tags/gerrit/"/>
+  <link rel="canonical" href="http://www.halfbaker.com/tags/Gerrit/"/>
 
 
 
@@ -141,7 +141,7 @@
   };
 </script>
 
-  <title>标签: gerrit | 半吊码工</title>
+  <title>标签: Gerrit | 半吊码工</title>
   
 
 
@@ -371,7 +371,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>gerrit<small>标签</small>
+        <h1>Gerrit<small>标签</small>
         </h1>
       </div>
 
@@ -383,37 +383,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/08/02/guider/devops/CodeReview使用向导/" itemprop="url">
+            <a class="post-title-link" href="/2018/07/18/guider/devops/Jenkins-Gerrit-Gitlab构建随记/" itemprop="url">
               
-                <span itemprop="name">CodeReview使用向导</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-02T10:10:13+08:00"
-              content="2018-08-02" >
-          08-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/07/20/guider/devops/基于Docker镜像的Gerrit安装与配置/" itemprop="url">
-              
-                <span itemprop="name">基于Docker镜像的Gerrit安装与配置</span>
+                <span itemprop="name">Jenkins+Gerrit+Gitlab构建随记</span>
               
             </a>
         
@@ -421,9 +393,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-20T08:33:59+08:00"
-              content="2018-07-20" >
-          07-20
+              datetime="2018-07-18T09:29:07+08:00"
+              content="2018-07-18" >
+          07-18
         </time>
       </div>
 
@@ -484,7 +456,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">25</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -668,7 +640,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -682,7 +654,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">34k</span>
+    <span title="站点总字数">35k</span>
   
 
   
@@ -1271,6 +1243,33 @@
       $(e).after($wrap)
       $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
         var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+</body>
+</html>
+.code').find('.line').map(function (i, e) {
           return $(e).text()
         }).toArray().join('\n')
         var ta = document.createElement('textarea')

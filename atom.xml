@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.halfbaker.com/"/>
-  <updated>2018-12-12T11:03:44.286Z</updated>
+  <updated>2018-12-20T13:22:44.517Z</updated>
   <id>http://www.halfbaker.com/</id>
   
   <author>
@@ -18,12 +18,36 @@
   
   <entry>
     <title></title>
+    <link href="http://www.halfbaker.com/2018/12/20/tech/innvo/%E4%B8%93%E5%88%A9%E8%AE%BE%E6%83%B3/"/>
+    <id>http://www.halfbaker.com/2018/12/20/tech/innvo/专利设想/</id>
+    <published>2018-12-20T11:16:34.277Z</published>
+    <updated>2018-12-20T13:22:44.517Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="专利构思"><a href="#专利构思" class="headerlink" title="专利构思"></a>专利构思</h1><ol><li><p>一种移动条件下单GPU多模型的调度方法</p></li><li><p>一种移动条件下双GPU多模型的调度方法</p></li><li><p>一种移动条件下多GPU多模型的调度方法</p></li><li>云平台上一种人工智能服务数据收集方法</li><li>云平台上一种人工智能服务数据收集与再训练结构</li><li>一种人工智能服务数据快速储存方法</li><li></li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;专利构思&quot;&gt;&lt;a href=&quot;#专利构思&quot; class=&quot;headerlink&quot; title=&quot;专利构思&quot;&gt;&lt;/a&gt;专利构思&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;一种移动条件下单GPU多模型的调度方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一种移动条件下双GPU多模型的调
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title></title>
     <link href="http://www.halfbaker.com/2018/12/12/tech/crypt/Gemalto%E8%BD%AF%E7%A1%AC%E7%8B%97%E8%AE%BE%E7%BD%AE/"/>
     <id>http://www.halfbaker.com/2018/12/12/tech/crypt/Gemalto软硬狗设置/</id>
     <published>2018-12-12T10:14:14.692Z</published>
-    <updated>2018-12-12T11:03:44.286Z</updated>
+    <updated>2018-12-20T13:22:48.677Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="Gemalto-Sentinel-LDK-设置"><a href="#Gemalto-Sentinel-LDK-设置" class="headerlink" title="Gemalto Sentinel LDK 设置"></a>Gemalto Sentinel LDK 设置</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>将<code>Installation Disk</code>中的文件安装到Windows系统中，一般也指EMS的安装</p><h2 id="硬Key制作与使用"><a href="#硬Key制作与使用" class="headerlink" title="硬Key制作与使用"></a>硬Key制作与使用</h2><ol><li>在EMS中添加Feature和Product(可以参照官方文档)，在配饰feature时注意feature的ID，该ID在加密文件时需要。</li><li>新建Entitlements，选择Product，插入黑色的Key进行烧制</li><li>使用<a href="http://localhost:1947查看生成的key" target="_blank" rel="noopener">http://localhost:1947查看生成的key</a></li><li>将安装Disk中Linux拷贝到需要运行Docker的宿主服务器中</li><li><p>安装Linux/Redistribute/Runtime/aksusbd_7.80-1_amd64.deb，并开放1947端口</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i aksusbd_7.80-1_amd64.deb</span><br></pre></td></tr></table></figure></li><li><p>使用Linux/VectorTools/Envelope/linuxenv 对so文件进行加密， DEMOMA.hvc是工具授权文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./linuxenv -d  -v:DEMOMA.hvc -f:5001 util.so util_p.so</span><br></pre></td></tr></table></figure></li><li><p>在Docker镜像中安装aksusbd驱动，并使用privileged模式启动镜像。</p></li></ol><h2 id="软Key制作与使用"><a href="#软Key制作与使用" class="headerlink" title="软Key制作与使用"></a>软Key制作与使用</h2>]]></content>
+    <content type="html"><![CDATA[<h1 id="Gemalto-Sentinel-LDK-设置"><a href="#Gemalto-Sentinel-LDK-设置" class="headerlink" title="Gemalto Sentinel LDK 设置"></a>Gemalto Sentinel LDK 设置</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>将<code>Installation Disk</code>中的文件安装到Windows系统中，一般也指EMS的安装</p><h2 id="硬Key制作与使用"><a href="#硬Key制作与使用" class="headerlink" title="硬Key制作与使用"></a>硬Key制作与使用</h2><ol><li>在EMS中添加Feature和Product(可以参照官方文档)，在配饰feature时注意feature的ID，该ID在加密文件时需要。</li><li>新建Entitlements，选择Product，插入黑色的Key进行烧制</li><li>使用<a href="http://localhost:1947查看生成的key" target="_blank" rel="noopener">http://localhost:1947查看生成的key</a></li><li>将安装Disk中Linux拷贝到需要运行Docker的宿主服务器中</li><li><p>安装Linux/Redistribute/Runtime/aksusbd_7.80-1_amd64.deb，并开放1947端口</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dpkg -i aksusbd_7.80-1_amd64.deb</span><br></pre></td></tr></table></figure></li><li><p>使用Linux/VectorTools/Envelope/linuxenv 对so文件进行加密， DEMOMA.hvc是工具授权文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./linuxenv -d  -v:DEMOMA.hvc -f:5001 util.so util_p.soz</span><br></pre></td></tr></table></figure></li><li><p>在Docker镜像中安装aksusbd驱动，并使用privileged模式启动镜像。</p></li></ol><h2 id="软Key制作与使用"><a href="#软Key制作与使用" class="headerlink" title="软Key制作与使用"></a>软Key制作与使用</h2>]]></content>
     
     <summary type="html">
     
@@ -540,38 +564,6 @@
     
     
       <category term="mysql" scheme="http://www.halfbaker.com/tags/mysql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>深度学习通用优化方法</title>
-    <link href="http://www.halfbaker.com/2018/06/12/tech/ai/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E9%80%9A%E7%94%A8%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95/"/>
-    <id>http://www.halfbaker.com/2018/06/12/tech/ai/深度学习通用优化方法/</id>
-    <published>2018-06-12T13:47:45.000Z</published>
-    <updated>2018-06-13T01:55:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>深度学习的最终目标是找到最优或者近似最优的模型。当有一个模型被训练出来后，怎么去改进？是否有一个通用的方法？</p></blockquote><h2 id="土豪法"><a href="#土豪法" class="headerlink" title="土豪法"></a>土豪法</h2><p>你认识或者自己就是研究领域的专家，拥有强大<code>GPU</code>计算集群，几乎没有限制的训练数据，先进模型的理论、架构与设计。最后有足够的时间和耐心，或者有助手帮助调参，迭代模型。</p><h2 id="通用法"><a href="#通用法" class="headerlink" title="通用法"></a>通用法</h2><p>通用法一般通过迁移开源的先进的模型、总结一些常用超参的调优手法进行改善模型的拟合时间和准确性。具体可以分为以下几个步骤：</p><h3 id="模型迁移前的准备："><a href="#模型迁移前的准备：" class="headerlink" title="模型迁移前的准备："></a>模型迁移前的准备：</h3><p>了解最新理论成果与理想的或者目前实践上最优的模型，研究其预训练体系结构。了解迁移学习的好处，思考要解决问题的领域与现有模型的共性问题。</p><h3 id="模型的裁剪"><a href="#模型的裁剪" class="headerlink" title="模型的裁剪"></a>模型的裁剪</h3><p>模型的前几层，主要是提取通用的和可以解释的特征。在迁移时，不需要修改和调整。输出层则需要进行修改，主要是使用适合应用领域的激活函数和输出维度替换模型的默认输出。</p><h3 id="训练优化"><a href="#训练优化" class="headerlink" title="训练优化"></a>训练优化</h3><p>1.使用较小的学习率，这是因为预训练的权重通常优于随机初始化的权重，因此修改要更为精细。<br>2.使用<code>Dropout</code>层。和传统的回归模型的<code>Ridge</code>和<code>LASSO</code>正则化一样，<code>Dropout</code>不会适用于所有的模型。他的适用取决于具体问题，需要进行测。<br>3.通过限制有些层的权重的最大范数（绝对值）来提高模型的泛化能力。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;深度学习的最终目标是找到最优或者近似最优的模型。当有一个模型被训练出来后，怎么去改进？是否有一个通用的方法？&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;土豪法&quot;&gt;&lt;a href=&quot;#土豪法&quot; class=&quot;headerlink&quot; titl
-      
-    
-    </summary>
-    
-      <category term="温故知新" scheme="http://www.halfbaker.com/categories/tech/"/>
-    
-      <category term="AI" scheme="http://www.halfbaker.com/categories/tech/AI/"/>
-    
-    
-      <category term="深度学习" scheme="http://www.halfbaker.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-      <category term="优化" scheme="http://www.halfbaker.com/tags/%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
