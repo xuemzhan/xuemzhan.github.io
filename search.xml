@@ -3,7 +3,7 @@
   <entry>
     <title></title>
     <url>%2F2018%2F12%2F20%2Ftech%2Finnvo%2F%E4%B8%93%E5%88%A9%E8%AE%BE%E6%83%B3%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[专利构思 一种移动条件下单GPU多模型的调度方法 一种移动条件下双GPU多模型的调度方法 一种移动条件下多GPU多模型的调度方法 云平台上一种人工智能服务数据收集方法 云平台上一种人工智能服务数据收集与再训练结构 一种人工智能服务数据快速储存方法]]></content>
   </entry>
   <entry>
     <title></title>
@@ -18,7 +18,7 @@
   <entry>
     <title><![CDATA[CodeReview使用向导]]></title>
     <url>%2F2018%2F08%2F02%2Fguider%2Fdevops%2FCodeReview%E4%BD%BF%E7%94%A8%E5%90%91%E5%AF%BC%2F</url>
-    <content type="text"><![CDATA[代码审核（Code Review）是软件研发质量保障机制中非常重要的一环，能够有效提高代码质量。目前团队使用的工具是基于gerrit搭建，结合git-review工具提交代码审查申请。 环境软件要求 git python 账号创建与配置目前gerrit系统没有与公司账号系统打通，因此在使用系统需要账号的设置工作。设置工作包括账号申请和账号设置两个步骤。 账号申请将ITCode发送给Gerrit系统管理员`zhangxm34@lenovo.com，邮件题目标明&quot;Gerrit`账号申请”。通过申请后管理员会将密码通过邮箱发送给申请者。 设置账号账号设置需要如下五个步骤： 1.登入Gerrit系统 http://10.100.208.502.进入系统后点击右上角用户名，选择下拉框的Settings选项3.使用ssh-keygen命令生成个人的SSH Key1234# 在windows中使用右键`Git Bash Here`打开$ ssh-keygen -t rsa -C &lt;itcode&gt;@lenovo.com -f ~/.ssh/id_gerrit# 复制公共Key$ cat ~/.ssh/id_gerrit.pub 4.在左边栏Settings菜单中选择SSH Public Keys，然后将3步复制的Key添加的系统中。5.验证系统是否连接成功12345678910111213$ ssh -p 29418 -i ~/.ssh/id_gerrit 10.100.208.50 -l &lt;your itcode&gt;# 如果连接成功则会出现如下提示**** Welcome to Gerrit Code Review **** Hi &lt;your itcode&gt;, you have successfully connected over SSH. Unfortunately, interactive shells are disabled. To clone a hosted Git repository, use: git clone ssh://zhangxm34@10.100.208.50:29418/REPOSITORY_NAME.gitConnection to 10.100.208.50 closed. 工具设置Gerrit系统支持原生的git命令，但命令比较复杂，因此需要git-review辅助开发人员进行相关操作。如果不想安装可以自行查看Gerrit的相关文档。 git-review下载安装git-review下载安装比较方便，在python环境下直接使用pip下载安装。1$ pip install git-review 参数设置git参数12$ git config --global user.name &lt;your itcode&gt;$ git config --global user.email &lt;your itcode&gt;@lenovo.com ssh配置文件在home目录（windows：c/Users/&lt; your computer account name&gt;/）下.ssh文件夹中添加config文件，配置内容如下12345678910111213# gitlab for LenovoHost gitlab.lenovo.comPreferredAuthentications publickeyIdentityFile ~/.ssh/id_rsaUser zhangxm34# gitlab for ci test# 克隆源代码Host 10.100.208.50Port 2222PreferredAuthentications publickeyIdentityFile ~/.ssh/id_rsaUser zhangxm34 使用示例下载源代码12345678$ git clone git@10.100.208.50:zhangxm/CapLogger.gitCloning into 'CapLogger'...remote: Counting objects: 25, done.remote: Compressing objects: 100% (18/18), done.remote: Total 25 (delta 0), reused 0 (delta 0)Receiving objects: 100% (25/25), 7.07 KiB | 1.18 MiB/s, done.$ cd CapLogger 初始化git-review123$ git review -sCreating a git remote called 'gerrit' that maps to: ssh://zhangxm34@10.100.208.50:29418/CapLogger 修改代码并提交1234$ echo "hello world from zhangxm34" &gt;&gt; README.md$ git add .$ git commit -m 'zhangxm34 review test'$ git review 经过上述步骤，提交者会收到一份邮件，表明Review请求已经提交成功，可以登入Gerrit系统进行查看。]]></content>
+    <content type="text"><![CDATA[代码审核（Code Review）是软件研发质量保障机制中非常重要的一环，能够有效提高代码质量。目前团队使用的工具是基于gerrit搭建，结合git-review工具提交代码审查申请。 环境软件要求 git python 账号创建与配置目前gerrit系统没有与公司账号系统打通，因此在使用系统需要账号的设置工作。设置工作包括账号申请和账号设置两个步骤。 账号申请将ITCode发送给Gerrit系统管理员`zhangxm@xxxx.com，邮件题目标明&quot;Gerrit`账号申请”。通过申请后管理员会将密码通过邮箱发送给申请者。 设置账号账号设置需要如下五个步骤： 1.登入Gerrit系统 http://10.100.208.502.进入系统后点击右上角用户名，选择下拉框的Settings选项3.使用ssh-keygen命令生成个人的SSH Key1234# 在windows中使用右键`Git Bash Here`打开$ ssh-keygen -t rsa -C &lt;itcode&gt;@xxxx.com -f ~/.ssh/id_gerrit# 复制公共Key$ cat ~/.ssh/id_gerrit.pub 4.在左边栏Settings菜单中选择SSH Public Keys，然后将3步复制的Key添加的系统中。5.验证系统是否连接成功12345678910111213$ ssh -p 29418 -i ~/.ssh/id_gerrit 10.100.208.50 -l &lt;your itcode&gt;# 如果连接成功则会出现如下提示**** Welcome to Gerrit Code Review **** Hi &lt;your itcode&gt;, you have successfully connected over SSH. Unfortunately, interactive shells are disabled. To clone a hosted Git repository, use: git clone ssh://zhangxm34@10.100.208.50:29418/REPOSITORY_NAME.gitConnection to 10.100.208.50 closed. 工具设置Gerrit系统支持原生的git命令，但命令比较复杂，因此需要git-review辅助开发人员进行相关操作。如果不想安装可以自行查看Gerrit的相关文档。 git-review下载安装git-review下载安装比较方便，在python环境下直接使用pip下载安装。1$ pip install git-review 参数设置git参数12$ git config --global user.name &lt;your itcode&gt;$ git config --global user.email &lt;your itcode&gt;@xxxx.com ssh配置文件在home目录（windows：c/Users/&lt; your computer account name&gt;/）下.ssh文件夹中添加config文件，配置内容如下12345678910111213# gitlab for xxxxHost gitlab.xxxx.comPreferredAuthentications publickeyIdentityFile ~/.ssh/id_rsaUser zhangxm34# gitlab for ci test# 克隆源代码Host 10.100.208.50Port 2222PreferredAuthentications publickeyIdentityFile ~/.ssh/id_rsaUser zhangxm34 使用示例下载源代码12345678$ git clone git@10.100.208.50:zhangxm/CapLogger.gitCloning into 'CapLogger'...remote: Counting objects: 25, done.remote: Compressing objects: 100% (18/18), done.remote: Total 25 (delta 0), reused 0 (delta 0)Receiving objects: 100% (25/25), 7.07 KiB | 1.18 MiB/s, done.$ cd CapLogger 初始化git-review123$ git review -sCreating a git remote called 'gerrit' that maps to: ssh://zhangxm34@10.100.208.50:29418/CapLogger 修改代码并提交1234$ echo "hello world from zhangxm34" &gt;&gt; README.md$ git add .$ git commit -m 'zhangxm34 review test'$ git review 经过上述步骤，提交者会收到一份邮件，表明Review请求已经提交成功，可以登入Gerrit系统进行查看。]]></content>
       <categories>
         <category>教程系列</category>
         <category>Devops</category>
@@ -101,7 +101,7 @@
   <entry>
     <title><![CDATA[Git命令小记]]></title>
     <url>%2F2018%2F07%2F18%2Ftips%2FGit%E5%91%BD%E4%BB%A4%E5%B0%8F%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[记录日常Git使用过程中的点滴 github和gitlab仓库一起使用 分别创建github和gitlab本地SSH RSA Key 12$ ssh-keygen -t rsa -C "注册的gitlab邮箱" -f ~/.ssh/gitlab_rsa$ ssh-keygen -t rsa -C "注册的gitlab邮箱" -f ~/.ssh/github_rsa 将生成的gitlab_rsa.pub和github_rsa.pub拷贝到系统中Profile-&gt;Settings-&gt;SSH Keys 12$ cat gitlab_rsa.pub | clip$ cat github_rsa.pub | clip 在${USER}/.ssh/目录下添加config文件，并进行配置 123456789101112131415161718192021# 配置文件参数# Host : Host可以看作是一个你要识别的模式，对识别的模式，进行配置对应的的主机名和ssh文件# HostName : 要登录主机的主机名# Port 端口号，默认为22# User : 登录名# IdentityFile : 指明上面User对应的identityFile路径# githubHost github.comHostName github.comPreferredAuthentications publickeyIdentityFile ~/.ssh/github_rsaUser xuemzhan# gitlabHost gitlab.lenovo.comHostName gitlab.lenovo.comPort 50022PreferredAuthentications publickeyIdentityFile ~/.ssh/gitlab_rsaUser xuemzhan 在不同的项目中设置用户和邮箱 123456789101112$ git init$ git config --local user.name 'personal'$ git config --local user.email 'personal@xxxx.com'```s5. 测试```shell# 测试github$ ssh -T git@github.com# 测试gitlab$ ssh -T git@gitlab.com Bad owner or permissions on /home//.ssh/config 1$chmod 600 config git clone --bare与git clone --mirror区别两个命令都表示克隆的版本不包含工作区，直接是版本的内容，这样克隆的版本成为裸版本库。一般约定裸版本库以.git为后缀。两者的区分是mirror克隆的对上游版本进行了注册，这样可以使用git fetch与上流的版本进行同步，而bare则没有。 在提交前撤销git commit123456# 查看需要撤销的`id`$ git log#完成撤销,同时将代码恢复到前一commit_id 对应的版本$ git reset --hard &lt;id&gt;#完成Commit命令的撤销，但是不对代码修改进行撤销，可以直接通过git commit 重新提交对本地代码的修改$ git reset &lt;id&gt;]]></content>
+    <content type="text"><![CDATA[记录日常Git使用过程中的点滴 github和gitlab仓库一起使用 分别创建github和gitlab本地SSH RSA Key 12$ ssh-keygen -t rsa -C "注册的gitlab邮箱" -f ~/.ssh/gitlab_rsa$ ssh-keygen -t rsa -C "注册的gitlab邮箱" -f ~/.ssh/github_rsa 将生成的gitlab_rsa.pub和github_rsa.pub拷贝到系统中Profile-&gt;Settings-&gt;SSH Keys 12$ cat gitlab_rsa.pub | clip$ cat github_rsa.pub | clip 在${USER}/.ssh/目录下添加config文件，并进行配置 123456789101112131415161718192021# 配置文件参数# Host : Host可以看作是一个你要识别的模式，对识别的模式，进行配置对应的的主机名和ssh文件# HostName : 要登录主机的主机名# Port 端口号，默认为22# User : 登录名# IdentityFile : 指明上面User对应的identityFile路径# githubHost github.comHostName github.comPreferredAuthentications publickeyIdentityFile ~/.ssh/github_rsaUser xuemzhan# gitlabHost gitlab.xxxxx.comHostName gitlab.xxxxx.comPort 50022PreferredAuthentications publickeyIdentityFile ~/.ssh/gitlab_rsaUser xuemzhan 在不同的项目中设置用户和邮箱 123456789101112$ git init$ git config --local user.name 'personal'$ git config --local user.email 'personal@xxxx.com'```s5. 测试```shell# 测试github$ ssh -T git@github.com# 测试gitlab$ ssh -T git@gitlab.com Bad owner or permissions on /home//.ssh/config 1$chmod 600 config git clone --bare与git clone --mirror区别两个命令都表示克隆的版本不包含工作区，直接是版本的内容，这样克隆的版本成为裸版本库。一般约定裸版本库以.git为后缀。两者的区分是mirror克隆的对上游版本进行了注册，这样可以使用git fetch与上流的版本进行同步，而bare则没有。 在提交前撤销git commit123456# 查看需要撤销的`id`$ git log#完成撤销,同时将代码恢复到前一commit_id 对应的版本$ git reset --hard &lt;id&gt;#完成Commit命令的撤销，但是不对代码修改进行撤销，可以直接通过git commit 重新提交对本地代码的修改$ git reset &lt;id&gt;]]></content>
       <categories>
         <category>小窍门</category>
       </categories>
@@ -263,9 +263,9 @@
         <category>工具类</category>
       </categories>
       <tags>
+        <tag>Hexo</tag>
         <tag>NexT</tag>
         <tag>教程</tag>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -277,8 +277,8 @@
         <category>工具类</category>
       </categories>
       <tags>
-        <tag>教程</tag>
         <tag>Hexo</tag>
+        <tag>教程</tag>
       </tags>
   </entry>
 </search>

@@ -5,9 +5,9 @@
   <subtitle>知识应予记录, 经验应当传播</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://www.halfbaker.com/"/>
-  <updated>2019-03-07T16:02:20.130Z</updated>
-  <id>http://www.halfbaker.com/</id>
+  <link href="http://www.halfbaker.cn/"/>
+  <updated>2019-03-21T01:11:46.652Z</updated>
+  <id>http://www.halfbaker.cn/</id>
   
   <author>
     <name>半吊码工</name>
@@ -18,12 +18,22 @@
   
   <entry>
     <title></title>
-    <link href="http://www.halfbaker.com/2018/12/20/tech/innvo/%E4%B8%93%E5%88%A9%E8%AE%BE%E6%83%B3/"/>
-    <id>http://www.halfbaker.com/2018/12/20/tech/innvo/专利设想/</id>
+    <link href="http://www.halfbaker.cn/2018/12/20/tech/innvo/%E4%B8%93%E5%88%A9%E8%AE%BE%E6%83%B3/"/>
+    <id>http://www.halfbaker.cn/2018/12/20/tech/innvo/专利设想/</id>
     <published>2018-12-20T11:16:34.277Z</published>
-    <updated>2019-03-07T16:02:20.130Z</updated>
+    <updated>2019-03-21T01:11:46.652Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="专利构思"><a href="#专利构思" class="headerlink" title="专利构思"></a>专利构思</h1><ol><li><p>一种移动条件下单GPU多模型的调度方法</p></li><li><p>一种移动条件下双GPU多模型的调度方法</p></li><li><p>一种移动条件下多GPU多模型的调度方法</p></li><li><p>云平台上一种人工智能服务数据收集方法</p></li><li><p>云平台上一种人工智能服务数据收集与再训练结构</p></li><li><p>一种人工智能服务数据快速储存方法</p></li></ol>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;专利构思&quot;&gt;&lt;a href=&quot;#专利构思&quot; class=&quot;headerlink&quot; title=&quot;专利构思&quot;&gt;&lt;/a&gt;专利构思&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;一种移动条件下单GPU多模型的调度方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一种移动条件下双GPU多模型的调
+      
     
     </summary>
     
@@ -32,8 +42,8 @@
   
   <entry>
     <title></title>
-    <link href="http://www.halfbaker.com/2018/12/12/tech/crypt/Gemalto%E8%BD%AF%E7%A1%AC%E7%8B%97%E8%AE%BE%E7%BD%AE/"/>
-    <id>http://www.halfbaker.com/2018/12/12/tech/crypt/Gemalto软硬狗设置/</id>
+    <link href="http://www.halfbaker.cn/2018/12/12/tech/crypt/Gemalto%E8%BD%AF%E7%A1%AC%E7%8B%97%E8%AE%BE%E7%BD%AE/"/>
+    <id>http://www.halfbaker.cn/2018/12/12/tech/crypt/Gemalto软硬狗设置/</id>
     <published>2018-12-12T10:14:14.692Z</published>
     <updated>2018-12-20T13:22:48.677Z</updated>
     
@@ -53,8 +63,8 @@
   
   <entry>
     <title></title>
-    <link href="http://www.halfbaker.com/2018/10/25/tech/jenkins/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/"/>
-    <id>http://www.halfbaker.com/2018/10/25/tech/jenkins/安装记录/</id>
+    <link href="http://www.halfbaker.cn/2018/10/25/tech/jenkins/%E5%AE%89%E8%A3%85%E8%AE%B0%E5%BD%95/"/>
+    <id>http://www.halfbaker.cn/2018/10/25/tech/jenkins/安装记录/</id>
     <published>2018-10-25T03:54:11.126Z</published>
     <updated>2018-10-31T04:06:08.620Z</updated>
     
@@ -76,12 +86,12 @@
   
   <entry>
     <title>CodeReview使用向导</title>
-    <link href="http://www.halfbaker.com/2018/08/02/guider/devops/CodeReview%E4%BD%BF%E7%94%A8%E5%90%91%E5%AF%BC/"/>
-    <id>http://www.halfbaker.com/2018/08/02/guider/devops/CodeReview使用向导/</id>
+    <link href="http://www.halfbaker.cn/2018/08/02/guider/devops/CodeReview%E4%BD%BF%E7%94%A8%E5%90%91%E5%AF%BC/"/>
+    <id>http://www.halfbaker.cn/2018/08/02/guider/devops/CodeReview使用向导/</id>
     <published>2018-08-02T02:10:13.000Z</published>
-    <updated>2018-08-08T02:28:53.105Z</updated>
+    <updated>2019-08-13T08:08:29.901Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>代码审核（<code>Code Review</code>）是软件研发质量保障机制中非常重要的一环，能够有效提高代码质量。目前团队使用的工具是基于<code>gerrit</code>搭建，结合<code>git-review</code>工具提交代码审查申请。</p></blockquote><h2 id="环境软件要求"><a href="#环境软件要求" class="headerlink" title="环境软件要求"></a>环境软件要求</h2><ul><li>git</li><li>python</li></ul><h2 id="账号创建与配置"><a href="#账号创建与配置" class="headerlink" title="账号创建与配置"></a>账号创建与配置</h2><p>目前<code>gerrit</code>系统没有与公司账号系统打通，因此在使用系统需要账号的设置工作。设置工作包括账号申请和账号设置两个步骤。</p><h3 id="账号申请"><a href="#账号申请" class="headerlink" title="账号申请"></a>账号申请</h3><p>将ITCode发送给<code>Gerrit</code>系统管理员<a href="mailto:`zhangxm34@lenovo.com" target="_blank" rel="noopener">`zhangxm34@lenovo.com</a><code>，邮件题目标明&quot;</code>Gerrit`账号申请”。通过申请后管理员会将密码通过邮箱发送给申请者。</p><h3 id="设置账号"><a href="#设置账号" class="headerlink" title="设置账号"></a>设置账号</h3><p>账号设置需要如下五个步骤：</p><p>1.登入<code>Gerrit</code>系统 <a href="http://10.100.208.50" target="_blank" rel="noopener">http://10.100.208.50</a><br>2.进入系统后点击右上角用户名，选择下拉框的<code>Settings</code>选项<br>3.使用<code>ssh-keygen</code>命令生成个人的<code>SSH Key</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 在windows中使用右键`Git Bash Here`打开</span><br><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -C &lt;itcode&gt;@lenovo.com -f ~/.ssh/id_gerrit</span><br><span class="line"><span class="meta">#</span> 复制公共Key</span><br><span class="line"><span class="meta">$</span> cat ~/.ssh/id_gerrit.pub</span><br></pre></td></tr></table></figure></p><p>4.在左边栏<code>Settings</code>菜单中选择<code>SSH Public Keys</code>，然后将3步复制的<code>Key</code>添加的系统中。<br>5.验证系统是否连接成功<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh -p 29418 -i ~/.ssh/id_gerrit 10.100.208.50 -l &lt;your itcode&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 如果连接成功则会出现如下提示</span><br><span class="line">****    Welcome to Gerrit Code Review    ****</span><br><span class="line"></span><br><span class="line"> Hi &lt;your itcode&gt;, you have successfully connected over SSH.</span><br><span class="line"></span><br><span class="line"> Unfortunately, interactive shells are disabled.</span><br><span class="line"> To clone a hosted Git repository, use:</span><br><span class="line"></span><br><span class="line"> git clone ssh://zhangxm34@10.100.208.50:29418/REPOSITORY_NAME.git</span><br><span class="line"></span><br><span class="line">Connection to 10.100.208.50 closed.</span><br></pre></td></tr></table></figure></p><h2 id="工具设置"><a href="#工具设置" class="headerlink" title="工具设置"></a>工具设置</h2><p><code>Gerrit</code>系统支持原生的<code>git</code>命令，但命令比较复杂，因此需要<code>git-review</code>辅助开发人员进行相关操作。如果不想安装可以自行查看<code>Gerrit</code>的相关文档。</p><h3 id="git-review下载安装"><a href="#git-review下载安装" class="headerlink" title="git-review下载安装"></a><code>git-review</code>下载安装</h3><p><code>git-review</code>下载安装比较方便，在<code>python</code>环境下直接使用<code>pip</code>下载安装。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> pip install git-review</span><br></pre></td></tr></table></figure></p><h3 id="参数设置"><a href="#参数设置" class="headerlink" title="参数设置"></a>参数设置</h3><h4 id="git参数"><a href="#git参数" class="headerlink" title="git参数"></a><code>git</code>参数</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config --global user.name &lt;your itcode&gt;</span><br><span class="line"><span class="meta">$</span> git config --global user.email &lt;your itcode&gt;@lenovo.com</span><br></pre></td></tr></table></figure><h4 id="ssh配置文件"><a href="#ssh配置文件" class="headerlink" title="ssh配置文件"></a><code>ssh</code>配置文件</h4><p>在<code>home</code>目录（windows：c/Users/&lt; your computer account name&gt;/）下<code>.ssh</code>文件夹中添加<code>config</code>文件，配置内容如下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> gitlab for Lenovo</span><br><span class="line">Host gitlab.lenovo.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">User zhangxm34</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> gitlab for ci test</span><br><span class="line"><span class="meta">#</span> 克隆源代码</span><br><span class="line">Host 10.100.208.50</span><br><span class="line">Port 2222</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">User zhangxm34</span><br></pre></td></tr></table></figure></p><h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><h3 id="下载源代码"><a href="#下载源代码" class="headerlink" title="下载源代码"></a>下载源代码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone git@10.100.208.50:zhangxm/CapLogger.git</span><br><span class="line">Cloning into 'CapLogger'...</span><br><span class="line">remote: Counting objects: 25, done.</span><br><span class="line">remote: Compressing objects: 100% (18/18), done.</span><br><span class="line">remote: Total 25 (delta 0), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (25/25), 7.07 KiB | 1.18 MiB/s, done.</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> cd CapLogger</span><br></pre></td></tr></table></figure><h3 id="初始化git-review"><a href="#初始化git-review" class="headerlink" title="初始化git-review"></a>初始化<code>git-review</code></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git review -s</span><br><span class="line">Creating a git remote called 'gerrit' that maps to:</span><br><span class="line">        ssh://zhangxm34@10.100.208.50:29418/CapLogger</span><br></pre></td></tr></table></figure><h3 id="修改代码并提交"><a href="#修改代码并提交" class="headerlink" title="修改代码并提交"></a>修改代码并提交</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> echo "hello world from zhangxm34" &gt;&gt; README.md</span><br><span class="line"><span class="meta">$</span> git add .</span><br><span class="line"><span class="meta">$</span> git commit -m 'zhangxm34 review test'</span><br><span class="line"><span class="meta">$</span> git review</span><br></pre></td></tr></table></figure><p>经过上述步骤，提交者会收到一份邮件，表明<code>Review</code>请求已经提交成功，可以登入<code>Gerrit</code>系统进行查看。</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>代码审核（<code>Code Review</code>）是软件研发质量保障机制中非常重要的一环，能够有效提高代码质量。目前团队使用的工具是基于<code>gerrit</code>搭建，结合<code>git-review</code>工具提交代码审查申请。</p></blockquote><h2 id="环境软件要求"><a href="#环境软件要求" class="headerlink" title="环境软件要求"></a>环境软件要求</h2><ul><li>git</li><li>python</li></ul><h2 id="账号创建与配置"><a href="#账号创建与配置" class="headerlink" title="账号创建与配置"></a>账号创建与配置</h2><p>目前<code>gerrit</code>系统没有与公司账号系统打通，因此在使用系统需要账号的设置工作。设置工作包括账号申请和账号设置两个步骤。</p><h3 id="账号申请"><a href="#账号申请" class="headerlink" title="账号申请"></a>账号申请</h3><p>将ITCode发送给<code>Gerrit</code>系统管理员<a href="mailto:`zhangxm@xxxx.com" target="_blank" rel="noopener">`zhangxm@xxxx.com</a><code>，邮件题目标明&quot;</code>Gerrit`账号申请”。通过申请后管理员会将密码通过邮箱发送给申请者。</p><h3 id="设置账号"><a href="#设置账号" class="headerlink" title="设置账号"></a>设置账号</h3><p>账号设置需要如下五个步骤：</p><p>1.登入<code>Gerrit</code>系统 <a href="http://10.100.208.50" target="_blank" rel="noopener">http://10.100.208.50</a><br>2.进入系统后点击右上角用户名，选择下拉框的<code>Settings</code>选项<br>3.使用<code>ssh-keygen</code>命令生成个人的<code>SSH Key</code><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 在windows中使用右键`Git Bash Here`打开</span><br><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -C &lt;itcode&gt;@xxxx.com -f ~/.ssh/id_gerrit</span><br><span class="line"><span class="meta">#</span> 复制公共Key</span><br><span class="line"><span class="meta">$</span> cat ~/.ssh/id_gerrit.pub</span><br></pre></td></tr></table></figure></p><p>4.在左边栏<code>Settings</code>菜单中选择<code>SSH Public Keys</code>，然后将3步复制的<code>Key</code>添加的系统中。<br>5.验证系统是否连接成功<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh -p 29418 -i ~/.ssh/id_gerrit 10.100.208.50 -l &lt;your itcode&gt;</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 如果连接成功则会出现如下提示</span><br><span class="line">****    Welcome to Gerrit Code Review    ****</span><br><span class="line"></span><br><span class="line"> Hi &lt;your itcode&gt;, you have successfully connected over SSH.</span><br><span class="line"></span><br><span class="line"> Unfortunately, interactive shells are disabled.</span><br><span class="line"> To clone a hosted Git repository, use:</span><br><span class="line"></span><br><span class="line"> git clone ssh://zhangxm34@10.100.208.50:29418/REPOSITORY_NAME.git</span><br><span class="line"></span><br><span class="line">Connection to 10.100.208.50 closed.</span><br></pre></td></tr></table></figure></p><h2 id="工具设置"><a href="#工具设置" class="headerlink" title="工具设置"></a>工具设置</h2><p><code>Gerrit</code>系统支持原生的<code>git</code>命令，但命令比较复杂，因此需要<code>git-review</code>辅助开发人员进行相关操作。如果不想安装可以自行查看<code>Gerrit</code>的相关文档。</p><h3 id="git-review下载安装"><a href="#git-review下载安装" class="headerlink" title="git-review下载安装"></a><code>git-review</code>下载安装</h3><p><code>git-review</code>下载安装比较方便，在<code>python</code>环境下直接使用<code>pip</code>下载安装。<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> pip install git-review</span><br></pre></td></tr></table></figure></p><h3 id="参数设置"><a href="#参数设置" class="headerlink" title="参数设置"></a>参数设置</h3><h4 id="git参数"><a href="#git参数" class="headerlink" title="git参数"></a><code>git</code>参数</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git config --global user.name &lt;your itcode&gt;</span><br><span class="line"><span class="meta">$</span> git config --global user.email &lt;your itcode&gt;@xxxx.com</span><br></pre></td></tr></table></figure><h4 id="ssh配置文件"><a href="#ssh配置文件" class="headerlink" title="ssh配置文件"></a><code>ssh</code>配置文件</h4><p>在<code>home</code>目录（windows：c/Users/&lt; your computer account name&gt;/）下<code>.ssh</code>文件夹中添加<code>config</code>文件，配置内容如下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> gitlab for xxxx</span><br><span class="line">Host gitlab.xxxx.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">User zhangxm34</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> gitlab for ci test</span><br><span class="line"><span class="meta">#</span> 克隆源代码</span><br><span class="line">Host 10.100.208.50</span><br><span class="line">Port 2222</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/id_rsa</span><br><span class="line">User zhangxm34</span><br></pre></td></tr></table></figure></p><h2 id="使用示例"><a href="#使用示例" class="headerlink" title="使用示例"></a>使用示例</h2><h3 id="下载源代码"><a href="#下载源代码" class="headerlink" title="下载源代码"></a>下载源代码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git clone git@10.100.208.50:zhangxm/CapLogger.git</span><br><span class="line">Cloning into 'CapLogger'...</span><br><span class="line">remote: Counting objects: 25, done.</span><br><span class="line">remote: Compressing objects: 100% (18/18), done.</span><br><span class="line">remote: Total 25 (delta 0), reused 0 (delta 0)</span><br><span class="line">Receiving objects: 100% (25/25), 7.07 KiB | 1.18 MiB/s, done.</span><br><span class="line"></span><br><span class="line"><span class="meta">$</span> cd CapLogger</span><br></pre></td></tr></table></figure><h3 id="初始化git-review"><a href="#初始化git-review" class="headerlink" title="初始化git-review"></a>初始化<code>git-review</code></h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git review -s</span><br><span class="line">Creating a git remote called 'gerrit' that maps to:</span><br><span class="line">        ssh://zhangxm34@10.100.208.50:29418/CapLogger</span><br></pre></td></tr></table></figure><h3 id="修改代码并提交"><a href="#修改代码并提交" class="headerlink" title="修改代码并提交"></a>修改代码并提交</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> echo "hello world from zhangxm34" &gt;&gt; README.md</span><br><span class="line"><span class="meta">$</span> git add .</span><br><span class="line"><span class="meta">$</span> git commit -m 'zhangxm34 review test'</span><br><span class="line"><span class="meta">$</span> git review</span><br></pre></td></tr></table></figure><p>经过上述步骤，提交者会收到一份邮件，表明<code>Review</code>请求已经提交成功，可以登入<code>Gerrit</code>系统进行查看。</p>]]></content>
     
     <summary type="html">
     
@@ -93,19 +103,19 @@
     
     </summary>
     
-      <category term="教程系列" scheme="http://www.halfbaker.com/categories/guider/"/>
+      <category term="教程系列" scheme="http://www.halfbaker.cn/categories/guider/"/>
     
-      <category term="Devops" scheme="http://www.halfbaker.com/categories/guider/Devops/"/>
+      <category term="Devops" scheme="http://www.halfbaker.cn/categories/guider/Devops/"/>
     
     
-      <category term="gerrit" scheme="http://www.halfbaker.com/tags/gerrit/"/>
+      <category term="gerrit" scheme="http://www.halfbaker.cn/tags/gerrit/"/>
     
   </entry>
   
   <entry>
     <title>Git命令大全</title>
-    <link href="http://www.halfbaker.com/2018/08/01/tips/Git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
-    <id>http://www.halfbaker.com/2018/08/01/tips/Git命令大全/</id>
+    <link href="http://www.halfbaker.cn/2018/08/01/tips/Git%E5%91%BD%E4%BB%A4%E5%A4%A7%E5%85%A8/"/>
+    <id>http://www.halfbaker.cn/2018/08/01/tips/Git命令大全/</id>
     <published>2018-08-01T03:39:08.000Z</published>
     <updated>2018-08-01T03:57:43.091Z</updated>
     
@@ -123,17 +133,17 @@
     
     </summary>
     
-      <category term="小窍门" scheme="http://www.halfbaker.com/categories/tips/"/>
+      <category term="小窍门" scheme="http://www.halfbaker.cn/categories/tips/"/>
     
     
-      <category term="git" scheme="http://www.halfbaker.com/tags/git/"/>
+      <category term="git" scheme="http://www.halfbaker.cn/tags/git/"/>
     
   </entry>
   
   <entry>
     <title>Shell使用小记</title>
-    <link href="http://www.halfbaker.com/2018/07/31/tips/Shell%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.halfbaker.com/2018/07/31/tips/Shell使用小记/</id>
+    <link href="http://www.halfbaker.cn/2018/07/31/tips/Shell%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://www.halfbaker.cn/2018/07/31/tips/Shell使用小记/</id>
     <published>2018-07-31T01:04:18.000Z</published>
     <updated>2018-07-31T01:07:41.233Z</updated>
     
@@ -148,17 +158,17 @@
     
     </summary>
     
-      <category term="小窍门" scheme="http://www.halfbaker.com/categories/tips/"/>
+      <category term="小窍门" scheme="http://www.halfbaker.cn/categories/tips/"/>
     
     
-      <category term="shell" scheme="http://www.halfbaker.com/tags/shell/"/>
+      <category term="shell" scheme="http://www.halfbaker.cn/tags/shell/"/>
     
   </entry>
   
   <entry>
     <title>开发客户代码环境工具与配置</title>
-    <link href="http://www.halfbaker.com/2018/07/30/guider/devops/%E5%BC%80%E5%8F%91%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE/"/>
-    <id>http://www.halfbaker.com/2018/07/30/guider/devops/开发客户端配置/</id>
+    <link href="http://www.halfbaker.cn/2018/07/30/guider/devops/%E5%BC%80%E5%8F%91%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE/"/>
+    <id>http://www.halfbaker.cn/2018/07/30/guider/devops/开发客户端配置/</id>
     <published>2018-07-30T06:08:19.000Z</published>
     <updated>2018-08-03T01:17:07.902Z</updated>
     
@@ -174,21 +184,21 @@
     
     </summary>
     
-      <category term="教程系列" scheme="http://www.halfbaker.com/categories/guider/"/>
+      <category term="教程系列" scheme="http://www.halfbaker.cn/categories/guider/"/>
     
-      <category term="Devops" scheme="http://www.halfbaker.com/categories/guider/Devops/"/>
+      <category term="Devops" scheme="http://www.halfbaker.cn/categories/guider/Devops/"/>
     
     
-      <category term="git" scheme="http://www.halfbaker.com/tags/git/"/>
+      <category term="git" scheme="http://www.halfbaker.cn/tags/git/"/>
     
-      <category term="git-review" scheme="http://www.halfbaker.com/tags/git-review/"/>
+      <category term="git-review" scheme="http://www.halfbaker.cn/tags/git-review/"/>
     
   </entry>
   
   <entry>
     <title>Mysql[MariaDB]使用小记</title>
-    <link href="http://www.halfbaker.com/2018/07/23/tips/Mysql-MariaDB-%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.halfbaker.com/2018/07/23/tips/Mysql-MariaDB-使用小记/</id>
+    <link href="http://www.halfbaker.cn/2018/07/23/tips/Mysql-MariaDB-%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://www.halfbaker.cn/2018/07/23/tips/Mysql-MariaDB-使用小记/</id>
     <published>2018-07-23T03:27:38.000Z</published>
     <updated>2018-07-23T03:29:12.000Z</updated>
     
@@ -203,19 +213,19 @@
     
     </summary>
     
-      <category term="小窍门" scheme="http://www.halfbaker.com/categories/tips/"/>
+      <category term="小窍门" scheme="http://www.halfbaker.cn/categories/tips/"/>
     
     
-      <category term="Mysql" scheme="http://www.halfbaker.com/tags/Mysql/"/>
+      <category term="Mysql" scheme="http://www.halfbaker.cn/tags/Mysql/"/>
     
-      <category term="MariaDB" scheme="http://www.halfbaker.com/tags/MariaDB/"/>
+      <category term="MariaDB" scheme="http://www.halfbaker.cn/tags/MariaDB/"/>
     
   </entry>
   
   <entry>
     <title>Maven使用小记</title>
-    <link href="http://www.halfbaker.com/2018/07/20/tips/Maven%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.halfbaker.com/2018/07/20/tips/Maven使用小记/</id>
+    <link href="http://www.halfbaker.cn/2018/07/20/tips/Maven%E4%BD%BF%E7%94%A8%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://www.halfbaker.cn/2018/07/20/tips/Maven使用小记/</id>
     <published>2018-07-20T07:20:44.000Z</published>
     <updated>2018-07-20T07:23:40.000Z</updated>
     
@@ -233,17 +243,17 @@
     
     </summary>
     
-      <category term="小窍门" scheme="http://www.halfbaker.com/categories/tips/"/>
+      <category term="小窍门" scheme="http://www.halfbaker.cn/categories/tips/"/>
     
     
-      <category term="maven" scheme="http://www.halfbaker.com/tags/maven/"/>
+      <category term="maven" scheme="http://www.halfbaker.cn/tags/maven/"/>
     
   </entry>
   
   <entry>
     <title>基于Docker镜像的Gerrit安装与配置</title>
-    <link href="http://www.halfbaker.com/2018/07/20/guider/devops/%E5%9F%BA%E4%BA%8EDocker%E9%95%9C%E5%83%8F%E7%9A%84Gerrit%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
-    <id>http://www.halfbaker.com/2018/07/20/guider/devops/基于Docker镜像的Gerrit安装与配置/</id>
+    <link href="http://www.halfbaker.cn/2018/07/20/guider/devops/%E5%9F%BA%E4%BA%8EDocker%E9%95%9C%E5%83%8F%E7%9A%84Gerrit%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/"/>
+    <id>http://www.halfbaker.cn/2018/07/20/guider/devops/基于Docker镜像的Gerrit安装与配置/</id>
     <published>2018-07-20T00:33:59.000Z</published>
     <updated>2018-07-20T01:47:10.000Z</updated>
     
@@ -260,25 +270,25 @@
     
     </summary>
     
-      <category term="教程系列" scheme="http://www.halfbaker.com/categories/guider/"/>
+      <category term="教程系列" scheme="http://www.halfbaker.cn/categories/guider/"/>
     
-      <category term="Devops" scheme="http://www.halfbaker.com/categories/guider/Devops/"/>
+      <category term="Devops" scheme="http://www.halfbaker.cn/categories/guider/Devops/"/>
     
     
-      <category term="gerrit" scheme="http://www.halfbaker.com/tags/gerrit/"/>
+      <category term="gerrit" scheme="http://www.halfbaker.cn/tags/gerrit/"/>
     
-      <category term="docker" scheme="http://www.halfbaker.com/tags/docker/"/>
+      <category term="docker" scheme="http://www.halfbaker.cn/tags/docker/"/>
     
   </entry>
   
   <entry>
     <title>Git命令小记</title>
-    <link href="http://www.halfbaker.com/2018/07/18/tips/Git%E5%91%BD%E4%BB%A4%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.halfbaker.com/2018/07/18/tips/Git命令小记/</id>
+    <link href="http://www.halfbaker.cn/2018/07/18/tips/Git%E5%91%BD%E4%BB%A4%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://www.halfbaker.cn/2018/07/18/tips/Git命令小记/</id>
     <published>2018-07-18T06:30:34.000Z</published>
-    <updated>2018-08-08T02:47:05.391Z</updated>
+    <updated>2019-08-13T08:08:27.117Z</updated>
     
-    <content type="html"><![CDATA[<blockquote><p>记录日常<code>Git</code>使用过程中的点滴</p></blockquote><h2 id="github和gitlab仓库一起使用"><a href="#github和gitlab仓库一起使用" class="headerlink" title="github和gitlab仓库一起使用"></a><code>github</code>和<code>gitlab</code>仓库一起使用</h2><ol><li><p>分别创建<code>github</code>和<code>gitlab</code>本地<code>SSH RSA Key</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -C "注册的gitlab邮箱" -f ~/.ssh/gitlab_rsa</span><br><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -C "注册的gitlab邮箱" -f ~/.ssh/github_rsa</span><br></pre></td></tr></table></figure></li><li><p>将生成的<code>gitlab_rsa.pub</code>和<code>github_rsa.pub</code>拷贝到系统中<code>Profile-&gt;Settings-&gt;SSH Keys</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cat gitlab_rsa.pub | clip</span><br><span class="line"><span class="meta">$</span> cat github_rsa.pub | clip</span><br></pre></td></tr></table></figure></li><li><p>在<code>${USER}/.ssh/</code>目录下添加<code>config</code>文件，并进行配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># 配置文件参数</span><br><span class="line"># Host : Host可以看作是一个你要识别的模式，对识别的模式，进行配置对应的的主机名和ssh文件</span><br><span class="line"># HostName : 要登录主机的主机名</span><br><span class="line"># Port 端口号，默认为22</span><br><span class="line"># User : 登录名</span><br><span class="line"># IdentityFile : 指明上面User对应的identityFile路径</span><br><span class="line"></span><br><span class="line"># github</span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/github_rsa</span><br><span class="line">User xuemzhan</span><br><span class="line"></span><br><span class="line"># gitlab</span><br><span class="line">Host gitlab.lenovo.com</span><br><span class="line">HostName gitlab.lenovo.com</span><br><span class="line">Port 50022</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/gitlab_rsa</span><br><span class="line">User xuemzhan</span><br></pre></td></tr></table></figure></li><li><p>在不同的项目中设置用户和邮箱</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git init</span><br><span class="line"><span class="meta">$</span> git config --local user.name 'personal'</span><br><span class="line"><span class="meta">$</span> git config --local user.email 'personal@xxxx.com'</span><br><span class="line"></span><br><span class="line">```s</span><br><span class="line">5. 测试</span><br><span class="line">```shell</span><br><span class="line"><span class="meta">#</span> 测试github</span><br><span class="line"><span class="meta">$</span> ssh -T git@github.com</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 测试gitlab</span><br><span class="line"><span class="meta">$</span> ssh -T git@gitlab.com</span><br></pre></td></tr></table></figure></li><li><p>Bad owner or permissions on /home/<name>/.ssh/config</name></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>chmod 600 config</span><br></pre></td></tr></table></figure></li></ol><h2 id="git-clone-bare与git-clone-mirror区别"><a href="#git-clone-bare与git-clone-mirror区别" class="headerlink" title="git clone --bare与git clone --mirror区别"></a><code>git clone --bare</code>与<code>git clone --mirror</code>区别</h2><p>两个命令都表示克隆的版本不包含工作区，直接是版本的内容，这样克隆的版本成为裸版本库。一般约定裸版本库以<code>.git</code>为后缀。两者的区分是<code>mirror</code>克隆的对上游版本进行了注册，这样可以使用<code>git fetch</code>与上流的版本进行同步，而<code>bare</code>则没有。</p><h2 id="在提交前撤销git-commit"><a href="#在提交前撤销git-commit" class="headerlink" title="在提交前撤销git commit"></a>在提交前撤销<code>git commit</code></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 查看需要撤销的`id`</span><br><span class="line"><span class="meta">$</span> git log</span><br><span class="line"><span class="meta">#</span>完成撤销,同时将代码恢复到前一commit_id 对应的版本</span><br><span class="line"><span class="meta">$</span> git reset --hard &lt;id&gt;</span><br><span class="line"><span class="meta">#</span>完成Commit命令的撤销，但是不对代码修改进行撤销，可以直接通过git commit 重新提交对本地代码的修改</span><br><span class="line"><span class="meta">$</span> git reset &lt;id&gt;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>记录日常<code>Git</code>使用过程中的点滴</p></blockquote><h2 id="github和gitlab仓库一起使用"><a href="#github和gitlab仓库一起使用" class="headerlink" title="github和gitlab仓库一起使用"></a><code>github</code>和<code>gitlab</code>仓库一起使用</h2><ol><li><p>分别创建<code>github</code>和<code>gitlab</code>本地<code>SSH RSA Key</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -C "注册的gitlab邮箱" -f ~/.ssh/gitlab_rsa</span><br><span class="line"><span class="meta">$</span> ssh-keygen -t rsa -C "注册的gitlab邮箱" -f ~/.ssh/github_rsa</span><br></pre></td></tr></table></figure></li><li><p>将生成的<code>gitlab_rsa.pub</code>和<code>github_rsa.pub</code>拷贝到系统中<code>Profile-&gt;Settings-&gt;SSH Keys</code></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> cat gitlab_rsa.pub | clip</span><br><span class="line"><span class="meta">$</span> cat github_rsa.pub | clip</span><br></pre></td></tr></table></figure></li><li><p>在<code>${USER}/.ssh/</code>目录下添加<code>config</code>文件，并进行配置</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># 配置文件参数</span><br><span class="line"># Host : Host可以看作是一个你要识别的模式，对识别的模式，进行配置对应的的主机名和ssh文件</span><br><span class="line"># HostName : 要登录主机的主机名</span><br><span class="line"># Port 端口号，默认为22</span><br><span class="line"># User : 登录名</span><br><span class="line"># IdentityFile : 指明上面User对应的identityFile路径</span><br><span class="line"></span><br><span class="line"># github</span><br><span class="line">Host github.com</span><br><span class="line">HostName github.com</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/github_rsa</span><br><span class="line">User xuemzhan</span><br><span class="line"></span><br><span class="line"># gitlab</span><br><span class="line">Host gitlab.xxxxx.com</span><br><span class="line">HostName gitlab.xxxxx.com</span><br><span class="line">Port 50022</span><br><span class="line">PreferredAuthentications publickey</span><br><span class="line">IdentityFile ~/.ssh/gitlab_rsa</span><br><span class="line">User xuemzhan</span><br></pre></td></tr></table></figure></li><li><p>在不同的项目中设置用户和邮箱</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> git init</span><br><span class="line"><span class="meta">$</span> git config --local user.name 'personal'</span><br><span class="line"><span class="meta">$</span> git config --local user.email 'personal@xxxx.com'</span><br><span class="line"></span><br><span class="line">```s</span><br><span class="line">5. 测试</span><br><span class="line">```shell</span><br><span class="line"><span class="meta">#</span> 测试github</span><br><span class="line"><span class="meta">$</span> ssh -T git@github.com</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 测试gitlab</span><br><span class="line"><span class="meta">$</span> ssh -T git@gitlab.com</span><br></pre></td></tr></table></figure></li><li><p>Bad owner or permissions on /home/<name>/.ssh/config</name></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span>chmod 600 config</span><br></pre></td></tr></table></figure></li></ol><h2 id="git-clone-bare与git-clone-mirror区别"><a href="#git-clone-bare与git-clone-mirror区别" class="headerlink" title="git clone --bare与git clone --mirror区别"></a><code>git clone --bare</code>与<code>git clone --mirror</code>区别</h2><p>两个命令都表示克隆的版本不包含工作区，直接是版本的内容，这样克隆的版本成为裸版本库。一般约定裸版本库以<code>.git</code>为后缀。两者的区分是<code>mirror</code>克隆的对上游版本进行了注册，这样可以使用<code>git fetch</code>与上流的版本进行同步，而<code>bare</code>则没有。</p><h2 id="在提交前撤销git-commit"><a href="#在提交前撤销git-commit" class="headerlink" title="在提交前撤销git commit"></a>在提交前撤销<code>git commit</code></h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 查看需要撤销的`id`</span><br><span class="line"><span class="meta">$</span> git log</span><br><span class="line"><span class="meta">#</span>完成撤销,同时将代码恢复到前一commit_id 对应的版本</span><br><span class="line"><span class="meta">$</span> git reset --hard &lt;id&gt;</span><br><span class="line"><span class="meta">#</span>完成Commit命令的撤销，但是不对代码修改进行撤销，可以直接通过git commit 重新提交对本地代码的修改</span><br><span class="line"><span class="meta">$</span> git reset &lt;id&gt;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -292,19 +302,19 @@
     
     </summary>
     
-      <category term="小窍门" scheme="http://www.halfbaker.com/categories/tips/"/>
+      <category term="小窍门" scheme="http://www.halfbaker.cn/categories/tips/"/>
     
     
-      <category term="Git" scheme="http://www.halfbaker.com/tags/Git/"/>
+      <category term="Git" scheme="http://www.halfbaker.cn/tags/Git/"/>
     
-      <category term="ssh" scheme="http://www.halfbaker.com/tags/ssh/"/>
+      <category term="ssh" scheme="http://www.halfbaker.cn/tags/ssh/"/>
     
   </entry>
   
   <entry>
     <title>Jenkins+Gerrit+Gitlab构建随记</title>
-    <link href="http://www.halfbaker.com/2018/07/18/guider/devops/Jenkins-Gerrit-Gitlab%E6%9E%84%E5%BB%BA%E9%9A%8F%E8%AE%B0/"/>
-    <id>http://www.halfbaker.com/2018/07/18/guider/devops/Jenkins-Gerrit-Gitlab构建随记/</id>
+    <link href="http://www.halfbaker.cn/2018/07/18/guider/devops/Jenkins-Gerrit-Gitlab%E6%9E%84%E5%BB%BA%E9%9A%8F%E8%AE%B0/"/>
+    <id>http://www.halfbaker.cn/2018/07/18/guider/devops/Jenkins-Gerrit-Gitlab构建随记/</id>
     <published>2018-07-18T01:29:07.000Z</published>
     <updated>2018-07-20T00:35:24.000Z</updated>
     
@@ -319,23 +329,23 @@
     
     </summary>
     
-      <category term="教程系列" scheme="http://www.halfbaker.com/categories/guider/"/>
+      <category term="教程系列" scheme="http://www.halfbaker.cn/categories/guider/"/>
     
-      <category term="Devops" scheme="http://www.halfbaker.com/categories/guider/Devops/"/>
+      <category term="Devops" scheme="http://www.halfbaker.cn/categories/guider/Devops/"/>
     
     
-      <category term="Gitlab" scheme="http://www.halfbaker.com/tags/Gitlab/"/>
+      <category term="Gitlab" scheme="http://www.halfbaker.cn/tags/Gitlab/"/>
     
-      <category term="Gerrit" scheme="http://www.halfbaker.com/tags/Gerrit/"/>
+      <category term="Gerrit" scheme="http://www.halfbaker.cn/tags/Gerrit/"/>
     
-      <category term="Jenkins" scheme="http://www.halfbaker.com/tags/Jenkins/"/>
+      <category term="Jenkins" scheme="http://www.halfbaker.cn/tags/Jenkins/"/>
     
   </entry>
   
   <entry>
     <title>CentOS命令小记</title>
-    <link href="http://www.halfbaker.com/2018/07/17/tips/CentOS%E5%91%BD%E4%BB%A4%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.halfbaker.com/2018/07/17/tips/CentOS命令小记/</id>
+    <link href="http://www.halfbaker.cn/2018/07/17/tips/CentOS%E5%91%BD%E4%BB%A4%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://www.halfbaker.cn/2018/07/17/tips/CentOS命令小记/</id>
     <published>2018-07-17T10:32:46.000Z</published>
     <updated>2018-07-19T03:13:12.000Z</updated>
     
@@ -353,17 +363,17 @@
     
     </summary>
     
-      <category term="小窍门" scheme="http://www.halfbaker.com/categories/tips/"/>
+      <category term="小窍门" scheme="http://www.halfbaker.cn/categories/tips/"/>
     
     
-      <category term="CentOS" scheme="http://www.halfbaker.com/tags/CentOS/"/>
+      <category term="CentOS" scheme="http://www.halfbaker.cn/tags/CentOS/"/>
     
   </entry>
   
   <entry>
     <title>敏捷摘记</title>
-    <link href="http://www.halfbaker.com/2018/07/17/tips/%E6%95%8F%E6%8D%B7%E6%91%98%E8%AE%B0/"/>
-    <id>http://www.halfbaker.com/2018/07/17/tips/敏捷摘记/</id>
+    <link href="http://www.halfbaker.cn/2018/07/17/tips/%E6%95%8F%E6%8D%B7%E6%91%98%E8%AE%B0/"/>
+    <id>http://www.halfbaker.cn/2018/07/17/tips/敏捷摘记/</id>
     <published>2018-07-17T07:47:42.000Z</published>
     <updated>2018-07-17T07:52:50.000Z</updated>
     
@@ -379,17 +389,17 @@
     
     </summary>
     
-      <category term="同心同德" scheme="http://www.halfbaker.com/categories/team/"/>
+      <category term="同心同德" scheme="http://www.halfbaker.cn/categories/team/"/>
     
     
-      <category term="scrum" scheme="http://www.halfbaker.com/tags/scrum/"/>
+      <category term="scrum" scheme="http://www.halfbaker.cn/tags/scrum/"/>
     
   </entry>
   
   <entry>
     <title>ELK平台搭建</title>
-    <link href="http://www.halfbaker.com/2018/07/16/tech/log/ELK%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/"/>
-    <id>http://www.halfbaker.com/2018/07/16/tech/log/ELK平台搭建/</id>
+    <link href="http://www.halfbaker.cn/2018/07/16/tech/log/ELK%E5%B9%B3%E5%8F%B0%E6%90%AD%E5%BB%BA/"/>
+    <id>http://www.halfbaker.cn/2018/07/16/tech/log/ELK平台搭建/</id>
     <published>2018-07-16T03:49:45.000Z</published>
     <updated>2018-07-18T06:52:34.000Z</updated>
     
@@ -397,21 +407,21 @@
     
     </summary>
     
-      <category term="温故知新" scheme="http://www.halfbaker.com/categories/tech/"/>
+      <category term="温故知新" scheme="http://www.halfbaker.cn/categories/tech/"/>
     
-      <category term="架构" scheme="http://www.halfbaker.com/categories/tech/%E6%9E%B6%E6%9E%84/"/>
+      <category term="架构" scheme="http://www.halfbaker.cn/categories/tech/%E6%9E%B6%E6%9E%84/"/>
     
     
-      <category term="日志" scheme="http://www.halfbaker.com/tags/%E6%97%A5%E5%BF%97/"/>
+      <category term="日志" scheme="http://www.halfbaker.cn/tags/%E6%97%A5%E5%BF%97/"/>
     
-      <category term="ELK" scheme="http://www.halfbaker.com/tags/ELK/"/>
+      <category term="ELK" scheme="http://www.halfbaker.cn/tags/ELK/"/>
     
   </entry>
   
   <entry>
     <title>Jupyter使用杂记</title>
-    <link href="http://www.halfbaker.com/2018/07/13/tips/Jupyter%E4%BD%BF%E7%94%A8%E6%9D%82%E8%AE%B0/"/>
-    <id>http://www.halfbaker.com/2018/07/13/tips/Jupyter使用杂记/</id>
+    <link href="http://www.halfbaker.cn/2018/07/13/tips/Jupyter%E4%BD%BF%E7%94%A8%E6%9D%82%E8%AE%B0/"/>
+    <id>http://www.halfbaker.cn/2018/07/13/tips/Jupyter使用杂记/</id>
     <published>2018-07-13T05:03:11.000Z</published>
     <updated>2018-07-13T05:08:26.000Z</updated>
     
@@ -429,17 +439,17 @@
     
     </summary>
     
-      <category term="小窍门" scheme="http://www.halfbaker.com/categories/tips/"/>
+      <category term="小窍门" scheme="http://www.halfbaker.cn/categories/tips/"/>
     
     
-      <category term="jupyter" scheme="http://www.halfbaker.com/tags/jupyter/"/>
+      <category term="jupyter" scheme="http://www.halfbaker.cn/tags/jupyter/"/>
     
   </entry>
   
   <entry>
     <title>Anaconda命令小记</title>
-    <link href="http://www.halfbaker.com/2018/07/13/tips/Anaconda%E5%91%BD%E4%BB%A4%E5%B0%8F%E8%AE%B0/"/>
-    <id>http://www.halfbaker.com/2018/07/13/tips/Anaconda命令小记/</id>
+    <link href="http://www.halfbaker.cn/2018/07/13/tips/Anaconda%E5%91%BD%E4%BB%A4%E5%B0%8F%E8%AE%B0/"/>
+    <id>http://www.halfbaker.cn/2018/07/13/tips/Anaconda命令小记/</id>
     <published>2018-07-13T03:34:08.000Z</published>
     <updated>2018-07-13T03:55:40.000Z</updated>
     
@@ -457,17 +467,17 @@
     
     </summary>
     
-      <category term="小窍门" scheme="http://www.halfbaker.com/categories/tips/"/>
+      <category term="小窍门" scheme="http://www.halfbaker.cn/categories/tips/"/>
     
     
-      <category term="Anaconda" scheme="http://www.halfbaker.com/tags/Anaconda/"/>
+      <category term="Anaconda" scheme="http://www.halfbaker.cn/tags/Anaconda/"/>
     
   </entry>
   
   <entry>
     <title>Kubernetes概述与架构</title>
-    <link href="http://www.halfbaker.com/2018/06/24/tech/k8s/Kubernetes%E6%A6%82%E8%BF%B0%E4%B8%8E%E6%9E%B6%E6%9E%84/"/>
-    <id>http://www.halfbaker.com/2018/06/24/tech/k8s/Kubernetes概述与架构/</id>
+    <link href="http://www.halfbaker.cn/2018/06/24/tech/k8s/Kubernetes%E6%A6%82%E8%BF%B0%E4%B8%8E%E6%9E%B6%E6%9E%84/"/>
+    <id>http://www.halfbaker.cn/2018/06/24/tech/k8s/Kubernetes概述与架构/</id>
     <published>2018-06-24T10:02:19.000Z</published>
     <updated>2018-06-24T13:58:34.000Z</updated>
     
@@ -482,21 +492,21 @@
     
     </summary>
     
-      <category term="温故知新" scheme="http://www.halfbaker.com/categories/tech/"/>
+      <category term="温故知新" scheme="http://www.halfbaker.cn/categories/tech/"/>
     
-      <category term="架构" scheme="http://www.halfbaker.com/categories/tech/%E6%9E%B6%E6%9E%84/"/>
+      <category term="架构" scheme="http://www.halfbaker.cn/categories/tech/%E6%9E%B6%E6%9E%84/"/>
     
     
-      <category term="架构" scheme="http://www.halfbaker.com/tags/%E6%9E%B6%E6%9E%84/"/>
+      <category term="架构" scheme="http://www.halfbaker.cn/tags/%E6%9E%B6%E6%9E%84/"/>
     
-      <category term="k8s" scheme="http://www.halfbaker.com/tags/k8s/"/>
+      <category term="k8s" scheme="http://www.halfbaker.cn/tags/k8s/"/>
     
   </entry>
   
   <entry>
     <title>强化学习要点</title>
-    <link href="http://www.halfbaker.com/2018/06/23/tech/ai/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%A6%81%E7%82%B9/"/>
-    <id>http://www.halfbaker.com/2018/06/23/tech/ai/强化学习要点/</id>
+    <link href="http://www.halfbaker.cn/2018/06/23/tech/ai/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E8%A6%81%E7%82%B9/"/>
+    <id>http://www.halfbaker.cn/2018/06/23/tech/ai/强化学习要点/</id>
     <published>2018-06-23T14:54:57.000Z</published>
     <updated>2018-06-24T08:57:52.000Z</updated>
     
@@ -514,23 +524,23 @@
     
     </summary>
     
-      <category term="温故知新" scheme="http://www.halfbaker.com/categories/tech/"/>
+      <category term="温故知新" scheme="http://www.halfbaker.cn/categories/tech/"/>
     
-      <category term="AI" scheme="http://www.halfbaker.com/categories/tech/AI/"/>
+      <category term="AI" scheme="http://www.halfbaker.cn/categories/tech/AI/"/>
     
-      <category term="强化学习" scheme="http://www.halfbaker.com/categories/tech/AI/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+      <category term="强化学习" scheme="http://www.halfbaker.cn/categories/tech/AI/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
     
     
-      <category term="机器学习" scheme="http://www.halfbaker.com/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+      <category term="机器学习" scheme="http://www.halfbaker.cn/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
-      <category term="强化网络" scheme="http://www.halfbaker.com/tags/%E5%BC%BA%E5%8C%96%E7%BD%91%E7%BB%9C/"/>
+      <category term="强化网络" scheme="http://www.halfbaker.cn/tags/%E5%BC%BA%E5%8C%96%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
   <entry>
     <title>数据库的分库与分表</title>
-    <link href="http://www.halfbaker.com/2018/06/13/tech/arch/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%86%E5%BA%93%E4%B8%8E%E5%88%86%E8%A1%A8/"/>
-    <id>http://www.halfbaker.com/2018/06/13/tech/arch/数据库的分库与分表/</id>
+    <link href="http://www.halfbaker.cn/2018/06/13/tech/arch/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%88%86%E5%BA%93%E4%B8%8E%E5%88%86%E8%A1%A8/"/>
+    <id>http://www.halfbaker.cn/2018/06/13/tech/arch/数据库的分库与分表/</id>
     <published>2018-06-13T05:47:37.000Z</published>
     <updated>2018-06-22T03:14:40.000Z</updated>
     
@@ -548,12 +558,12 @@
     
     </summary>
     
-      <category term="温故知新" scheme="http://www.halfbaker.com/categories/tech/"/>
+      <category term="温故知新" scheme="http://www.halfbaker.cn/categories/tech/"/>
     
-      <category term="架构" scheme="http://www.halfbaker.com/categories/tech/%E6%9E%B6%E6%9E%84/"/>
+      <category term="架构" scheme="http://www.halfbaker.cn/categories/tech/%E6%9E%B6%E6%9E%84/"/>
     
     
-      <category term="mysql" scheme="http://www.halfbaker.com/tags/mysql/"/>
+      <category term="mysql" scheme="http://www.halfbaker.cn/tags/mysql/"/>
     
   </entry>
   

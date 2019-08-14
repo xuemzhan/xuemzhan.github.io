@@ -116,7 +116,7 @@
 <meta name="keywords" content="技术, 生活, 感想">
 <meta property="og:type" content="website">
 <meta property="og:title" content="半吊码工">
-<meta property="og:url" content="http://www.halfbaker.com/tags/Git/index.html">
+<meta property="og:url" content="http://www.halfbaker.cn/tags/git/index.html">
 <meta property="og:site_name" content="半吊码工">
 <meta property="og:description" content="半路出家, 不似半路出家人">
 <meta property="og:locale" content="zh-CN">
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://www.halfbaker.com/tags/Git/"/>
+  <link rel="canonical" href="http://www.halfbaker.cn/tags/git/"/>
 
 
 
@@ -141,7 +141,7 @@
   };
 </script>
 
-  <title>标签: Git | 半吊码工</title>
+  <title>标签: git | 半吊码工</title>
   
 
 
@@ -371,7 +371,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>Git<small>标签</small>
+        <h1>git<small>标签</small>
         </h1>
       </div>
 
@@ -383,9 +383,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/07/18/tips/Git命令小记/" itemprop="url">
+            <a class="post-title-link" href="/2018/08/01/tips/Git命令大全/" itemprop="url">
               
-                <span itemprop="name">Git命令小记</span>
+                <span itemprop="name">Git命令大全</span>
               
             </a>
         
@@ -393,9 +393,37 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-18T14:30:34+08:00"
-              content="2018-07-18" >
-          07-18
+              datetime="2018-08-01T11:39:08+08:00"
+              content="2018-08-01" >
+          08-01
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
+            <a class="post-title-link" href="/2018/07/30/guider/devops/开发客户端配置/" itemprop="url">
+              
+                <span itemprop="name">开发客户代码环境工具与配置</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-07-30T14:08:19+08:00"
+              content="2018-07-30" >
+          07-30
         </time>
       </div>
 
@@ -654,7 +682,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">34k</span>
+    <span title="站点总字数">35k</span>
   
 
   
@@ -1243,33 +1271,6 @@
       $(e).after($wrap)
       $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
         var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
-          return $(e).text()
-        }).toArray().join('\n')
-        var ta = document.createElement('textarea')
-        document.body.appendChild(ta)
-        ta.style.position = 'absolute'
-        ta.style.top = '0px'
-        ta.style.left = '0px'
-        ta.value = code
-        ta.select()
-        ta.focus()
-        var result = document.execCommand('copy')
-        document.body.removeChild(ta)
-        
-        $(this).blur()
-      })).on('mouseleave', function (e) {
-        var $b = $(this).find('.copy-btn')
-        setTimeout(function () {
-          $b.text('复制')
-        }, 300)
-      }).append(e)
-    })
-  </script>
-
-
-</body>
-</html>
-ode').find('.line').map(function (i, e) {
           return $(e).text()
         }).toArray().join('\n')
         var ta = document.createElement('textarea')
